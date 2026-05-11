@@ -1,6 +1,31 @@
+# Entorno local
 .env
-__pycache__/
 .venv/
-*.db
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Archivos temporales del sistema/editor
 .DS_Store
-node_modules/
+Thumbs.db
+*.swp
+*.swo
+
+# Datos locales
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Logs
+*.log
+logs/

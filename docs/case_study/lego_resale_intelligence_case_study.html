@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LEGO Resale Intelligence Case Study</title>
+  <style>
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+
+    :root {
+      --red: #e3000b;
+      --deep-red: #b50009;
+      --yellow: #ffed00;
+      --orange: #f39317;
+      --black: #111111;
+      --ink: #171717;
+      --muted: #6f6a61;
+      --paper: #f4f1ea;
+      --surface: #fffdf8;
+      --line: rgba(17, 17, 17, 0.13);
+      --green: #116b4f;
+      --shadow: 0 28px 70px rgba(17, 17, 17, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #202020;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+    }
+
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .deck {
+      width: 16in;
+      margin: 0 auto;
+      background: #202020;
+    }
+
+    .page {
+      position: relative;
+      width: 16in;
+      height: 9in;
+      overflow: hidden;
+      page-break-after: always;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(244, 241, 234, 0.96)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(17, 17, 17, 0.028) 0,
+          rgba(17, 17, 17, 0.028) 1px,
+          transparent 1px,
+          transparent 92px
+        ),
+        var(--paper);
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page.dark {
+      background:
+        radial-gradient(circle at 70% 10%, rgba(227, 0, 11, 0.22), transparent 27%),
+        linear-gradient(180deg, #1b1b1b, #101010);
+      color: white;
+    }
+
+    .page.yellow {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(255, 255, 255, 0.34), transparent 22%),
+        var(--yellow);
+    }
+
+    .brand-line {
+      position: absolute;
+      left: 0.72in;
+      right: 0.72in;
+      top: 0.34in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.13in;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      z-index: 5;
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 0.14in;
+    }
+
+    .brand-mini img {
+      width: 0.44in;
+      height: 0.44in;
+      object-fit: cover;
+      border-radius: 0.07in;
+      box-shadow: 0 0.16in 0.34in rgba(227, 0, 11, 0.26);
+    }
+
+    .kicker {
+      color: var(--red);
+      font-size: 0.15in;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .dark .kicker {
+      color: var(--yellow);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 0.84in;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      font-weight: 950;
+      max-width: 8.4in;
+    }
+
+    h2 {
+      font-size: 0.62in;
+      line-height: 0.93;
+      letter-spacing: -0.035em;
+      font-weight: 950;
+      max-width: 7.4in;
+    }
+
+    h3 {
+      font-size: 0.24in;
+      line-height: 1.05;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .copy {
+      font-size: 0.18in;
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 6.25in;
+    }
+
+    .dark .copy {
+      color: rgba(255, 255, 255, 0.70);
+    }
+
+    .micro {
+      color: var(--muted);
+      font-size: 0.105in;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .dark .micro {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.11in;
+      margin-top: 0.3in;
+    }
+
+    .badge {
+      min-height: 0.36in;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.18in;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.82);
+      font-size: 0.115in;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .dark .badge {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .brick-edge-top::before,
+    .brick-edge-bottom::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 0.17in;
+      background:
+        linear-gradient(90deg, transparent 0 0.17in, currentColor 0.17in 0.34in) 0 0 / 0.34in 0.17in repeat-x;
+      color: inherit;
+      z-index: 10;
+    }
+
+    .brick-edge-top::before {
+      top: 0;
+    }
+
+    .brick-edge-bottom::after {
+      bottom: 0;
+    }
+
+    .studs {
+      background-image:
+        radial-gradient(circle at 22px 22px, rgba(0, 0, 0, 0.20) 0 6px, transparent 7px),
+        radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.13) 0 3px, transparent 4px);
+      background-size: 44px 44px;
+    }
+
+    .screen {
+      display: block;
+      width: 100%;
+      border-radius: 0.1in;
+      border: 1px solid rgba(17, 17, 17, 0.11);
+      box-shadow: var(--shadow);
+    }
+
+    .screen.dark-frame {
+      border: 0.09in solid #111;
+      border-radius: 0.18in;
+      background: #111;
+    }
+
+    .plinth {
+      position: relative;
+      border-radius: 0.16in;
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      background: rgba(255, 253, 248, 0.82);
+      box-shadow: var(--shadow);
+      padding: 0.34in;
+    }
+
+    .plinth::before {
+      content: "";
+      position: absolute;
+      inset: 0.16in;
+      border-radius: 0.12in;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      pointer-events: none;
+    }
+
+    .logo-object {
+      width: 2.38in;
+      height: 2.38in;
+      object-fit: cover;
+      border-radius: 0.12in;
+      box-shadow: 0 0.26in 0.6in rgba(227, 0, 11, 0.28);
+    }
+
+    .poster-title {
+      font-family: Impact, "Arial Black", Inter, sans-serif;
+      font-size: 1.05in;
+      line-height: 0.88;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .page-1 .left {
+      position: absolute;
+      left: 0.78in;
+      top: 1.4in;
+      width: 7.3in;
+      z-index: 3;
+    }
+
+    .page-1 .hero-screen {
+      position: absolute;
+      right: 0.72in;
+      top: 1.15in;
+      width: 6.45in;
+      transform: rotate(-1.2deg);
+    }
+
+    .page-1 .logo-tile {
+      position: absolute;
+      right: 4.75in;
+      top: 4.92in;
+      width: 2.25in;
+      height: 2.25in;
+      display: grid;
+      place-items: center;
+      background: var(--surface);
+      border-radius: 0.16in;
+      border: 1px solid var(--line);
+      box-shadow: 0 0.34in 0.9in rgba(17, 17, 17, 0.22);
+      z-index: 4;
+    }
+
+    .page-1 .huge-red {
+      position: absolute;
+      right: -1.1in;
+      bottom: -1.2in;
+      width: 6.5in;
+      height: 6.5in;
+      background: var(--red);
+      border-radius: 50%;
+      opacity: 0.92;
+      z-index: 1;
+    }
+
+    .page-2 .noise {
+      position: absolute;
+      right: 0.65in;
+      top: 1.1in;
+      width: 6.3in;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.18in;
+    }
+
+    .problem-card {
+      border-radius: 0.12in;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.28in;
+      min-height: 1.2in;
+    }
+
+    .problem-card strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 0.31in;
+      line-height: 1;
+      margin-bottom: 0.12in;
+    }
+
+    .problem-card span {
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.14in;
+      line-height: 1.35;
+    }
+
+    .page-2 .left {
+      position: absolute;
+      left: 0.82in;
+      top: 1.45in;
+      width: 6.5in;
+    }
+
+    .yellow-slab {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1.05in;
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .page-3 .screen-wrap {
+      position: absolute;
+      left: 4.05in;
+      right: 2.5in;
+      bottom: 0.65in;
+    }
+
+    .page-3 .promise-copy {
+      position: absolute;
+      left: 0.76in;
+      top: 1.08in;
+      width: 3.05in;
+      z-index: 4;
+    }
+
+    .page-3 .promise-copy h2 {
+      font-size: 0.56in;
+      line-height: 0.9;
+    }
+
+    .callout {
+      position: absolute;
+      padding: 0.14in 0.18in;
+      border-radius: 999px;
+      background: var(--black);
+      color: white;
+      font-size: 0.12in;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 0.16in 0.36in rgba(17, 17, 17, 0.22);
+      z-index: 5;
+    }
+
+    .page-3 .c1 { left: 1.05in; top: 5.65in; }
+    .page-3 .c2 { left: 4.15in; top: 4.62in; }
+    .page-3 .c3 { right: 4.75in; top: 4.85in; }
+    .page-3 .c4 { right: 1.25in; top: 4.45in; }
+
+    .pipeline {
+      position: absolute;
+      left: 0.76in;
+      right: 0.76in;
+      bottom: 0.7in;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 0.12in;
+    }
+
+    .pipe-block {
+      position: relative;
+      min-height: 1.24in;
+      border-radius: 0.1in;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 0.22in 0.15in;
+      box-shadow: 0 0.18in 0.42in rgba(17, 17, 17, 0.07);
+    }
+
+    .pipe-block::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0.09in;
+      background: var(--red);
+      border-radius: 0.1in 0.1in 0 0;
+    }
+
+    .pipe-block .num {
+      font-size: 0.1in;
+      font-weight: 900;
+      color: var(--muted);
+      margin-bottom: 0.12in;
+      letter-spacing: 0.12em;
+    }
+
+    .pipe-block .name {
+      font-size: 0.15in;
+      font-weight: 950;
+      line-height: 1.12;
+    }
+
+    .page-5 .score-close {
+      position: absolute;
+      left: 0.7in;
+      bottom: 0.7in;
+      width: 9.2in;
+    }
+
+    .formula-stack {
+      position: absolute;
+      right: 0.75in;
+      bottom: 0.68in;
+      width: 4.5in;
+      display: grid;
+      gap: 0.16in;
+    }
+
+    .formula {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 0.08in solid var(--red);
+      border-radius: 0.1in;
+      padding: 0.22in;
+      box-shadow: 0 0.18in 0.38in rgba(17, 17, 17, 0.08);
+    }
+
+    .formula .label {
+      font-size: 0.1in;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 900;
+      margin-bottom: 0.07in;
+    }
+
+    .formula .value {
+      font-size: 0.19in;
+      font-weight: 950;
+    }
+
+    .experience-grid {
+      position: absolute;
+      left: 0.75in;
+      right: 0.75in;
+      bottom: 0.48in;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0.34in;
+      align-items: end;
+    }
+
+    .page-6 .mini-screen {
+      width: 100%;
+      height: 4.72in;
+      object-fit: cover;
+      object-position: top;
+      transform: rotate(1.4deg);
+    }
+
+    .page-6 .experience-copy {
+      position: absolute;
+      left: 0.76in;
+      top: 1.05in;
+      width: 8.4in;
+      z-index: 4;
+    }
+
+    .page-6 .plinth {
+      padding: 0.24in;
+    }
+
+    .page-6 .plinth .screen {
+      height: 3.65in;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .page-7 .detail-screen {
+      position: absolute;
+      left: 0.72in;
+      right: 0.72in;
+      bottom: 0.55in;
+      width: 14.56in;
+    }
+
+    .page-7 .label-stack {
+      position: absolute;
+      right: 0.9in;
+      top: 1.25in;
+      display: flex;
+      gap: 0.12in;
+      flex-wrap: wrap;
+      width: 5.6in;
+      justify-content: flex-end;
+    }
+
+    .phone-row {
+      position: absolute;
+      left: 1.35in;
+      right: 1.35in;
+      bottom: 0.55in;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4in;
+      align-items: end;
+    }
+
+    .phone {
+      height: 6.1in;
+      overflow: hidden;
+      border: 0.075in solid #111;
+      border-radius: 0.34in;
+      box-shadow: var(--shadow);
+      background: #111;
+    }
+
+    .phone img {
+      width: 100%;
+      display: block;
+    }
+
+    .numbers {
+      position: absolute;
+      left: 0.72in;
+      right: 0.72in;
+      bottom: 0.8in;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.18in;
+    }
+
+    .number-card {
+      background: #111;
+      color: #fff;
+      border-radius: 0.12in;
+      min-height: 1.8in;
+      padding: 0.25in;
+      box-shadow: var(--shadow);
+    }
+
+    .number-card:nth-child(even) {
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .number-card .big {
+      font-size: 0.58in;
+      font-weight: 950;
+      line-height: 0.9;
+      margin-bottom: 0.18in;
+    }
+
+    .number-card .small {
+      font-size: 0.12in;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 900;
+    }
+
+    .module-map {
+      position: absolute;
+      left: 0.8in;
+      right: 0.8in;
+      bottom: 0.72in;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.16in;
+    }
+
+    .module {
+      border-radius: 0.12in;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.07);
+      min-height: 0.78in;
+      padding: 0.2in;
+      color: white;
+      font-size: 0.16in;
+      font-weight: 950;
+      letter-spacing: 0.01em;
+    }
+
+    .module span {
+      display: block;
+      color: var(--yellow);
+      font-size: 0.1in;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.1in;
+    }
+
+    .two-col {
+      position: absolute;
+      left: 0.8in;
+      right: 0.8in;
+      bottom: 0.7in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35in;
+    }
+
+    .list-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 0.14in;
+      padding: 0.34in;
+      min-height: 4.1in;
+      box-shadow: var(--shadow);
+    }
+
+    .list-panel h3 {
+      color: var(--red);
+      margin-bottom: 0.22in;
+    }
+
+    .list-panel ul {
+      margin: 0;
+      padding-left: 0.22in;
+      color: var(--muted);
+      font-size: 0.17in;
+      line-height: 1.6;
+    }
+
+    .closing {
+      position: absolute;
+      left: 0.76in;
+      top: 1.12in;
+      width: 8.7in;
+    }
+
+    .closing h2 {
+      font-size: 0.92in;
+      max-width: 8.2in;
+    }
+
+    .closing-visual {
+      position: absolute;
+      right: 0.7in;
+      top: 1.0in;
+      width: 4.8in;
+      display: grid;
+      gap: 0.2in;
+    }
+
+    .closing-visual img {
+      width: 100%;
+      border-radius: 0.12in;
+      box-shadow: var(--shadow);
+    }
+
+    .footer-credit {
+      position: absolute;
+      left: 0.76in;
+      bottom: 0.56in;
+      font-size: 0.14in;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.5;
+    }
+
+    @media print {
+      html,
+      body,
+      .deck {
+        width: 16in;
+        margin: 0;
+        background: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="page page-1 brick-edge-bottom">
+      <div class="brand-line">
+        <div class="brand-mini"><img src="assets/08_closeup_hero_logo.png" alt="" /> LEGO Resale Intelligence</div>
+        <div>Phase 4 · Case Study</div>
+      </div>
+      <div class="huge-red"></div>
+      <div class="left">
+        <div class="kicker">Collector-grade resale intelligence</div>
+        <h1>LEGO Resale Intelligence</h1>
+        <p class="copy" style="margin-top:0.24in;">A premium resale intelligence tool for retired LEGO listings.</p>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">Streamlit</span>
+          <span class="badge">Anthropic</span>
+          <span class="badge">SQLite</span>
+        </div>
+      </div>
+      <img class="screen hero-screen" src="assets/01_desktop_overview.png" alt="Overview screen" />
+      <div class="logo-tile"><img class="logo-object" src="assets/08_closeup_hero_logo.png" alt="LEGO inspired logo tile" /></div>
+    </section>
+
+    <section class="page dark page-2 brick-edge-top brick-edge-bottom">
+      <div class="brand-line">
+        <div>01 · The Problem</div>
+        <div>Marketplace noise</div>
+      </div>
+      <div class="left">
+        <div class="kicker">Signal vs noise</div>
+        <h2>Marketplace listings are noisy. Good opportunities are easy to miss.</h2>
+        <p class="copy" style="margin-top:0.28in;">Retired LEGO sets can be valuable, but listings are inconsistent: incomplete titles, unclear condition, missing set IDs, unstable URLs and prices that are hard to compare.</p>
+      </div>
+      <div class="noise">
+        <div class="problem-card"><strong>SET ID</strong><span>Often missing, hidden, translated or mixed with marketplace noise.</span></div>
+        <div class="problem-card"><strong>PRICE</strong><span>Asking price is easy to see; real net margin is not.</span></div>
+        <div class="problem-card"><strong>RISK</strong><span>Incomplete boxes, unclear condition and missing parts change the deal.</span></div>
+        <div class="problem-card"><strong>SCORE</strong><span>A buyer needs a fast way to decide whether to inspect or skip.</span></div>
+      </div>
+      <div class="yellow-slab studs"></div>
+    </section>
+
+    <section class="page yellow page-3 brick-edge-bottom">
+      <div class="brand-line">
+        <div>02 · Product Promise</div>
+        <div>One URL → one score</div>
+      </div>
+      <div class="promise-copy">
+        <div class="kicker" style="color:#111;">Product flow</div>
+        <h2>One URL. One score.</h2>
+        <p class="copy" style="margin-top:0.2in;color:#3a3100;">The app turns a real listing URL into a structured buying signal: fair price, net margin, risk flags, opportunity score and local archive.</p>
+      </div>
+      <span class="callout c1">Capture</span>
+      <span class="callout c2">Extract</span>
+      <span class="callout c3">Score</span>
+      <span class="callout c4">Archive</span>
+      <div class="screen-wrap">
+        <img class="screen dark-frame" src="assets/02_desktop_analyze.png" alt="Analyze view" />
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="brand-line">
+        <div>03 · Architecture</div>
+        <div>Small on purpose</div>
+      </div>
+      <div style="position:absolute;left:0.76in;top:1.05in;width:9.5in;">
+        <div class="kicker">Explainable pipeline</div>
+        <h2>A simple system that a junior developer can defend.</h2>
+        <p class="copy" style="margin-top:0.22in;">No FastAPI, no React, no Postgres, no Docker. The goal was a v1 that can be understood, tested and iterated without enterprise architecture.</p>
+      </div>
+      <div class="pipeline">
+        <div class="pipe-block"><div class="num">01</div><div class="name">URL</div></div>
+        <div class="pipe-block"><div class="num">02</div><div class="name">capture.py</div></div>
+        <div class="pipe-block"><div class="num">03</div><div class="name">Anthropic extract</div></div>
+        <div class="pipe-block"><div class="num">04</div><div class="name">identify.py</div></div>
+        <div class="pipe-block"><div class="num">05</div><div class="name">catalog.csv</div></div>
+        <div class="pipe-block"><div class="num">06</div><div class="name">scoring.py</div></div>
+        <div class="pipe-block"><div class="num">07</div><div class="name">SQLite</div></div>
+        <div class="pipe-block"><div class="num">08</div><div class="name">Streamlit UI</div></div>
+      </div>
+    </section>
+
+    <section class="page page-5">
+      <div class="brand-line">
+        <div>04 · Intelligence Layer</div>
+        <div>Explicit scoring</div>
+      </div>
+      <div style="position:absolute;left:0.76in;top:1.0in;width:8.2in;">
+        <div class="kicker">Not magic</div>
+        <h2>Scoring is explicit, explainable and testable.</h2>
+      </div>
+      <img class="screen score-close" src="assets/09_closeup_archived_score.png" alt="Archived score close up" />
+      <div class="formula-stack">
+        <div class="formula"><div class="label">Gross margin</div><div class="value">fair price - acquisition cost</div></div>
+        <div class="formula"><div class="label">Net margin</div><div class="value">minus fees and outbound shipping</div></div>
+        <div class="formula"><div class="label">GREEN</div><div class="value">strong score + positive margin</div></div>
+      </div>
+    </section>
+
+    <section class="page page-6 dark brick-edge-top">
+      <div class="brand-line">
+        <div>05 · Product Experience</div>
+        <div>Premium Streamlit</div>
+      </div>
+      <div class="experience-copy">
+        <div class="kicker">Visual system</div>
+        <h2>Premium UI, grounded in a real workflow.</h2>
+        <p class="copy" style="margin-top:0.22in;">Phase 3 transformed the prototype into a polished Streamlit experience with Overview, Analyze and About.</p>
+      </div>
+      <div class="experience-grid">
+        <img class="screen mini-screen" src="assets/01_desktop_overview.png" alt="Overview" />
+        <div class="plinth"><img class="screen" src="assets/04_desktop_about.png" alt="About" /></div>
+      </div>
+    </section>
+
+    <section class="page page-7">
+      <div class="brand-line">
+        <div>06 · Analyze View</div>
+        <div>Operational surface</div>
+      </div>
+      <div style="position:absolute;left:0.76in;top:1.0in;width:7.6in;">
+        <div class="kicker">Traceable workflow</div>
+        <h2>Operational, clear and traceable.</h2>
+      </div>
+      <div class="label-stack">
+        <span class="badge">Paste URL</span>
+        <span class="badge">Run pipeline</span>
+        <span class="badge">Archive result</span>
+        <span class="badge">Inspect score</span>
+      </div>
+      <img class="screen detail-screen" src="assets/03_desktop_analyze_detail.png" alt="Analyze detail" />
+    </section>
+
+    <section class="page yellow">
+      <div class="brand-line">
+        <div>07 · Responsive Polish</div>
+        <div>Desktop + mobile</div>
+      </div>
+      <div style="position:absolute;left:0.76in;top:0.9in;width:8.8in;">
+        <div class="kicker" style="color:#111;">Mobile proof</div>
+        <h2>Designed to hold up beyond desktop.</h2>
+      </div>
+      <div class="phone-row">
+        <div class="phone"><img src="assets/05_mobile_overview.png" alt="Mobile overview" /></div>
+        <div class="phone"><img src="assets/06_mobile_analyze.png" alt="Mobile analyze" /></div>
+        <div class="phone"><img src="assets/07_mobile_about.png" alt="Mobile about" /></div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="brand-line">
+        <div>08 · Validation</div>
+        <div>Real URLs, real limits</div>
+      </div>
+      <div style="position:absolute;left:0.76in;top:1.02in;width:9.0in;">
+        <div class="kicker">Evidence</div>
+        <h2>Tested with real URLs, not only mock data.</h2>
+        <p class="copy" style="margin-top:0.18in;">Failures were documented as external marketplace constraints, not hidden errors.</p>
+      </div>
+      <div class="numbers">
+        <div class="number-card"><div class="big">64</div><div class="small">automated tests passing</div></div>
+        <div class="number-card"><div class="big">20</div><div class="small">real URLs tested</div></div>
+        <div class="number-card"><div class="big">13</div><div class="small">end-to-end successes</div></div>
+        <div class="number-card"><div class="big">7</div><div class="small">external failures documented</div></div>
+        <div class="number-card"><div class="big">10</div><div class="small">catalog sets covered</div></div>
+      </div>
+    </section>
+
+    <section class="page dark">
+      <div class="brand-line">
+        <div>09 · What Was Built</div>
+        <div>Serious v1</div>
+      </div>
+      <div style="position:absolute;left:0.76in;top:1.0in;width:8.5in;">
+        <div class="kicker">Product engineering</div>
+        <h2>Built as a serious v1, not an over-engineered system.</h2>
+      </div>
+      <div class="module-map">
+        <div class="module"><span>Capture</span>capture.py</div>
+        <div class="module"><span>LLM</span>extract.py</div>
+        <div class="module"><span>Catalog</span>identify.py</div>
+        <div class="module"><span>Pricing</span>pricing_reference.py</div>
+        <div class="module"><span>Score</span>scoring.py</div>
+        <div class="module"><span>Flow</span>pipeline.py</div>
+        <div class="module"><span>Storage</span>db.py</div>
+        <div class="module"><span>Interface</span>app/main.py</div>
+        <div class="module"><span>Polish</span>app/styles.py</div>
+      </div>
+    </section>
+
+    <section class="page dark page-12 brick-edge-top brick-edge-bottom">
+      <div class="brand-line">
+        <div>11 · Closing Poster</div>
+        <div>Portfolio-ready</div>
+      </div>
+      <div class="closing">
+        <div class="kicker">Closing signal</div>
+        <h2>From noisy marketplace listings to a focused buying signal.</h2>
+        <p class="copy" style="margin-top:0.28in;">LEGO Resale Intelligence is a personal product engineering project built to show end-to-end thinking: data capture, LLM extraction, structured modeling, scoring, persistence, testing and premium product presentation.</p>
+      </div>
+      <div class="closing-visual">
+        <img src="assets/08_closeup_hero_logo.png" alt="" />
+        <img src="assets/10_closeup_mobile_archive.png" alt="" />
+      </div>
+      <div class="footer-credit">
+        Built by Juan Manuel Muriel Mora<br />
+        Python · Product Engineering · AI-assisted workflows · UI polish<br />
+        Personal educational project. Not affiliated with or endorsed by the LEGO Group.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
