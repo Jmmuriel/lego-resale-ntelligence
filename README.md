@@ -8,8 +8,7 @@ A personal e-commerce intelligence tool that turns retired LEGO marketplace list
 
 ## Live demo
 
-<!-- Replace with your Streamlit Community Cloud URL once deployed -->
-🔗 _Coming soon — run locally for now (see setup below)_
+🔗 [https://lego-resale-ntelligence-gybrigvpvh9aa9epszcdul.streamlit.app](https://lego-resale-ntelligence-gybrigvpvh9aa9epszcdul.streamlit.app)
 
 ### Deploy to Streamlit Community Cloud
 
