@@ -6,6 +6,61 @@ A personal e-commerce intelligence tool that turns retired LEGO marketplace list
 
 ---
 
+## V2 status
+
+V1 is the stable Streamlit product. V2 is an incremental expansion in the same repo, not a rewrite.
+
+V2 adds:
+
+- FastAPI backend in `backend/`
+- Next.js frontend in `frontend/`
+- dynamic pricing seed data
+- set-level intelligence with price history charts
+- portfolio P&L views
+- local market briefings
+- shared SQLite watchlist workflow
+- premium Linear/Stripe-inspired UI with restrained LEGO cues and a Three.js scene
+
+Current V2 progress:
+
+- Demo local: **97/100**
+- Full guide: **84/100**
+
+Start V2 locally:
+
+```bash
+# Terminal 1
+bash scripts/v2_start_api.sh
+
+# Terminal 2
+bash scripts/v2_start_frontend.sh
+```
+
+Open:
+
+- V2 web: `http://127.0.0.1:3000`
+- V2 API docs: `http://127.0.0.1:8000/docs`
+
+Check V2:
+
+```bash
+bash scripts/v2_doctor.sh
+```
+
+V2 documentation:
+
+- [`docs/v2/README.md`](docs/v2/README.md)
+- [`docs/v2/demo_runbook.md`](docs/v2/demo_runbook.md)
+- [`docs/v2/release_checklist.md`](docs/v2/release_checklist.md)
+- [`docs/v2/portfolio_story.md`](docs/v2/portfolio_story.md)
+- [`docs/v2/deploy_plan.md`](docs/v2/deploy_plan.md)
+- [`docs/v2/guide_gap_analysis.md`](docs/v2/guide_gap_analysis.md)
+- [`docs/v2/postgres_alembic_notes.md`](docs/v2/postgres_alembic_notes.md)
+- [`docs/v2/db_read_fallback_notes.md`](docs/v2/db_read_fallback_notes.md)
+- [`docs/v2/data_quality_notes.md`](docs/v2/data_quality_notes.md)
+
+---
+
 ## Live demo
 
 🔗 [https://lego-resale-ntelligence-gybrigvpvh9aa9epszcdul.streamlit.app](https://lego-resale-ntelligence-gybrigvpvh9aa9epszcdul.streamlit.app)
@@ -102,10 +157,10 @@ net_margin    = gross_margin − selling_fees − outbound_shipping
 ## Test coverage
 
 ```
-64 passed
+114 passed
 ```
 
-Tests cover: data models, capture, extraction mocks, catalog matching, pricing lookups, scoring logic, margin calculations and database operations.
+Tests cover: data models, capture, extraction mocks, catalog matching, pricing lookups, scoring logic, margin calculations, database operations, FastAPI routes, dynamic pricing, DB-backed seed loading, seed data validation, data quality API, catalog research queue, portfolio logic (including CRUD), Claude Sonnet briefings with local fallback, expanded price history for all 10 active sets, and watchlist workflows.
 
 ---
 

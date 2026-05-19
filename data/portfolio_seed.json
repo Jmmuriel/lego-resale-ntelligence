@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "set_id": "75192",
+    "set_name": "Millennium Falcon (UCS)",
+    "condition": "USED_COMPLETE",
+    "quantity": 1,
+    "cost_basis_eur": 585.0,
+    "purchased_at": "2026-02-10",
+    "status": "HOLDING",
+    "notes": "Demo position based on a strong V1-style opportunity.",
+    "sell_target_eur": 820.0
+  },
+  {
+    "id": 2,
+    "set_id": "75313",
+    "set_name": "AT-AT (UCS)",
+    "condition": "USED_COMPLETE",
+    "quantity": 1,
+    "cost_basis_eur": 690.0,
+    "purchased_at": "2026-03-03",
+    "status": "HOLDING",
+    "notes": "Large retired UCS set with active market tracking.",
+    "sell_target_eur": 860.0
+  },
+  {
+    "id": 3,
+    "set_id": "75095",
+    "set_name": "TIE Fighter (UCS)",
+    "condition": "USED_COMPLETE",
+    "quantity": 1,
+    "cost_basis_eur": 285.0,
+    "purchased_at": "2025-12-15",
+    "status": "HOLDING",
+    "notes": "Older UCS position with weaker recent price movement.",
+    "sell_target_eur": 330.0
+  }
+]

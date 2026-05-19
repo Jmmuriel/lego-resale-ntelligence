@@ -698,6 +698,53 @@ def apply_global_styles() -> None:
             margin-top: 3px;
         }
 
+        .lri-status-control-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin: -2px 0 12px;
+            border: 1px solid var(--lri-line);
+            border-radius: 8px;
+            background: rgba(255,253,248,0.74);
+            padding: 14px 16px;
+        }
+
+        .lri-status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 0 12px;
+            border-radius: 999px;
+            border: 1px solid var(--lri-line);
+            color: var(--lri-ink);
+            background: var(--lri-surface);
+            font-size: 11px;
+            font-weight: 850;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .lri-status-badge.watching {
+            border-color: rgba(214,169,0,0.42);
+            background: rgba(214,169,0,0.12);
+            color: #7a5a00;
+        }
+
+        .lri-status-badge.bought {
+            border-color: rgba(17,107,79,0.42);
+            background: rgba(17,107,79,0.12);
+            color: var(--lri-green);
+        }
+
+        .lri-status-badge.discarded {
+            border-color: rgba(185,28,28,0.30);
+            background: rgba(185,28,28,0.09);
+            color: var(--lri-red);
+        }
+
         .lri-table-note {
             color: var(--lri-muted);
             font-size: 13px;
@@ -798,7 +845,8 @@ def apply_global_styles() -> None:
             }
 
             .lri-section-label,
-            .lri-inspector-panel {
+            .lri-inspector-panel,
+            .lri-status-control-panel {
                 align-items: flex-start;
                 flex-direction: column;
             }

@@ -15,13 +15,24 @@ if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
 from styles import apply_global_styles
-from src.db import ListingAnalysisRecord, list_recent_listings, save_listing_analysis
+from src.db import (
+    ListingAnalysisRecord,
+    list_recent_listings,
+    save_listing_analysis,
+    update_listing_status,
+)
 from src.models import ListingAnalysis
 from src.pipeline import PipelineError, analyze_listing_url
 from src.scoring import build_margin_breakdown
 
 
-PHASE_LABEL = "Phase 3B Premium Streamlit Experience"
+PHASE_LABEL = "V2 Incremental Watchlist"
+STATUS_LABELS = {
+    "analyzed": "Analyzed",
+    "watching": "Watching",
+    "discarded": "Discarded",
+    "bought": "Bought",
+}
 
 
 def format_eur(value: float | None) -> str:
@@ -36,6 +47,13 @@ def format_condition(value: str | None) -> str:
     if value is None:
         return "N/D"
     return value.replace("_", " ")
+
+
+def format_status(value: str | None) -> str:
+    """Hace legible el estado manual de un análisis guardado."""
+    if value is None:
+        return "N/D"
+    return STATUS_LABELS.get(value, value.replace("_", " ").title())
 
 
 def safe_text(value: object) -> str:
@@ -431,12 +449,13 @@ def recent_active_records() -> list[ListingAnalysisRecord]:
 
 def show_recent_records() -> None:
     """Muestra la tabla de últimos análisis guardados."""
+    show_status_update_feedback()
     st.markdown(
         """
         <div class="lri-panel">
             <div class="lri-section-label">
                 <span>Recent intelligence</span>
-                <span>SQLite archive</span>
+                <span>SQLite watchlist</span>
             </div>
         </div>
         """,
@@ -463,6 +482,7 @@ def show_recent_records() -> None:
             height=310,
             column_config={
                 "id": st.column_config.NumberColumn("ID", width="small"),
+                "status": st.column_config.TextColumn("Status"),
                 "category": st.column_config.TextColumn("Category"),
                 "score": st.column_config.NumberColumn("Score", width="small"),
                 "set_id": st.column_config.TextColumn("Set"),
@@ -491,6 +511,7 @@ def records_as_rows(records: list[ListingAnalysisRecord]) -> list[dict[str, obje
     return [
         {
             "id": record.id,
+            "status": format_status(record.status),
             "category": record.category,
             "score": record.opportunity_score,
             "set_id": record.set_id,
@@ -543,7 +564,7 @@ def show_record_detail(record: ListingAnalysisRecord) -> None:
         <div class="lri-panel">
             <div class="lri-section-label">
                 <span>Archived detail</span>
-                <span>record #{safe_text(record.id)}</span>
+                <span>record #{safe_text(record.id)} · {safe_text(format_status(record.status))}</span>
             </div>
             <div class="lri-result-grid compact">
                 <div class="lri-score-card">
@@ -571,6 +592,69 @@ def show_record_detail(record: ListingAnalysisRecord) -> None:
         </div>
         """,
         unsafe_allow_html=True,
+    )
+    show_status_controls(record)
+
+
+def show_status_controls(record: ListingAnalysisRecord) -> None:
+    """Permite convertir el archivo local en una watchlist accionable."""
+    status_keys = list(STATUS_LABELS.keys())
+    current_status = record.status if record.status in STATUS_LABELS else "analyzed"
+    current_index = status_keys.index(current_status)
+
+    st.markdown(
+        f"""
+        <div class="lri-status-control-panel">
+            <div>
+                <div class="lri-inspector-eyebrow">Manual decision</div>
+                <div class="lri-inspector-title">Move this listing through your resale workflow</div>
+            </div>
+            <div class="lri-status-badge {safe_text(current_status)}">
+                {safe_text(format_status(current_status))}
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    left_column, right_column = st.columns([0.65, 0.35])
+    with left_column:
+        selected_status = st.selectbox(
+            "Listing status",
+            options=status_keys,
+            index=current_index,
+            format_func=format_status,
+            key=f"status_select_{record.id}",
+            label_visibility="collapsed",
+        )
+    with right_column:
+        if st.button("Update status", key=f"status_button_{record.id}"):
+            updated_record = update_listing_status(record.id, selected_status)
+            if updated_record is None:
+                status_panel(
+                    "Status update failed",
+                    f"No se encontró el registro #{record.id} en SQLite.",
+                    tone="error",
+                )
+            else:
+                st.session_state["lri_status_feedback"] = (
+                    updated_record.id,
+                    updated_record.status,
+                )
+                st.rerun()
+
+
+def show_status_update_feedback() -> None:
+    """Muestra feedback después de cambiar un estado y refrescar el archivo."""
+    feedback = st.session_state.pop("lri_status_feedback", None)
+    if feedback is None:
+        return
+
+    record_id, status = feedback
+    status_panel(
+        "Watchlist updated",
+        f"Registro #{record_id} movido a {format_status(status)}.",
+        tone="success",
     )
 
 
