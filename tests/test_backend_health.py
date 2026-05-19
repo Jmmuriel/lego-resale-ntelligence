@@ -64,9 +64,9 @@ def test_market_data_quality_endpoint_returns_coverage_metrics():
     assert response.status_code == 200
     payload = response.json()
     assert payload["ok"] is True
-    assert payload["status"] == "needs_research"
-    assert payload["metrics"]["catalog_sets"] == 10
-    assert payload["metrics"]["catalog_candidate_sets"] == 40
+    assert payload["status"] == "ready"
+    assert payload["metrics"]["catalog_sets"] == 50
+    assert payload["metrics"]["catalog_candidate_sets"] == 0
     assert payload["metrics"]["catalog_plus_candidates"] == 50
     assert payload["metrics"]["candidate_catalog_coverage_pct"] == 100.0
 
@@ -78,11 +78,7 @@ def test_market_catalog_candidates_endpoint_returns_research_queue():
 
     assert response.status_code == 200
     payload = response.json()
-    assert len(payload) == 40
-    assert payload[0]["validation_status"] == "needs_research"
-    assert {"set_id", "name", "theme", "reason", "readiness"} <= set(payload[0])
-    assert payload[0]["readiness"]["ready_for_promotion"] is False
-    assert payload[0]["readiness"]["completed_checks"] == 0
+    assert len(payload) == 0
 
 
 def test_market_set_intelligence_endpoint_returns_set_summary():

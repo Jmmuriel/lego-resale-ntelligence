@@ -4,8 +4,21 @@ from backend.services.data_quality import list_catalog_candidates
 from scripts.v2_check_candidate_readiness import check_candidate_readiness
 
 
-def test_candidate_readiness_blocks_candidates_without_evidence():
-    candidates = list_catalog_candidates()
+def test_candidate_readiness_blocks_candidates_without_evidence(tmp_path):
+    candidates_csv = tmp_path / "catalog_expansion_candidates.csv"
+    candidates_csv.write_text(
+        "set_id,name,theme,reason,validation_status\n"
+        "99999,Test Set,Star Wars,Test candidate,needs_research\n",
+        encoding="utf-8",
+    )
+
+    from backend.services import data_quality as dq
+    original = dq.CATALOG_CANDIDATES_PATH
+    dq.CATALOG_CANDIDATES_PATH = candidates_csv
+    try:
+        candidates = list_catalog_candidates()
+    finally:
+        dq.CATALOG_CANDIDATES_PATH = original
 
     first_candidate = candidates[0]
 
@@ -16,6 +29,12 @@ def test_candidate_readiness_blocks_candidates_without_evidence():
 
 
 def test_candidate_readiness_accepts_complete_evidence(tmp_path):
+    candidates_csv = tmp_path / "catalog_expansion_candidates.csv"
+    candidates_csv.write_text(
+        "set_id,name,theme,reason,validation_status\n"
+        "10212,Imperial Shuttle,Star Wars,UCS candidate,needs_research\n",
+        encoding="utf-8",
+    )
     research_path = tmp_path / "catalog_candidate_research.json"
     research_path.write_text(
         json.dumps(
@@ -49,12 +68,18 @@ def test_candidate_readiness_accepts_complete_evidence(tmp_path):
         encoding="utf-8",
     )
 
-    candidates = list_catalog_candidates(research_path=research_path)
+    from backend.services import data_quality as dq
+    original = dq.CATALOG_CANDIDATES_PATH
+    dq.CATALOG_CANDIDATES_PATH = candidates_csv
+    try:
+        candidates = list_catalog_candidates(research_path=research_path)
+    finally:
+        dq.CATALOG_CANDIDATES_PATH = original
     target = next(candidate for candidate in candidates if candidate.set_id == "10212")
 
     assert target.readiness.ready_for_promotion is True
     assert target.readiness.completed_checks == target.readiness.required_checks
 
 
-def test_candidate_readiness_cli_returns_blocked_code():
-    assert check_candidate_readiness("10212") == 2
+def test_candidate_readiness_cli_returns_not_found_code():
+    assert check_candidate_readiness("10212") == 1

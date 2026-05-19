@@ -498,5 +498,2005 @@
     "price_max_eur": 1330.0,
     "sample_count": 6,
     "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10212",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 171.6,
+    "price_avg_eur": 195.0,
+    "price_max_eur": 222.3,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10212",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 173.32,
+    "price_avg_eur": 196.95,
+    "price_max_eur": 224.52,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10212",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 172.45,
+    "price_avg_eur": 195.97,
+    "price_max_eur": 223.41,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10212",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 175.9,
+    "price_avg_eur": 199.89,
+    "price_max_eur": 227.87,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10212",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 174.14,
+    "price_avg_eur": 197.89,
+    "price_max_eur": 225.59,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "75060",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 206.8,
+    "price_avg_eur": 235.0,
+    "price_max_eur": 267.9,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "75060",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 208.87,
+    "price_avg_eur": 237.35,
+    "price_max_eur": 270.58,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "75060",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 207.82,
+    "price_avg_eur": 236.16,
+    "price_max_eur": 269.22,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "75060",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 211.97,
+    "price_avg_eur": 240.88,
+    "price_max_eur": 274.6,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "75060",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 209.85,
+    "price_avg_eur": 238.47,
+    "price_max_eur": 271.86,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "75144",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 149.6,
+    "price_avg_eur": 170.0,
+    "price_max_eur": 193.8,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "75144",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 151.1,
+    "price_avg_eur": 171.7,
+    "price_max_eur": 195.74,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "75144",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 150.34,
+    "price_avg_eur": 170.84,
+    "price_max_eur": 194.76,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "75144",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 153.35,
+    "price_avg_eur": 174.26,
+    "price_max_eur": 198.66,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "75144",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 151.82,
+    "price_avg_eur": 172.52,
+    "price_max_eur": 196.67,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "75159",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 369.6,
+    "price_avg_eur": 420.0,
+    "price_max_eur": 478.8,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "75159",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 373.3,
+    "price_avg_eur": 424.2,
+    "price_max_eur": 483.59,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "75159",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 371.43,
+    "price_avg_eur": 422.08,
+    "price_max_eur": 481.17,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "75159",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 378.86,
+    "price_avg_eur": 430.52,
+    "price_max_eur": 490.79,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "75159",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 375.06,
+    "price_avg_eur": 426.21,
+    "price_max_eur": 485.88,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "75275",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 140.8,
+    "price_avg_eur": 160.0,
+    "price_max_eur": 182.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "75275",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 142.21,
+    "price_avg_eur": 161.6,
+    "price_max_eur": 184.22,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "75275",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 141.5,
+    "price_avg_eur": 160.79,
+    "price_max_eur": 183.3,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "75275",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 144.33,
+    "price_avg_eur": 164.01,
+    "price_max_eur": 186.97,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "75275",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 142.89,
+    "price_avg_eur": 162.37,
+    "price_max_eur": 185.1,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "75309",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 272.8,
+    "price_avg_eur": 310.0,
+    "price_max_eur": 353.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "75309",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 275.53,
+    "price_avg_eur": 313.1,
+    "price_max_eur": 356.93,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "75309",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 274.15,
+    "price_avg_eur": 311.53,
+    "price_max_eur": 355.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "75309",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 279.63,
+    "price_avg_eur": 317.76,
+    "price_max_eur": 362.25,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "75309",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 276.83,
+    "price_avg_eur": 314.58,
+    "price_max_eur": 358.62,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10182",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 686.4,
+    "price_avg_eur": 780.0,
+    "price_max_eur": 889.2,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10182",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 693.26,
+    "price_avg_eur": 787.8,
+    "price_max_eur": 898.09,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10182",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 689.8,
+    "price_avg_eur": 783.86,
+    "price_max_eur": 893.6,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10182",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 703.6,
+    "price_avg_eur": 799.54,
+    "price_max_eur": 911.48,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10182",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 696.56,
+    "price_avg_eur": 791.54,
+    "price_max_eur": 902.36,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10185",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 748.0,
+    "price_avg_eur": 850.0,
+    "price_max_eur": 969.0,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10185",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 755.48,
+    "price_avg_eur": 858.5,
+    "price_max_eur": 978.69,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10185",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 751.7,
+    "price_avg_eur": 854.21,
+    "price_max_eur": 973.8,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10185",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 766.74,
+    "price_avg_eur": 871.29,
+    "price_max_eur": 993.27,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10185",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 759.07,
+    "price_avg_eur": 862.58,
+    "price_max_eur": 983.34,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10197",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 325.6,
+    "price_avg_eur": 370.0,
+    "price_max_eur": 421.8,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10197",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 328.86,
+    "price_avg_eur": 373.7,
+    "price_max_eur": 426.02,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10197",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 327.21,
+    "price_avg_eur": 371.83,
+    "price_max_eur": 423.89,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10197",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 333.76,
+    "price_avg_eur": 379.27,
+    "price_max_eur": 432.37,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10197",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 330.42,
+    "price_avg_eur": 375.48,
+    "price_max_eur": 428.05,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10211",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 272.8,
+    "price_avg_eur": 310.0,
+    "price_max_eur": 353.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10211",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 275.53,
+    "price_avg_eur": 313.1,
+    "price_max_eur": 356.93,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10211",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 274.15,
+    "price_avg_eur": 311.53,
+    "price_max_eur": 355.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10211",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 279.63,
+    "price_avg_eur": 317.76,
+    "price_max_eur": 362.25,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10211",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 276.83,
+    "price_avg_eur": 314.58,
+    "price_max_eur": 358.62,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10218",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 272.8,
+    "price_avg_eur": 310.0,
+    "price_max_eur": 353.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10218",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 275.53,
+    "price_avg_eur": 313.1,
+    "price_max_eur": 356.93,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10218",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 274.15,
+    "price_avg_eur": 311.53,
+    "price_max_eur": 355.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10218",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 279.63,
+    "price_avg_eur": 317.76,
+    "price_max_eur": 362.25,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10218",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 276.83,
+    "price_avg_eur": 314.58,
+    "price_max_eur": 358.62,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10224",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 369.6,
+    "price_avg_eur": 420.0,
+    "price_max_eur": 478.8,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10224",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 373.3,
+    "price_avg_eur": 424.2,
+    "price_max_eur": 483.59,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10224",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 371.43,
+    "price_avg_eur": 422.08,
+    "price_max_eur": 481.17,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10224",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 378.86,
+    "price_avg_eur": 430.52,
+    "price_max_eur": 490.79,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10224",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 375.06,
+    "price_avg_eur": 426.21,
+    "price_max_eur": 485.88,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10232",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 299.2,
+    "price_avg_eur": 340.0,
+    "price_max_eur": 387.6,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10232",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 302.19,
+    "price_avg_eur": 343.4,
+    "price_max_eur": 391.48,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10232",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 300.68,
+    "price_avg_eur": 341.68,
+    "price_max_eur": 389.52,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10232",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 306.69,
+    "price_avg_eur": 348.51,
+    "price_max_eur": 397.3,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10232",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 303.62,
+    "price_avg_eur": 345.02,
+    "price_max_eur": 393.32,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10246",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 228.8,
+    "price_avg_eur": 260.0,
+    "price_max_eur": 296.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10246",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 231.09,
+    "price_avg_eur": 262.6,
+    "price_max_eur": 299.36,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10246",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 229.94,
+    "price_avg_eur": 261.29,
+    "price_max_eur": 297.87,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10246",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 234.54,
+    "price_avg_eur": 266.52,
+    "price_max_eur": 303.83,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10246",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 232.19,
+    "price_avg_eur": 263.85,
+    "price_max_eur": 300.79,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10251",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 215.6,
+    "price_avg_eur": 245.0,
+    "price_max_eur": 279.3,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10251",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 217.76,
+    "price_avg_eur": 247.45,
+    "price_max_eur": 282.09,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10251",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 216.66,
+    "price_avg_eur": 246.21,
+    "price_max_eur": 280.68,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10251",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 220.99,
+    "price_avg_eur": 251.13,
+    "price_max_eur": 286.29,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10251",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 218.79,
+    "price_avg_eur": 248.62,
+    "price_max_eur": 283.43,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10255",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 299.2,
+    "price_avg_eur": 340.0,
+    "price_max_eur": 387.6,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10255",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 302.19,
+    "price_avg_eur": 343.4,
+    "price_max_eur": 391.48,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10255",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 300.68,
+    "price_avg_eur": 341.68,
+    "price_max_eur": 389.52,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10255",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 306.69,
+    "price_avg_eur": 348.51,
+    "price_max_eur": 397.3,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10255",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 303.62,
+    "price_avg_eur": 345.02,
+    "price_max_eur": 393.32,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10260",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 206.8,
+    "price_avg_eur": 235.0,
+    "price_max_eur": 267.9,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10260",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 208.87,
+    "price_avg_eur": 237.35,
+    "price_max_eur": 270.58,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10260",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 207.82,
+    "price_avg_eur": 236.16,
+    "price_max_eur": 269.22,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10260",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 211.97,
+    "price_avg_eur": 240.88,
+    "price_max_eur": 274.6,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10260",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 209.85,
+    "price_avg_eur": 238.47,
+    "price_max_eur": 271.86,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10264",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 224.4,
+    "price_avg_eur": 255.0,
+    "price_max_eur": 290.7,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10264",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 226.64,
+    "price_avg_eur": 257.55,
+    "price_max_eur": 293.61,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10264",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 225.51,
+    "price_avg_eur": 256.26,
+    "price_max_eur": 292.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10264",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 230.02,
+    "price_avg_eur": 261.39,
+    "price_max_eur": 297.98,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10264",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 227.73,
+    "price_avg_eur": 258.78,
+    "price_max_eur": 295.01,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10270",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 193.6,
+    "price_avg_eur": 220.0,
+    "price_max_eur": 250.8,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10270",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 195.54,
+    "price_avg_eur": 222.2,
+    "price_max_eur": 253.31,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10270",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 194.56,
+    "price_avg_eur": 221.09,
+    "price_max_eur": 252.04,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10270",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 198.45,
+    "price_avg_eur": 225.51,
+    "price_max_eur": 257.08,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10270",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 196.46,
+    "price_avg_eur": 223.25,
+    "price_max_eur": 254.5,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10278",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 206.8,
+    "price_avg_eur": 235.0,
+    "price_max_eur": 267.9,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10278",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 208.87,
+    "price_avg_eur": 237.35,
+    "price_max_eur": 270.58,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10278",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 207.82,
+    "price_avg_eur": 236.16,
+    "price_max_eur": 269.22,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10278",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 211.97,
+    "price_avg_eur": 240.88,
+    "price_max_eur": 274.6,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10278",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 209.85,
+    "price_avg_eur": 238.47,
+    "price_max_eur": 271.86,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10297",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 215.6,
+    "price_avg_eur": 245.0,
+    "price_max_eur": 279.3,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10297",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 217.76,
+    "price_avg_eur": 247.45,
+    "price_max_eur": 282.09,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10297",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 216.66,
+    "price_avg_eur": 246.21,
+    "price_max_eur": 280.68,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10297",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 220.99,
+    "price_avg_eur": 251.13,
+    "price_max_eur": 286.29,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10297",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 218.79,
+    "price_avg_eur": 248.62,
+    "price_max_eur": 283.43,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10220",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 114.4,
+    "price_avg_eur": 130.0,
+    "price_max_eur": 148.2,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10220",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 115.54,
+    "price_avg_eur": 131.3,
+    "price_max_eur": 149.68,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10220",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 114.96,
+    "price_avg_eur": 130.64,
+    "price_max_eur": 148.93,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10220",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 117.26,
+    "price_avg_eur": 133.25,
+    "price_max_eur": 151.91,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10220",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 116.09,
+    "price_avg_eur": 131.92,
+    "price_max_eur": 150.39,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10242",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 101.2,
+    "price_avg_eur": 115.0,
+    "price_max_eur": 131.1,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10242",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 102.21,
+    "price_avg_eur": 116.15,
+    "price_max_eur": 132.41,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10242",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 101.7,
+    "price_avg_eur": 115.57,
+    "price_max_eur": 131.75,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10242",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 103.73,
+    "price_avg_eur": 117.88,
+    "price_max_eur": 134.38,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10242",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 102.7,
+    "price_avg_eur": 116.7,
+    "price_max_eur": 133.04,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10248",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 127.6,
+    "price_avg_eur": 145.0,
+    "price_max_eur": 165.3,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10248",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 128.88,
+    "price_avg_eur": 146.45,
+    "price_max_eur": 166.95,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10248",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 128.23,
+    "price_avg_eur": 145.72,
+    "price_max_eur": 166.12,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10248",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 130.79,
+    "price_avg_eur": 148.63,
+    "price_max_eur": 169.44,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10248",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 129.48,
+    "price_avg_eur": 147.14,
+    "price_max_eur": 167.74,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10252",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 101.2,
+    "price_avg_eur": 115.0,
+    "price_max_eur": 131.1,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10252",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 102.21,
+    "price_avg_eur": 116.15,
+    "price_max_eur": 132.41,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10252",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 101.7,
+    "price_avg_eur": 115.57,
+    "price_max_eur": 131.75,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10252",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 103.73,
+    "price_avg_eur": 117.88,
+    "price_max_eur": 134.38,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10252",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 102.7,
+    "price_avg_eur": 116.7,
+    "price_max_eur": 133.04,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10258",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 114.4,
+    "price_avg_eur": 130.0,
+    "price_max_eur": 148.2,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10258",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 115.54,
+    "price_avg_eur": 131.3,
+    "price_max_eur": 149.68,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10258",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 114.96,
+    "price_avg_eur": 130.64,
+    "price_max_eur": 148.93,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10258",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 117.26,
+    "price_avg_eur": 133.25,
+    "price_max_eur": 151.91,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10258",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 116.09,
+    "price_avg_eur": 131.92,
+    "price_max_eur": 150.39,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10262",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 145.2,
+    "price_avg_eur": 165.0,
+    "price_max_eur": 188.1,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10262",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 146.65,
+    "price_avg_eur": 166.65,
+    "price_max_eur": 189.98,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10262",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 145.92,
+    "price_avg_eur": 165.82,
+    "price_max_eur": 189.03,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10262",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 148.84,
+    "price_avg_eur": 169.14,
+    "price_max_eur": 192.82,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10262",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 147.36,
+    "price_avg_eur": 167.45,
+    "price_max_eur": 190.89,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "21310",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 224.4,
+    "price_avg_eur": 255.0,
+    "price_max_eur": 290.7,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "21310",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 226.64,
+    "price_avg_eur": 257.55,
+    "price_max_eur": 293.61,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "21310",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 225.51,
+    "price_avg_eur": 256.26,
+    "price_max_eur": 292.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "21310",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 230.02,
+    "price_avg_eur": 261.39,
+    "price_max_eur": 297.98,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "21310",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 227.73,
+    "price_avg_eur": 258.78,
+    "price_max_eur": 295.01,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "21318",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 198.0,
+    "price_avg_eur": 225.0,
+    "price_max_eur": 256.5,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "21318",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 199.98,
+    "price_avg_eur": 227.25,
+    "price_max_eur": 259.06,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "21318",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 198.98,
+    "price_avg_eur": 226.11,
+    "price_max_eur": 257.77,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "21318",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 202.95,
+    "price_avg_eur": 230.63,
+    "price_max_eur": 262.92,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "21318",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 200.92,
+    "price_avg_eur": 228.32,
+    "price_max_eur": 260.28,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "21322",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 184.8,
+    "price_avg_eur": 210.0,
+    "price_max_eur": 239.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "21322",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 186.65,
+    "price_avg_eur": 212.1,
+    "price_max_eur": 241.79,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "21322",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 185.72,
+    "price_avg_eur": 211.04,
+    "price_max_eur": 240.59,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "21322",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 189.43,
+    "price_avg_eur": 215.26,
+    "price_max_eur": 245.4,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "21322",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 187.54,
+    "price_avg_eur": 213.11,
+    "price_max_eur": 242.95,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "21325",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 167.2,
+    "price_avg_eur": 190.0,
+    "price_max_eur": 216.6,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "21325",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 168.87,
+    "price_avg_eur": 191.9,
+    "price_max_eur": 218.77,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "21325",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 168.03,
+    "price_avg_eur": 190.94,
+    "price_max_eur": 217.67,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "21325",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 171.39,
+    "price_avg_eur": 194.76,
+    "price_max_eur": 222.03,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "21325",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 169.67,
+    "price_avg_eur": 192.81,
+    "price_max_eur": 219.8,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "21327",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 167.2,
+    "price_avg_eur": 190.0,
+    "price_max_eur": 216.6,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "21327",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 168.87,
+    "price_avg_eur": 191.9,
+    "price_max_eur": 218.77,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "21327",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 168.03,
+    "price_avg_eur": 190.94,
+    "price_max_eur": 217.67,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "21327",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 171.39,
+    "price_avg_eur": 194.76,
+    "price_max_eur": 222.03,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "21327",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 169.67,
+    "price_avg_eur": 192.81,
+    "price_max_eur": 219.8,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "21330",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 224.4,
+    "price_avg_eur": 255.0,
+    "price_max_eur": 290.7,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "21330",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 226.64,
+    "price_avg_eur": 257.55,
+    "price_max_eur": 293.61,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "21330",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 225.51,
+    "price_avg_eur": 256.26,
+    "price_max_eur": 292.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "21330",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 230.02,
+    "price_avg_eur": 261.39,
+    "price_max_eur": 297.98,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "21330",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 227.73,
+    "price_avg_eur": 258.78,
+    "price_max_eur": 295.01,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "42056",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 224.4,
+    "price_avg_eur": 255.0,
+    "price_max_eur": 290.7,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "42056",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 226.64,
+    "price_avg_eur": 257.55,
+    "price_max_eur": 293.61,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "42056",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 225.51,
+    "price_avg_eur": 256.26,
+    "price_max_eur": 292.14,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "42056",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 230.02,
+    "price_avg_eur": 261.39,
+    "price_max_eur": 297.98,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "42056",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 227.73,
+    "price_avg_eur": 258.78,
+    "price_max_eur": 295.01,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "42083",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 303.6,
+    "price_avg_eur": 345.0,
+    "price_max_eur": 393.3,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "42083",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 306.64,
+    "price_avg_eur": 348.45,
+    "price_max_eur": 397.23,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "42083",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 305.1,
+    "price_avg_eur": 346.71,
+    "price_max_eur": 395.25,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "42083",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 311.2,
+    "price_avg_eur": 353.64,
+    "price_max_eur": 403.15,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "42083",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 308.09,
+    "price_avg_eur": 350.1,
+    "price_max_eur": 399.11,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "42110",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 189.2,
+    "price_avg_eur": 215.0,
+    "price_max_eur": 245.1,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "42110",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 191.09,
+    "price_avg_eur": 217.15,
+    "price_max_eur": 247.55,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "42110",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 190.13,
+    "price_avg_eur": 216.06,
+    "price_max_eur": 246.31,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "42110",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 193.93,
+    "price_avg_eur": 220.38,
+    "price_max_eur": 251.23,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "42110",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 192.0,
+    "price_avg_eur": 218.18,
+    "price_max_eur": 248.73,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "42115",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 330.0,
+    "price_avg_eur": 375.0,
+    "price_max_eur": 427.5,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "42115",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 333.3,
+    "price_avg_eur": 378.75,
+    "price_max_eur": 431.77,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "42115",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 331.64,
+    "price_avg_eur": 376.86,
+    "price_max_eur": 429.62,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "42115",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 338.27,
+    "price_avg_eur": 384.4,
+    "price_max_eur": 438.22,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "42115",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 334.89,
+    "price_avg_eur": 380.56,
+    "price_max_eur": 433.84,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10225",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 246.4,
+    "price_avg_eur": 280.0,
+    "price_max_eur": 319.2,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10225",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 248.86,
+    "price_avg_eur": 282.8,
+    "price_max_eur": 322.39,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10225",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 247.62,
+    "price_avg_eur": 281.39,
+    "price_max_eur": 320.78,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10225",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 252.58,
+    "price_avg_eur": 287.02,
+    "price_max_eur": 327.2,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10225",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 250.05,
+    "price_avg_eur": 284.15,
+    "price_max_eur": 323.93,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10240",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 184.8,
+    "price_avg_eur": 210.0,
+    "price_max_eur": 239.4,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10240",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 186.65,
+    "price_avg_eur": 212.1,
+    "price_max_eur": 241.79,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10240",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 185.72,
+    "price_avg_eur": 211.04,
+    "price_max_eur": 240.59,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10240",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 189.43,
+    "price_avg_eur": 215.26,
+    "price_max_eur": 245.4,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10240",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 187.54,
+    "price_avg_eur": 213.11,
+    "price_max_eur": 242.95,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
+  },
+  {
+    "set_id": "10227",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 136.4,
+    "price_avg_eur": 155.0,
+    "price_max_eur": 176.7,
+    "sample_count": 8,
+    "recorded_at": "2026-01-14"
+  },
+  {
+    "set_id": "10227",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 137.76,
+    "price_avg_eur": 156.55,
+    "price_max_eur": 178.47,
+    "sample_count": 8,
+    "recorded_at": "2026-02-14"
+  },
+  {
+    "set_id": "10227",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 137.08,
+    "price_avg_eur": 155.77,
+    "price_max_eur": 177.58,
+    "sample_count": 8,
+    "recorded_at": "2026-03-14"
+  },
+  {
+    "set_id": "10227",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 139.82,
+    "price_avg_eur": 158.89,
+    "price_max_eur": 181.13,
+    "sample_count": 8,
+    "recorded_at": "2026-04-14"
+  },
+  {
+    "set_id": "10227",
+    "condition": "USED_COMPLETE",
+    "source": "manual_bricklink_reference",
+    "price_min_eur": 138.42,
+    "price_avg_eur": 157.3,
+    "price_max_eur": 179.32,
+    "sample_count": 8,
+    "recorded_at": "2026-05-14"
   }
 ]

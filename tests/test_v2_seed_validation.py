@@ -5,19 +5,19 @@ from scripts.v2_validate_seed_data import validate_seed_data
 
 
 def test_current_v2_seed_data_is_valid():
-    report = validate_seed_data(target_catalog_size=10)
+    report = validate_seed_data()
 
     assert report["ok"] is True
     assert report["errors"] == []
-    assert report["metrics"]["catalog_sets"] == 10
-    assert report["metrics"]["catalog_candidate_sets"] == 40
+    assert report["metrics"]["catalog_sets"] == 50
+    assert report["metrics"]["catalog_candidate_sets"] == 0
     assert report["metrics"]["catalog_plus_candidates"] == 50
-    assert report["metrics"]["price_snapshots"] == 50
+    assert report["metrics"]["price_snapshots"] == 250
     assert report["metrics"]["portfolio_items"] == 3
 
 
 def test_validation_reports_catalog_below_guide_target():
-    report = validate_seed_data()
+    report = validate_seed_data(target_catalog_size=100)
 
     assert report["ok"] is True
     assert any(

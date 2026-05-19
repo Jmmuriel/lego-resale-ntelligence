@@ -9,3 +9,43 @@ set_id,name,theme,year_released,year_retired,retail_price_eur,pieces,popularity_
 75059,Sandcrawler,Star Wars,2014,2016,299.99,3296,7
 10030,Imperial Star Destroyer,Star Wars,2002,2008,269.99,3096,8
 75095,TIE Fighter,Star Wars,2015,2017,199.99,1685,7
+10212,Imperial Shuttle,Star Wars,2010,2014,259.99,2503,8
+75060,Slave I,Star Wars,2015,2017,199.99,1996,8
+75144,Snowspeeder,Star Wars,2017,2019,199.99,1703,7
+75159,Death Star,Star Wars,2016,2021,499.99,4016,9
+75275,A-wing Starfighter,Star Wars,2020,2022,199.99,1673,7
+75309,Republic Gunship,Star Wars,2021,2023,349.99,3292,8
+10182,Cafe Corner,Modular Buildings,2007,2009,139.99,2056,10
+10185,Green Grocer,Modular Buildings,2008,2011,149.99,2352,10
+10197,Fire Brigade,Modular Buildings,2009,2012,149.99,2231,8
+10211,Grand Emporium,Modular Buildings,2010,2012,149.99,2182,8
+10218,Pet Shop,Modular Buildings,2011,2013,149.99,2032,8
+10224,Town Hall,Modular Buildings,2012,2014,199.99,2766,9
+10232,Palace Cinema,Modular Buildings,2013,2015,149.99,2196,8
+10246,Detective's Office,Modular Buildings,2015,2019,159.99,2262,8
+10251,Brick Bank,Modular Buildings,2016,2019,169.99,2380,8
+10255,Assembly Square,Modular Buildings,2017,2020,279.99,4002,9
+10260,Downtown Diner,Modular Buildings,2018,2021,169.99,2480,7
+10264,Corner Garage,Modular Buildings,2019,2022,199.99,2569,8
+10270,Bookshop,Modular Buildings,2020,2022,179.99,2504,8
+10278,Police Station,Modular Buildings,2021,2023,199.99,2923,8
+10297,Boutique Hotel,Modular Buildings,2022,2024,229.99,3066,7
+10220,Volkswagen T1 Camper Van,Icons,2011,2015,119.99,1332,7
+10242,MINI Cooper,Icons,2014,2017,99.99,1077,7
+10248,Ferrari F40,Icons,2015,2017,99.99,1158,7
+10252,Volkswagen Beetle,Icons,2016,2019,99.99,1167,7
+10258,London Bus,Icons,2017,2020,109.99,1686,7
+10262,James Bond Aston Martin DB5,Icons,2018,2021,149.99,1295,8
+21310,Old Fishing Store,Ideas,2017,2019,149.99,2049,8
+21318,Tree House,Ideas,2019,2022,199.99,3036,8
+21322,Pirates of Barracuda Bay,Ideas,2020,2022,199.99,2545,8
+21325,Medieval Blacksmith,Ideas,2021,2023,179.99,2164,7
+21327,Typewriter,Ideas,2021,2023,209.99,2079,7
+21330,Home Alone,Ideas,2021,2023,249.99,3955,8
+42056,Porsche 911 GT3 RS,Technic,2016,2020,299.99,2704,8
+42083,Bugatti Chiron,Technic,2018,2021,449.99,3599,9
+42110,Land Rover Defender,Technic,2019,2022,199.99,2573,8
+42115,Lamborghini Sian FKP 37,Technic,2020,2022,449.99,3696,9
+10225,R2-D2,Star Wars,2012,2015,179.99,2127,8
+10240,Red Five X-wing Starfighter,Star Wars,2013,2015,199.99,1558,8
+10227,B-wing Starfighter,Star Wars,2012,2014,199.99,1487,7
