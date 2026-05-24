@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. Only sets listed under active_sets with all required checks and verification_status=verified count as verified market data. FASE DATA-1 started with the first 10 catalog sets.",
+  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 20/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -137,14 +137,29 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/10221-1/super-star-destroyer",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "pieces"
+          ],
           "notes": "Shows 10221-1 Super Star Destroyer, released August 2011, retired December 2014 and 3152 pieces."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/10221-1/lego-star-wars-super-star-destroyer",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows set details for 10221-1, year 2011, retired 2014, 3152 pieces and Europe retail price EUR 399.99."
         }
       ],
@@ -163,9 +178,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-02", "price_avg": 1925.55, "currency": "USD", "sales_count": 2},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 1728.66, "currency": "USD", "sales_count": 3},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 1822.59, "currency": "USD", "sales_count": 2}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 1925.55,
+          "currency": "USD",
+          "sales_count": 2
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 1728.66,
+          "currency": "USD",
+          "sales_count": 3
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1822.59,
+          "currency": "USD",
+          "sales_count": 2
+        }
       ],
       "recommended_action": "Count as verified external evidence for V2 data maturity."
     },
@@ -195,14 +231,29 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/21309-1/nasa-apollo-saturn-v",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows 21309-1, released June 2017, EU retirement February 2020, EUR 119.99 RRP and 1969 pieces."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/21309-1/lego-ideas-nasa-apollo-saturn-v",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Confirms 21309-1 NASA Apollo Saturn V as a 1969-piece Ideas set released in 2017."
         }
       ],
@@ -221,9 +272,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 274.56, "currency": "USD", "sales_count": 11},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 254.69, "currency": "USD", "sales_count": 43},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-05", "price_avg": 290.82, "currency": "USD", "sales_count": 3}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 274.56,
+          "currency": "USD",
+          "sales_count": 11
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 254.69,
+          "currency": "USD",
+          "sales_count": 43
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 290.82,
+          "currency": "USD",
+          "sales_count": 3
+        }
       ],
       "recommended_action": "Do not count as verified until the catalog decides whether it tracks 21309 original or 92176 re-release."
     },
@@ -253,14 +325,30 @@
           "name": "Brickset",
           "url": "https://brickset.com/sets?query=10179",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "pieces"
+          ],
           "notes": "Shows 10179-1, Star Wars UCS, 2007, 5197 pieces and launch/exit at day precision."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/10179-1/lego-star-wars-ultimate-collectors-millennium-falcon",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Shows year 2007, retired May 2010, 5197 pieces, and regional retail prices including Europe EUR 499.99."
         }
       ],
@@ -279,9 +367,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickEconomy set value", "condition": "NEW", "period": "current", "price_avg": 2525.57, "currency": "USD", "sales_count": null},
-        {"source": "BrickEconomy used value", "condition": "USED", "period": "current", "price_avg": 1006.0, "currency": "USD", "sales_count": null},
-        {"source": "BrickEconomy forecast", "condition": "NEW", "period": "1y_forecast", "price_avg": 2560.96, "currency": "USD", "sales_count": null}
+        {
+          "source": "BrickEconomy set value",
+          "condition": "NEW",
+          "period": "current",
+          "price_avg": 2525.57,
+          "currency": "USD",
+          "sales_count": null
+        },
+        {
+          "source": "BrickEconomy used value",
+          "condition": "USED",
+          "period": "current",
+          "price_avg": 1006.0,
+          "currency": "USD",
+          "sales_count": null
+        },
+        {
+          "source": "BrickEconomy forecast",
+          "condition": "NEW",
+          "period": "1y_forecast",
+          "price_avg": 2560.96,
+          "currency": "USD",
+          "sales_count": null
+        }
       ],
       "recommended_action": "Choose one region standard for historical EU retail prices, then either update catalog to EUR 499.99 or document France-specific pricing."
     },
@@ -311,14 +420,29 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/10214-1/tower-bridge",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows released October 2010, retired December 2018, 4295 pieces and EUR 219.99 RRP."
         },
         {
           "name": "Brickset",
           "url": "https://brickset.com/sets/10214-1/Tower-Bridge",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Used as secondary metadata reference for set identity and catalog fields."
         }
       ],
@@ -337,9 +461,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 372.11, "currency": "USD", "sales_count": 4},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 348.62, "currency": "USD", "sales_count": 4},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-05", "price_avg": 429.91, "currency": "USD", "sales_count": 1}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 372.11,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 348.62,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 429.91,
+          "currency": "USD",
+          "sales_count": 1
+        }
       ],
       "recommended_action": "Update catalog year_retired to 2018 if BrickRanker/Brickset alignment is confirmed."
     },
@@ -361,14 +506,31 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/75252-1/imperial-star-destroyer",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows released October 2019, retired December 2022, 4784 pieces and EUR 699.99 RRP."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/75252-1/lego-star-wars-imperial-star-destroyer",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_usd", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_usd",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Confirms 75252 as a retired Star Wars UCS set with 4784 pieces and current market value."
         }
       ],
@@ -387,9 +549,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-02", "price_avg": 1632.93, "currency": "USD", "sales_count": 8},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 1477.58, "currency": "USD", "sales_count": 12},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 1501.07, "currency": "USD", "sales_count": 7}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 1632.93,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 1477.58,
+          "currency": "USD",
+          "sales_count": 12
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1501.07,
+          "currency": "USD",
+          "sales_count": 7
+        }
       ],
       "recommended_action": "Count as verified external evidence for V2 data maturity."
     },
@@ -411,14 +594,30 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/75313-1/at-at",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows released November 2021, retired December 2024, 6785 pieces and EUR 849.99 RRP."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/75313-1/lego-star-wars-at-at",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Used as secondary metadata and market-value reference."
         }
       ],
@@ -437,9 +636,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 1429.65, "currency": "USD", "sales_count": 10},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 1535.09, "currency": "USD", "sales_count": 7},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-05", "price_avg": 1658.39, "currency": "USD", "sales_count": 1}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 1429.65,
+          "currency": "USD",
+          "sales_count": 10
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1535.09,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 1658.39,
+          "currency": "USD",
+          "sales_count": 1
+        }
       ],
       "recommended_action": "Count as verified external evidence for V2 data maturity."
     },
@@ -461,14 +681,30 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/75059-1/sandcrawler",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows released April 2014, retired December 2016, 3296 pieces and EUR 299.99 RRP."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/75059-1/lego-star-wars-sandcrawler",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Used as secondary metadata and market-value reference."
         }
       ],
@@ -487,9 +723,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 888.18, "currency": "USD", "sales_count": 5},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 781.60, "currency": "USD", "sales_count": 5},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-05", "price_avg": 884.63, "currency": "USD", "sales_count": 2}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 888.18,
+          "currency": "USD",
+          "sales_count": 5
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 781.6,
+          "currency": "USD",
+          "sales_count": 5
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 884.63,
+          "currency": "USD",
+          "sales_count": 2
+        }
       ],
       "recommended_action": "Count as verified external evidence for V2 data maturity."
     },
@@ -526,14 +783,30 @@
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/10030-1/lego-star-wars-imperial-star-destroyer",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_usd", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_usd",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Shows 10030-1, year 2002, retired February 2008, 3096 pieces and USD 269.99 retail price."
         },
         {
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/10030-1/imperial-star-destroyer",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_retired", "retail_price_usd", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_retired",
+            "retail_price_usd",
+            "market_value"
+          ],
           "notes": "Provides value history but disagrees on release year and piece count for this set."
         }
       ],
@@ -552,9 +825,30 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2023-03", "price_avg": 3628.73, "currency": "USD", "sales_count": 1},
-        {"source": "BrickEconomy set value", "condition": "NEW", "period": "current", "price_avg": 1602.33, "currency": "USD", "sales_count": null},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-current", "price_avg": 1186.07, "currency": "USD", "sales_count": null}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2023-03",
+          "price_avg": 3628.73,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickEconomy set value",
+          "condition": "NEW",
+          "period": "current",
+          "price_avg": 1602.33,
+          "currency": "USD",
+          "sales_count": null
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-current",
+          "price_avg": 1186.07,
+          "currency": "USD",
+          "sales_count": null
+        }
       ],
       "recommended_action": "Do not count as verified until Brickset or LEGO-owned archival data resolves piece count and date discrepancies."
     },
@@ -576,14 +870,30 @@
           "name": "BrickRanker",
           "url": "https://brickranker.com/rankings/set/75095-1/tie-fighter",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "retail_price_eur", "pieces"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
           "notes": "Shows released April 2015, retired December 2017, 1685 pieces and EUR 199.99 RRP."
         },
         {
           "name": "BrickEconomy",
           "url": "https://www.brickeconomy.com/set/75095-1/lego-star-wars-tie-fighter",
           "checked_at": "2026-05-24",
-          "supports": ["set_id", "name", "theme", "year_released", "year_retired", "pieces", "market_value"],
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "pieces",
+            "market_value"
+          ],
           "notes": "Used as secondary metadata and market-value reference."
         }
       ],
@@ -602,11 +912,1017 @@
         }
       ],
       "price_snapshots": [
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-03", "price_avg": 480.77, "currency": "USD", "sales_count": 3},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-04", "price_avg": 509.58, "currency": "USD", "sales_count": 4},
-        {"source": "BrickRanker value history", "condition": "NEW", "period": "2026-05", "price_avg": 491.57, "currency": "USD", "sales_count": 1}
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 480.77,
+          "currency": "USD",
+          "sales_count": 3
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 509.58,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 491.57,
+          "currency": "USD",
+          "sales_count": 1
+        }
       ],
       "recommended_action": "Count as verified external evidence for V2 data maturity."
+    },
+    {
+      "set_id": "10212",
+      "name": "Imperial Shuttle",
+      "theme": "Star Wars",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker and Brickset agree on 2010 release, 2012 retirement and 2503 pieces, but the active catalog currently marks retirement as 2014.",
+      "year_released": 2010,
+      "year_retired": 2012,
+      "retail_price_eur": 259.99,
+      "pieces": 2503,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2014,
+          "evidence_value": 2012,
+          "severity": "blocking",
+          "note": "Both BrickRanker and Brickset show December 2012 retirement."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10212-1/imperial-shuttle",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10212-1/Imperial-Shuttle",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10212-1/imperial-shuttle",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10212-1/Imperial-Shuttle",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 1572.48,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1417.92,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 2487.744,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "75060",
+      "name": "Slave I",
+      "theme": "Star Wars",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker and Brickset agree on 2015 release, 2018 retirement, 1996 pieces and EUR 199.99 RRP, but the active catalog currently marks retirement as 2017.",
+      "year_released": 2015,
+      "year_retired": 2018,
+      "retail_price_eur": 199.99,
+      "pieces": 1996,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2017,
+          "evidence_value": 2018,
+          "severity": "blocking",
+          "note": "Both BrickRanker and Brickset show December 2018 retirement."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/75060-1/slave-i",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/75060-1/Slave-I",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/75060-1/slave-i",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/75060-1/Slave-I",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 502.656,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 599.424,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 594.048,
+          "currency": "USD",
+          "sales_count": 2
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "75144",
+      "name": "Snowspeeder",
+      "theme": "Star Wars",
+      "verification_status": "needs_review_source_disagreement",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Core fields mostly align, but Brickset shows exit on 31 Dec 2018 while BrickRanker describes February 2019 retirement; the catalog uses 2019.",
+      "year_released": 2017,
+      "year_retired": 2019,
+      "retail_price_eur": 199.99,
+      "pieces": 1703,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2019,
+          "evidence_value": 2018,
+          "severity": "review",
+          "note": "Brickset launch/exit shows 31 Dec 2018; BrickRanker text says February 2019."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/75144-1/snowspeeder",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/75144-1/Snowspeeder",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/75144-1/snowspeeder",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/75144-1/Snowspeeder",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 411.264,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 352.128,
+          "currency": "USD",
+          "sales_count": 2
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 510.72,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "75159",
+      "name": "Death Star",
+      "theme": "Star Wars",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker and Brickset show retirement in 2020, while the active catalog marks 2021. Brickset also shows EUR 487.39 RRP while the catalog has EUR 499.99.",
+      "year_released": 2016,
+      "year_retired": 2020,
+      "retail_price_eur": 487.39,
+      "pieces": 4016,
+      "popularity_score": 9,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2021,
+          "evidence_value": 2020,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2020 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 499.99,
+          "evidence_value": 487.39,
+          "severity": "review",
+          "note": "Brickset lists EUR 487.39 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/75159-1/death-star",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/75159-1/Death-Star",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/75159-1/death-star",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/75159-1/Death-Star",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 1167.936,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 1279.488,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1182.72,
+          "currency": "USD",
+          "sales_count": 3
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "75275",
+      "name": "A-wing Starfighter",
+      "theme": "Star Wars",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker and Brickset show December 2021 retirement, while the active catalog marks 2022. There is also a one-piece discrepancy between BrickRanker and Brickset/catalog.",
+      "year_released": 2020,
+      "year_retired": 2021,
+      "retail_price_eur": 199.99,
+      "pieces": 1673,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2022,
+          "evidence_value": 2021,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2021 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 1673,
+          "evidence_value": 1672,
+          "severity": "review",
+          "note": "Brickset/catalog show 1673 pieces; BrickRanker text shows 1672."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/75275-1/a-wing-starfighter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/75275-1/A-wing-Starfighter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/75275-1/a-wing-starfighter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/75275-1/A-wing-Starfighter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 254.016,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 287.616,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 318.528,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "75309",
+      "name": "Republic Gunship",
+      "theme": "Star Wars",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Release, retirement and pieces align, but BrickRanker and Brickset show EUR 399.99 RRP while the active catalog has EUR 349.99.",
+      "year_released": 2021,
+      "year_retired": 2023,
+      "retail_price_eur": 399.99,
+      "pieces": 3292,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 349.99,
+          "evidence_value": 399.99,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show EUR 399.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/75309-1/republic-gunship",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/75309-1/Republic-Gunship",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/75309-1/republic-gunship",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/75309-1/Republic-Gunship",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 456.96,
+          "currency": "USD",
+          "sales_count": 11
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 487.872,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 485.184,
+          "currency": "USD",
+          "sales_count": 5
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10182",
+      "name": "Cafe Corner",
+      "theme": "Modular Buildings",
+      "verification_status": "needs_review_source_disagreement",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Brickset aligns with the catalog on 2056 pieces and 2009 exit, but BrickRanker reports 2058 pieces.",
+      "year_released": 2007,
+      "year_retired": 2009,
+      "retail_price_eur": 139.99,
+      "pieces": 2056,
+      "popularity_score": 10,
+      "catalog_mismatches": [
+        {
+          "field": "pieces",
+          "catalog_value": 2056,
+          "evidence_value": 2058,
+          "severity": "review",
+          "note": "Brickset/catalog show 2056 pieces; BrickRanker text shows 2058."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10182-1/cafe-corner",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10182-1/Cafe-Corner",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10182-1/cafe-corner",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10182-1/Cafe-Corner",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 2210.88,
+          "currency": "USD",
+          "sales_count": 0
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 1985.088,
+          "currency": "USD",
+          "sales_count": 0
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1759.296,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10185",
+      "name": "Green Grocer",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Brickset and BrickRanker show December 2010 retirement while the active catalog marks 2011. BrickRanker also reports 2358 pieces while Brickset/catalog show 2352.",
+      "year_released": 2008,
+      "year_retired": 2010,
+      "retail_price_eur": 149.99,
+      "pieces": 2352,
+      "popularity_score": 10,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2011,
+          "evidence_value": 2010,
+          "severity": "blocking",
+          "note": "Brickset and BrickRanker show December 2010 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2352,
+          "evidence_value": 2358,
+          "severity": "review",
+          "note": "Brickset/catalog show 2352 pieces; BrickRanker text shows 2358."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10185-1/green-grocer",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10185-1/Green-Grocer",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10185-1/green-grocer",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10185-1/Green-Grocer",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2025-12",
+          "price_avg": 1670.592,
+          "currency": "USD",
+          "sales_count": 0
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-01",
+          "price_avg": 1799.616,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 1444.8,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10197",
+      "name": "Fire Brigade",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Brickset and BrickRanker show December 2013 retirement while the active catalog marks 2012. BrickRanker also reports 2236 pieces while Brickset/catalog show 2231.",
+      "year_released": 2009,
+      "year_retired": 2013,
+      "retail_price_eur": 149.99,
+      "pieces": 2231,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2012,
+          "evidence_value": 2013,
+          "severity": "blocking",
+          "note": "Brickset and BrickRanker show December 2013 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2231,
+          "evidence_value": 2236,
+          "severity": "review",
+          "note": "Brickset/catalog show 2231 pieces; BrickRanker text shows 2236."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10197-1/fire-brigade",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10197-1/Fire-Brigade",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10197-1/fire-brigade",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10197-1/Fire-Brigade",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 752.64,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 584.64,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 715.008,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10211",
+      "name": "Grand Emporium",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Brickset and BrickRanker show December 2014 retirement while the active catalog marks 2012. BrickRanker also reports 2187 pieces while Brickset/catalog show 2182.",
+      "year_released": 2010,
+      "year_retired": 2014,
+      "retail_price_eur": 149.99,
+      "pieces": 2182,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2012,
+          "evidence_value": 2014,
+          "severity": "blocking",
+          "note": "Brickset and BrickRanker show December 2014 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2182,
+          "evidence_value": 2187,
+          "severity": "review",
+          "note": "Brickset/catalog show 2182 pieces; BrickRanker text shows 2187."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10211-1/grand-emporium",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for set identity, lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10211-1/Grand-Emporium",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10211-1/grand-emporium",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10211-1/Grand-Emporium",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 471.744,
+          "currency": "USD",
+          "sales_count": 2
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 419.328,
+          "currency": "USD",
+          "sales_count": 6
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 473.088,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
     }
   ]
 }

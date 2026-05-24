@@ -8,7 +8,7 @@ Avance contra la guia completa: **90/100**
 
 La V2 esta lista como demo local avanzada, proyecto de portfolio ensenable y demo publica Railway/Vercel.
 
-No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, y una primera tanda de auditoria real con 10 sets revisados.
+No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, y una primera tanda de auditoria real con 20 sets revisados.
 
 ## Que esta hecho
 
@@ -61,18 +61,18 @@ Porque el catalogo de 50 sets todavia no esta verificado con evidencias externas
 Estado actual:
 
 - `active_catalog_verified_sets`: 5
-- `active_catalog_evidence_started_sets`: 10
-- `active_catalog_blocked_sets`: 5
+- `active_catalog_evidence_started_sets`: 20
+- `active_catalog_blocked_sets`: 15
 - `market_data_source_status`: `partially_verified`
 
-Sets auditados en FASE DATA-1:
+Primeros sets auditados en FASE DATA-1:
 
 - Verificados: `10221`, `75252`, `75313`, `75059`, `75095`.
-- Bloqueados o en revision: `75192`, `21309`, `10214`, `10179`, `10030`.
+- Bloqueados o en revision: 15 sets, incluyendo `75192`, `21309`, `10214`, `10179`, `10030`, `10212`, `75060`, `75144`, `75159`, `75275`, `75309`, `10182`, `10185`, `10197`, `10211`.
 
 ## Lo que falta para 100/100
 
-1. Verificar los 40 sets restantes con evidencias reales.
+1. Verificar los 30 sets restantes con evidencias reales.
 2. Resolver discrepancias de `75192`, `21309`, `10214`, `10179` y `10030`.
 3. Opcional: activar Railway Postgres y migraciones.
 4. Mantener el smoke test publico despues de cada deploy.
