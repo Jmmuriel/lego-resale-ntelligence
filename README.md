@@ -23,10 +23,10 @@ V2 adds:
 
 Data provenance note:
 
-- the active V2 catalog currently contains 50 seed/demo sets;
+- the active V2 catalog currently contains 50 sets;
 - external verification is tracked separately in `data/catalog_active_research.json`;
-- until evidence is added there, V2 should be described as a seed-backed prototype, not as verified live market data.
-- the first evidence audit has started with set `75192`, currently blocked by a retirement-date mismatch between seed data and external sources.
+- 10 sets have been audited in FASE DATA-1;
+- 5 sets are externally verified, and 5 are blocked or need review because sources disagree with the seed catalog.
 
 Current V2 progress:
 
@@ -255,13 +255,14 @@ pytest
 
 V1 supports 10 manually priced reference sets.
 
-V2 contains 50 active seed/demo catalog rows and 250 seed price snapshots. They are useful for portfolio demonstration, but should not be described as verified live market data yet.
+V2 contains 50 active catalog rows and 250 seed price snapshots. The app now separates seed/demo coverage from external verification, so it should be described as partially verified rather than fully verified live market data.
 
 Current V2 evidence status:
 
-- `active_catalog_verified_sets: 0`
-- `active_catalog_evidence_started_sets: 1`
-- first audited set: `75192`, blocked by a retirement-date mismatch
+- `active_catalog_verified_sets: 5`
+- `active_catalog_evidence_started_sets: 10`
+- `active_catalog_blocked_sets: 5`
+- `market_data_source_status: partially_verified`
 - evidence file: `data/catalog_active_research.json`
 
 ---

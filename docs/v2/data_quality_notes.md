@@ -46,11 +46,11 @@ portfolio_sets: 3
 sets_with_3_plus_snapshots: 50
 sets_with_5_plus_snapshots: 50
 unpriced_catalog_sets: []
-active_catalog_verified_sets: 0
-active_catalog_verified_pct: 0.0
-active_catalog_evidence_started_sets: 1
-active_catalog_blocked_sets: 1
-market_data_source_status: seed_demo
+active_catalog_verified_sets: 5
+active_catalog_verified_pct: 10.0
+active_catalog_evidence_started_sets: 10
+active_catalog_blocked_sets: 5
+market_data_source_status: partially_verified
 ```
 
 Esto significa:
@@ -59,7 +59,9 @@ Esto significa:
 - la demo puede seguir funcionando;
 - el catálogo seed llega al objetivo local de 50 sets;
 - la app distingue entre datos seed/demo y datos externamente verificados;
-- la auditoria larga ya empezó con `75192`, pero queda bloqueado por una discrepancia de retirada;
+- FASE DATA-1 ya auditó 10 sets del catálogo activo;
+- 5 sets pasan como verificados;
+- 5 sets quedan bloqueados o en revisión por discrepancias de fuentes;
 - ahora mismo no hay candidatos pendientes en `data/catalog_expansion_candidates.csv`.
 
 ## Por qué mejora la guía completa

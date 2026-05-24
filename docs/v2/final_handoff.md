@@ -6,9 +6,9 @@ Avance contra la guia completa: **90/100**
 
 ## Estado real
 
-La V2 esta lista como demo local avanzada y como proyecto de portfolio ensenable.
+La V2 esta lista como demo local avanzada, proyecto de portfolio ensenable y demo publica Railway/Vercel.
 
-No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets seed/demo, un sistema de calidad de datos, y un primer flujo de auditoria real iniciado.
+No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, y una primera tanda de auditoria real con 10 sets revisados.
 
 ## Que esta hecho
 
@@ -60,27 +60,22 @@ Porque el catalogo de 50 sets todavia no esta verificado con evidencias externas
 
 Estado actual:
 
-- `active_catalog_verified_sets`: 0
-- `active_catalog_evidence_started_sets`: 1
-- `active_catalog_blocked_sets`: 1
-- `market_data_source_status`: `seed_demo`
+- `active_catalog_verified_sets`: 5
+- `active_catalog_evidence_started_sets`: 10
+- `active_catalog_blocked_sets`: 5
+- `market_data_source_status`: `partially_verified`
 
-Primer set auditado:
+Sets auditados en FASE DATA-1:
 
-- `75192`
-- Estado: bloqueado por discrepancia de fecha de retirada.
-- Motivo: el seed local marca 2024, pero fuentes externas apuntan a activo/retirada estimada posterior.
+- Verificados: `10221`, `75252`, `75313`, `75059`, `75095`.
+- Bloqueados o en revision: `75192`, `21309`, `10214`, `10179`, `10030`.
 
 ## Lo que falta para 100/100
 
-1. Publicar backend en Railway.
-2. Publicar frontend en Vercel.
-3. Conectar Vercel con Railway mediante `NEXT_PUBLIC_API_URL`.
-4. Actualizar CORS en Railway con la URL final de Vercel.
-5. Ejecutar smoke test contra URLs publicas.
-6. Opcional: activar Railway Postgres y migraciones.
-7. Verificar mas sets con evidencias reales antes de hablar de mercado verificado.
-8. Resolver la discrepancia de `75192`.
+1. Verificar los 40 sets restantes con evidencias reales.
+2. Resolver discrepancias de `75192`, `21309`, `10214`, `10179` y `10030`.
+3. Opcional: activar Railway Postgres y migraciones.
+4. Mantener el smoke test publico despues de cada deploy.
 
 ## Archivos clave
 

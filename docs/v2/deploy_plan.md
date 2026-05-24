@@ -191,10 +191,12 @@ sh scripts/v2_deploy_smoke.sh
 
 ## Estado honesto antes de deploy
 
-La app está lista para demo pública como **seed-backed prototype**.
+La app está lista para demo pública como **partially verified seed-backed prototype**.
 
 No afirmar todavía que los 50 sets son datos reales verificados:
 
-- `active_catalog_verified_sets: 0`;
-- `active_catalog_evidence_started_sets: 1`;
-- `75192` está bloqueado por discrepancia de retirada entre seed y fuentes externas.
+- `active_catalog_verified_sets: 5`;
+- `active_catalog_evidence_started_sets: 10`;
+- `active_catalog_blocked_sets: 5`;
+- `market_data_source_status: partially_verified`;
+- `75192`, `21309`, `10214`, `10179` y `10030` no cuentan como verificados hasta resolver discrepancias.
