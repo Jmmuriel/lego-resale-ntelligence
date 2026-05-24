@@ -1,4 +1,5 @@
 import type {
+  ActiveCatalogEvidence,
   AddPositionRequest,
   AnalysisResult,
   CatalogCandidate,
@@ -90,6 +91,10 @@ export function getDataQualityReport(): Promise<DataQualityReport> {
 
 export function getCatalogCandidates(): Promise<CatalogCandidate[]> {
   return apiFetch<CatalogCandidate[]>("/api/market/catalog-candidates");
+}
+
+export function getActiveCatalogEvidence(): Promise<ActiveCatalogEvidence[]> {
+  return apiFetch<ActiveCatalogEvidence[]>("/api/market/active-evidence");
 }
 
 export function getSetIntelligence(setId: string, days = 180): Promise<SetIntelligence> {

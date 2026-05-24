@@ -1,8 +1,8 @@
 # V2 deploy plan
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guia completa: **76/100**
+Avance contra la guia completa: **90/100**
 
 Plan recomendado para publicar LEGO Resale Intelligence V2.
 
@@ -57,14 +57,22 @@ Variable:
 NEXT_PUBLIC_API_URL=https://your-api-domain.example.com
 ```
 
+Si se importa el repo completo en Vercel, configurar **Root Directory** como:
+
+```text
+frontend
+```
+
 ## Backend
 
 Proveedor recomendado: Railway o Render.
 
-Start command:
+Railway ya puede usar el `Dockerfile` del repo.
+
+Start command interno:
 
 ```bash
-uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+sh scripts/v2_boot_api.sh
 ```
 
 Variables:
@@ -73,7 +81,21 @@ Variables:
 ANTHROPIC_API_KEY=
 ANTHROPIC_MODEL=claude-haiku-4-5-20251001
 DATABASE_URL=
+V2_DATABASE_URL=
+BACKEND_CORS_ORIGINS=https://your-vercel-app.vercel.app
+V2_RUN_MIGRATIONS=0
+V2_SEED_DATABASE=0
 ```
+
+Para Railway con Postgres:
+
+```env
+V2_DATABASE_URL=postgresql+psycopg://...
+V2_RUN_MIGRATIONS=1
+V2_SEED_DATABASE=1
+```
+
+Después del primer seed, cambiar `V2_SEED_DATABASE=0` para no sobrescribir datos editables en cada redeploy.
 
 Para demo sin Anthropic:
 
@@ -101,7 +123,7 @@ sqlite:///db/lri.db
 Postgres:
 
 ```env
-DATABASE_URL=postgresql+psycopg://...
+V2_DATABASE_URL=postgresql+psycopg://...
 ```
 
 Trabajo pendiente antes de Postgres:
@@ -110,6 +132,12 @@ Trabajo pendiente antes de Postgres:
 - ejecutar migraciones y seed sobre esa instancia;
 - definir backups;
 - decidir retention de watchlist y price history.
+
+El repo ya incluye:
+
+- `scripts/v2_boot_api.sh` para arrancar Railway con migraciones/seed opcionales;
+- `scripts/v2_deploy_smoke.sh` para comprobar API y web publicadas;
+- `.dockerignore` para no subir `.env`, `.venv`, `node_modules`, `.next` ni bases locales al build Docker.
 
 ## Seguridad
 
@@ -132,6 +160,14 @@ cd ..
 bash scripts/v2_doctor.sh
 ```
 
+Cuando existan URLs publicas:
+
+```bash
+API_URL=https://your-railway-api.up.railway.app \
+WEB_URL=https://your-vercel-app.vercel.app \
+sh scripts/v2_deploy_smoke.sh
+```
+
 ## Riesgos
 
 - El extractor real depende de HTML externo.
@@ -142,9 +178,23 @@ bash scripts/v2_doctor.sh
 
 ## Secuencia recomendada
 
-1. Publicar backend con demo endpoints.
+1. Publicar backend en Railway con `Dockerfile`.
 2. Verificar `/health` y `/docs`.
-3. Publicar frontend con `NEXT_PUBLIC_API_URL`.
-4. Verificar rutas principales.
-5. Activar Anthropic solo cuando el flujo demo este estable.
-6. Migrar SQLite a Postgres si la watchlist debe persistir en cloud.
+3. Si se quiere persistencia, crear Postgres en Railway y usar `V2_DATABASE_URL`.
+4. Ejecutar primer deploy con `V2_RUN_MIGRATIONS=1` y `V2_SEED_DATABASE=1`.
+5. Cambiar `V2_SEED_DATABASE=0` después del primer seed.
+6. Publicar frontend en Vercel con Root Directory `frontend`.
+7. Configurar `NEXT_PUBLIC_API_URL` en Vercel apuntando al backend.
+8. Configurar `BACKEND_CORS_ORIGINS` en Railway apuntando al dominio Vercel.
+9. Ejecutar `scripts/v2_deploy_smoke.sh`.
+10. Activar Anthropic solo cuando el flujo demo este estable.
+
+## Estado honesto antes de deploy
+
+La app está lista para demo pública como **seed-backed prototype**.
+
+No afirmar todavía que los 50 sets son datos reales verificados:
+
+- `active_catalog_verified_sets: 0`;
+- `active_catalog_evidence_started_sets: 1`;
+- `75192` está bloqueado por discrepancia de retirada entre seed y fuentes externas.

@@ -1,8 +1,8 @@
 # Plan de implementación V2
 
-Avance demo local: **97/100**
+Avance demo local: **99/100**
 
-Avance contra la guía completa: **84/100**
+Avance contra la guía completa: **90/100**
 
 ## Principio
 
@@ -18,8 +18,8 @@ Lo vamos a hacer, pero de forma incremental:
 
 Nota importante:
 
-- el 94/100 mide la **demo local V2**;
-- el 76/100 mide la **Guía Maestra V2 completa**;
+- el 99/100 mide la **demo local V2**;
+- el 90/100 mide la **Guía Maestra V2 completa**;
 - el seguimiento detallado de brechas vive en `docs/v2/guide_gap_analysis.md`.
 
 ## Fase 0A - Ordenar V2 dentro del repo
@@ -292,7 +292,7 @@ Entregables:
 - `POST /api/briefings/generate?use_llm=true` usa Sonnet si hay API key;
 - `POST /api/portfolio` y `DELETE /api/portfolio/{id}`;
 - `add_portfolio_item()` y `delete_portfolio_item()` en `portfolio_engine.py`;
-- `data/price_history_seed.json` expandido a 50 snapshots (5 por set, 10 sets activos);
+- `data/price_history_seed.json` expandido a 250 snapshots (5 por set, 50 sets activos);
 - tests actualizados: 114 pasando.
 
 ## Fase 6 - Publicación y portfolio
@@ -399,12 +399,12 @@ Resultado actual:
 
 - `scripts/v2_validate_seed_data.py` creado;
 - detecta sets duplicados, referencias a sets inexistentes, bandas de precio inválidas y campos mal formateados;
-- avisa que el catálogo actual tiene 10/50 sets, sin bloquear la demo;
-- añade 40 candidatos en `data/catalog_expansion_candidates.csv` para investigación;
+- valida que el catálogo seed actual llega a 50/50 sets;
+- deja `data/catalog_expansion_candidates.csv` preparado para futuros candidatos;
 - expone `GET /api/market/data-quality`;
 - expone `GET /api/market/catalog-candidates`;
 - muestra madurez de datos en Market Overview;
-- añade página `Research` para revisar los 40 candidatos sin activarlos;
+- añade página `Research` para revisar futuros candidatos sin activarlos;
 - añade búsqueda y filtro por tema en la cola Research;
 - añade un checklist de 8 evidencias por candidato antes de poder promocionarlo;
 - expone `candidate_ready_for_promotion` en la API de madurez de datos;
@@ -424,4 +424,4 @@ Para la demo local usamos una escala simple sobre 100:
 - 80-95: deploy, seed data y polish;
 - 95-100: documentación final y portfolio público.
 
-Para la guía completa, el avance actual es 76/100 porque ya existe foundation PostgreSQL/Alembic, carga seed a DB V2, servicios leyendo DB con fallback JSON, validación automática de seed data, lista candidata de 50 sets totales, superficie API/UI de madurez de datos, cola visual filtrable de investigación y candado de promoción con 8 checks por candidato, pero faltan instancia Postgres real, datos activos ampliados, CRUD real de portfolio, Sonnet real, deploy y artefactos finales.
+Para la guía completa, el avance actual es 90/100 porque ya existe foundation PostgreSQL/Alembic, carga seed a DB V2, servicios leyendo DB con fallback JSON, validación automática de seed data, catálogo seed de 50 sets, 250 snapshots, UI 2D premium, portfolio CRUD básico, Sonnet con fallback local, superficie API/UI de madurez de datos, auditoría activa de evidencias, preparación Railway/Vercel y case study V2. Falta publicar con cuentas reales, conectar Postgres cloud real y ampliar evidencia verificada por set.

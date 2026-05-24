@@ -1,6 +1,6 @@
 # LEGO Resale Intelligence
 
-A personal e-commerce intelligence tool that turns retired LEGO marketplace listings into structured buying signals: fair price, net margin, risk flags and an opportunity score — built end-to-end in Python with a premium Streamlit UI.
+A personal e-commerce intelligence tool that turns LEGO marketplace listings into structured buying signals: fair price, net margin, risk flags, portfolio P&L and market context. V1 is a stable Streamlit product; V2 expands it with FastAPI, Next.js and a seed-backed intelligence layer.
 
 > **Portfolio project** — built to demonstrate product engineering, LLM integration and UI polish without over-engineering the architecture.
 
@@ -19,12 +19,19 @@ V2 adds:
 - portfolio P&L views
 - local market briefings
 - shared SQLite watchlist workflow
-- premium Linear/Stripe-inspired UI with restrained LEGO cues and a Three.js scene
+- premium Linear/Stripe-inspired 2D UI with restrained LEGO cues
+
+Data provenance note:
+
+- the active V2 catalog currently contains 50 seed/demo sets;
+- external verification is tracked separately in `data/catalog_active_research.json`;
+- until evidence is added there, V2 should be described as a seed-backed prototype, not as verified live market data.
+- the first evidence audit has started with set `75192`, currently blocked by a retirement-date mismatch between seed data and external sources.
 
 Current V2 progress:
 
-- Demo local: **97/100**
-- Full guide: **84/100**
+- Demo local: **99/100**
+- Full guide: **90/100**
 
 Start V2 locally:
 
@@ -54,6 +61,8 @@ V2 documentation:
 - [`docs/v2/release_checklist.md`](docs/v2/release_checklist.md)
 - [`docs/v2/portfolio_story.md`](docs/v2/portfolio_story.md)
 - [`docs/v2/deploy_plan.md`](docs/v2/deploy_plan.md)
+- [`docs/v2/publish_manual_for_juan.md`](docs/v2/publish_manual_for_juan.md)
+- [`docs/v2/final_handoff.md`](docs/v2/final_handoff.md)
 - [`docs/v2/guide_gap_analysis.md`](docs/v2/guide_gap_analysis.md)
 - [`docs/v2/postgres_alembic_notes.md`](docs/v2/postgres_alembic_notes.md)
 - [`docs/v2/db_read_fallback_notes.md`](docs/v2/db_read_fallback_notes.md)
@@ -81,9 +90,9 @@ V2 documentation:
 
 ---
 
-## What it does
+## What It Does
 
-Paste a listing URL from Wallapop or eBay. The system:
+V1 lets you paste a Wallapop or eBay listing URL. The system:
 
 1. Downloads the listing HTML
 2. Extracts structured data (title, set ID, condition, risks) via Anthropic
@@ -93,6 +102,16 @@ Paste a listing URL from Wallapop or eBay. The system:
 6. Produces an opportunity score (0–100) with a GREEN / AMBER / RED category
 7. Persists the result to a local SQLite archive
 8. Displays everything in a clean, premium Streamlit interface
+
+V2 adds a product-grade web layer:
+
+1. Market overview with seeded price history
+2. Set intelligence and price charts
+3. Watchlist workflow
+4. Portfolio P&L
+5. Research queue and active evidence audit log
+6. Local analyst briefings with Claude fallback architecture
+7. Deploy-ready FastAPI + Next.js split
 
 ---
 
@@ -116,7 +135,7 @@ Paste a listing URL from Wallapop or eBay. The system:
 
 ## Architecture
 
-Eight focused modules, each with a single responsibility. No FastAPI, no React, no Docker — intentionally small so every part is explainable and testable.
+V1 remains intentionally compact and explainable.
 
 ```
 URL
@@ -126,7 +145,27 @@ URL
                 └─▶ pricing_reference.py   Look up manual fair price by set + condition
                      └─▶ scoring.py        Calculate margins, fees and opportunity score
                           └─▶ db.py        Persist result to SQLite via SQLAlchemy
-                               └─▶ app/main.py   Streamlit UI (Overview · Analyze · About)
+	                               └─▶ app/main.py   Streamlit UI (Overview · Analyze · About)
+```
+
+V2 wraps that foundation with API and product surfaces:
+
+```text
+backend/main.py
+ ├─ /api/analyze      Listing analysis and demo analysis
+ ├─ /api/market       Dynamic pricing, trends, data quality, evidence audit
+ ├─ /api/watchlist    Shared watchlist workflow
+ ├─ /api/portfolio    Portfolio P&L and CRUD
+ └─ /api/briefings    Analyst briefing fallback
+
+frontend/
+ ├─ Market Overview
+ ├─ Analyze
+ ├─ Watchlist
+ ├─ Sets
+ ├─ Research
+ ├─ Portfolio
+ └─ Briefings
 ```
 
 **Scoring is explicit, not a black box.**
@@ -144,10 +183,12 @@ net_margin    = gross_margin − selling_fees − outbound_shipping
 | Layer | Technology |
 |---|---|
 | Language | Python 3.11 |
-| UI | Streamlit + custom CSS/HTML |
+| V1 UI | Streamlit + custom CSS/HTML |
+| V2 UI | Next.js + TypeScript |
+| V2 API | FastAPI |
 | LLM | Anthropic (`claude-haiku-4-5`) |
 | Data modeling | Pydantic v2 |
-| Persistence | SQLite + SQLAlchemy |
+| Persistence | SQLite/Postgres-ready SQLAlchemy |
 | HTML capture | requests + BeautifulSoup |
 | Testing | pytest |
 | Config | python-dotenv |
@@ -157,10 +198,10 @@ net_margin    = gross_margin − selling_fees − outbound_shipping
 ## Test coverage
 
 ```
-114 passed
+116 passed
 ```
 
-Tests cover: data models, capture, extraction mocks, catalog matching, pricing lookups, scoring logic, margin calculations, database operations, FastAPI routes, dynamic pricing, DB-backed seed loading, seed data validation, data quality API, catalog research queue, portfolio logic (including CRUD), Claude Sonnet briefings with local fallback, expanded price history for all 10 active sets, and watchlist workflows.
+Tests cover: data models, capture, extraction mocks, catalog matching, pricing lookups, scoring logic, margin calculations, database operations, FastAPI routes, dynamic pricing, DB-backed seed loading, seed data validation, data quality API, catalog research queue, portfolio logic (including CRUD), Claude Sonnet briefings with local fallback, expanded price history for all 50 active seed sets, and watchlist workflows.
 
 ---
 
@@ -179,11 +220,20 @@ pip install -r requirements.txt
 cp .env.example .env
 # Add your ANTHROPIC_API_KEY to .env
 
-# 4. Run
+# 4. Run V1
 streamlit run app/main.py
 ```
 
 Open `http://localhost:8501`
+
+Run V2:
+
+```bash
+bash scripts/v2_start_api.sh
+bash scripts/v2_start_frontend.sh
+```
+
+Open `http://127.0.0.1:3000`
 
 ### Environment variables
 
@@ -201,24 +251,18 @@ pytest
 
 ---
 
-## Catalog coverage
+## Catalog Coverage
 
-10 retired sets currently supported:
+V1 supports 10 manually priced reference sets.
 
-| Set | Name | Theme |
-|---|---|---|
-| 75192 | Millennium Falcon (UCS) | Star Wars |
-| 75252 | Imperial Star Destroyer (UCS) | Star Wars |
-| 75313 | AT-AT (UCS) | Star Wars |
-| 75059 | Sandcrawler (UCS) | Star Wars |
-| 75095 | TIE Fighter (UCS) | Star Wars |
-| 10179 | Millennium Falcon (original UCS) | Star Wars |
-| 10030 | Imperial Star Destroyer (original) | Star Wars |
-| 21003 | Seattle Space Needle | Architecture |
-| 10214 | Tower Bridge | Creator Expert |
-| 10243 | Parisian Restaurant | Creator Expert |
+V2 contains 50 active seed/demo catalog rows and 250 seed price snapshots. They are useful for portfolio demonstration, but should not be described as verified live market data yet.
 
-Fair price references are stored in `src/pricing_reference.py` and updated manually.
+Current V2 evidence status:
+
+- `active_catalog_verified_sets: 0`
+- `active_catalog_evidence_started_sets: 1`
+- first audited set: `75192`, blocked by a retirement-date mismatch
+- evidence file: `data/catalog_active_research.json`
 
 ---
 
@@ -226,7 +270,7 @@ Fair price references are stored in `src/pricing_reference.py` and updated manua
 
 These are documented constraints, not hidden failures.
 
-- **Catalog is small by design** — fair prices require manual research; expanding coverage takes time.
+- **V2 market data is seed/demo** — the app now labels this explicitly and tracks external evidence separately.
 - **HTML parsing is basic** — marketplaces can change page structure; this is a known fragility.
 - **eBay may block requests** — 403 errors are an external constraint, not a bug.
 - **Score is explainable, not financial advice** — every signal is visible and traceable.
@@ -249,8 +293,8 @@ Built as a personal portfolio project to demonstrate:
 - **End-to-end product thinking** — from raw marketplace HTML to a scored, archived buying signal
 - **LLM integration** — structured extraction with Anthropic, explicit fallback handling
 - **Explainable scoring** — every number is traceable; no magic
-- **UI polish** — premium Streamlit experience without a frontend framework
-- **Honest scope** — v1 that works, with documented limits and a clear path forward
+- **UI polish** — premium Streamlit V1 and Linear/Stripe-inspired Next.js V2
+- **Honest scope** — a working V1, an expanded V2, and clear evidence limits before public claims
 
 ---
 

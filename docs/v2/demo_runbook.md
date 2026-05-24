@@ -1,6 +1,6 @@
 # V2 demo runbook
 
-Avance actual: **94/100**
+Avance actual: **99/100**
 
 Esta guia sirve para abrir y explicar LEGO Resale Intelligence V2 sin depender de memoria.
 
@@ -49,7 +49,7 @@ bash scripts/v2_doctor.sh
 1. **Market**
    - Enseñar el dashboard general.
    - Explicar que consume portfolio, tendencias y briefing local.
-   - Mostrar la escena 3D LEGO adulta como senal visual premium.
+   - Mostrar la UI 2D premium con lenguaje LEGO adulto sobrio.
 
 2. **Analyze**
    - Explicar que reutiliza el pipeline V1.
@@ -70,9 +70,8 @@ bash scripts/v2_doctor.sh
    - Mostrar coste, valor actual, P&L y senales HOLD/SELL.
 
 6. **Briefings**
-   - Explicar que ahora es local/deterministico.
-   - No gasta tokens.
-   - Claude Sonnet queda preparado para una fase posterior.
+   - Explicar que usa briefing local por defecto.
+   - Si existe `ANTHROPIC_API_KEY`, puede usar Claude Sonnet con fallback local.
 
 ## Coste de API
 
@@ -98,7 +97,7 @@ Puede gastar Anthropic:
 Resultado esperado actual:
 
 ```text
-95 passed
+114 passed
 ```
 
 ```bash

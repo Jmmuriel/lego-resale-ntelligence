@@ -1,8 +1,8 @@
 # V2 data quality notes
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guia completa: **76/100**
+Avance contra la guia completa: **90/100**
 
 ## Qué se ha hecho
 
@@ -34,35 +34,52 @@ Resultado actual:
 
 ```text
 V2 seed data validation: OK
-catalog_sets: 10
-catalog_candidate_sets: 40
+catalog_sets: 50
+catalog_candidate_sets: 0
 catalog_plus_candidates: 50
 target_catalog_sets: 50
-price_snapshots: 12
-priced_sets: 4
+price_snapshots: 250
+priced_sets: 50
 candidate_ready_for_promotion: 0
 portfolio_items: 3
 portfolio_sets: 3
-sets_with_3_plus_snapshots: 3
-sets_with_5_plus_snapshots: 1
-WARNING CATALOG_BELOW_TARGET: Catalog has 10 sets; guide target is 50.
+sets_with_3_plus_snapshots: 50
+sets_with_5_plus_snapshots: 50
+unpriced_catalog_sets: []
+active_catalog_verified_sets: 0
+active_catalog_verified_pct: 0.0
+active_catalog_evidence_started_sets: 1
+active_catalog_blocked_sets: 1
+market_data_source_status: seed_demo
 ```
 
 Esto significa:
 
-- los datos actuales son consistentes;
+- los datos seed actuales son consistentes;
 - la demo puede seguir funcionando;
-- hay 40 candidatos pendientes de investigar antes de activarlos en el catálogo.
-- ahora mismo 0 candidatos están listos para promoción, porque no hemos cargado evidencias verificadas.
+- el catálogo seed llega al objetivo local de 50 sets;
+- la app distingue entre datos seed/demo y datos externamente verificados;
+- la auditoria larga ya empezó con `75192`, pero queda bloqueado por una discrepancia de retirada;
+- ahora mismo no hay candidatos pendientes en `data/catalog_expansion_candidates.csv`.
 
 ## Por qué mejora la guía completa
 
 Antes podíamos añadir datos, pero no teníamos una alarma clara si algo quedaba mal.
 
-Ahora podemos crecer el catálogo y el histórico con más confianza. Cuando metamos 50 sets, el script nos dirá si falta precio, si un set no existe o si una fila tiene formato incorrecto. El nuevo candado de candidatos evita además que pasemos un set a catálogo activo sin evidencias mínimas.
+Ahora podemos crecer el catálogo y el histórico con más confianza. El script nos dice si falta precio, si un set no existe o si una fila tiene formato incorrecto. El candado de candidatos evita además que pasemos futuros candidatos a catálogo activo sin evidencias mínimas.
+
+Nota honesta para portfolio: los 50 sets actuales deben presentarse como **seed/demo data** salvo que se añadan evidencias explícitas de fuentes en `data/catalog_active_research.json`. El archivo `data/catalog_candidate_research.json` queda para futuros candidatos antes de activarlos.
+
+El histórico `data/price_history_seed.json` usa ahora `manual_seed_reference` para evitar sugerir que las cifras proceden de BrickLink si no hay evidencia guardada.
+
+Primera auditoria real:
+
+- `75192` tiene fuentes de metadata/precio localizadas, pero no se marca como verificado;
+- bloqueo: el catálogo seed dice `year_retired = 2024`, mientras BrickRanker y la página oficial de LEGO apuntan a set activo / retirada estimada en 2026;
+- acción recomendada: separar en V2 los sets realmente retirados de los sets activos o en vigilancia de retirada.
 
 ## Siguiente paso recomendado
 
-**G4B - validar candidatos y promoverlos al catálogo activo.**
+**G4C - etiquetar evidencias/fuentes de los 50 sets seed antes de publicarlos como datos reales.**
 
 Para precios reales de mercado, conviene validarlos manualmente con BrickLink o una fuente equivalente antes de tratarlos como fair price.

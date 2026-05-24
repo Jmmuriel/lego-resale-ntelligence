@@ -1,6 +1,9 @@
 import json
 
-from backend.services.data_quality import list_catalog_candidates
+from backend.services.data_quality import (
+    get_active_catalog_evidence_index,
+    list_catalog_candidates,
+)
 from scripts.v2_check_candidate_readiness import check_candidate_readiness
 
 
@@ -83,3 +86,44 @@ def test_candidate_readiness_accepts_complete_evidence(tmp_path):
 
 def test_candidate_readiness_cli_returns_not_found_code():
     assert check_candidate_readiness("10212") == 1
+
+
+def test_active_catalog_evidence_requires_verified_status(tmp_path):
+    research_path = tmp_path / "catalog_active_research.json"
+    research_path.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "active_sets": [
+                    {
+                        "set_id": "75192",
+                        "verification_status": "blocked_catalog_mismatch",
+                        "year_released": 2017,
+                        "year_retired": 2026,
+                        "retail_price_eur": 849.99,
+                        "pieces": 7541,
+                        "popularity_score": 10,
+                        "metadata_sources": [
+                            {"url": "https://example.com/metadata-a"},
+                            {"url": "https://example.com/metadata-b"},
+                        ],
+                        "price_sources": [
+                            {"url": "https://example.com/prices-a"},
+                            {"url": "https://example.com/prices-b"},
+                        ],
+                        "price_snapshots": [
+                            {"price_avg_eur": 600},
+                            {"price_avg_eur": 620},
+                            {"price_avg_eur": 640},
+                        ],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    readiness = get_active_catalog_evidence_index(research_path)["75192"]
+
+    assert readiness.ready_for_promotion is False
+    assert "verified evidence status" in readiness.missing_requirements

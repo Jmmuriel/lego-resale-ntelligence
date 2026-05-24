@@ -1,9 +1,11 @@
 from fastapi import APIRouter, Query
 
 from backend.services.data_quality import (
+    ActiveCatalogEvidence,
     CatalogCandidate,
     DataQualityReport,
     get_data_quality_report,
+    list_active_catalog_evidence,
     list_catalog_candidates,
 )
 from backend.services.price_engine import (
@@ -71,3 +73,9 @@ async def market_data_quality() -> DataQualityReport:
 async def market_catalog_candidates() -> list[CatalogCandidate]:
     """Return catalog candidates that are not active market data yet."""
     return list_catalog_candidates()
+
+
+@router.get("/active-evidence", response_model=list[ActiveCatalogEvidence])
+async def market_active_evidence() -> list[ActiveCatalogEvidence]:
+    """Return active catalog evidence audits and blockers."""
+    return list_active_catalog_evidence()

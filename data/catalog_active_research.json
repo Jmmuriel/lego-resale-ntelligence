@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "notes": "External evidence for active catalog sets. Only sets listed under active_sets with all required checks count as verified market data. Empty means the active catalog is valid seed/demo data, not externally verified market data.",
+  "required_checks": [
+    "year_released",
+    "year_retired",
+    "retail_price_eur",
+    "pieces",
+    "popularity_score",
+    "2 metadata_sources",
+    "2 price_sources",
+    "3 price_snapshots",
+    "verification_status = verified"
+  ],
+  "active_sets": [
+    {
+      "set_id": "75192",
+      "name": "Millennium Falcon",
+      "theme": "Star Wars",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-19",
+      "audit_summary": "Metadata and price evidence exists, but the seed catalog marks year_retired as 2024 while current external sources show the set as active or expected to retire in 2026. Keep this set as seed/demo data until the catalog assumption is resolved.",
+      "year_released": 2017,
+      "year_retired": 2026,
+      "retail_price_eur": 849.99,
+      "pieces": 7541,
+      "popularity_score": 10,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2024,
+          "evidence_value": 2026,
+          "severity": "blocking",
+          "note": "BrickRanker shows Dec 31, 2026 estimated retirement and active status; Brickset shows launch/exit as t.b.a.; LEGO official shop still has an add-to-bag product page."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/75192-1/Millennium-Falcon",
+          "checked_at": "2026-05-19",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "retail_price_eur",
+            "pieces"
+          ],
+          "notes": "Shows 75192-1 Millennium Falcon, Star Wars UCS, year released 2017, pieces 7541 and RRP EUR 849.99."
+        },
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/75192-1/ucs-millennium-falcon",
+          "checked_at": "2026-05-19",
+          "supports": [
+            "set_id",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces",
+            "active_status"
+          ],
+          "notes": "Shows released October 2017, 7541 pieces, RRP EUR 849.99, active status and estimated retirement in December 2026."
+        },
+        {
+          "name": "LEGO official shop",
+          "url": "https://www.lego.com/en-us/product/millennium-falcon-75192",
+          "checked_at": "2026-05-19",
+          "supports": [
+            "set_id",
+            "retail_price_usd",
+            "pieces",
+            "active_status"
+          ],
+          "notes": "Official product page shows 75192, USD 849.99, 7541 pieces and add-to-bag availability."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/75192-1/ucs-millennium-falcon",
+          "checked_at": "2026-05-19",
+          "notes": "Provides monthly new-condition average sale prices and current value from average sale price over the last 6 months."
+        },
+        {
+          "name": "BrickLink price guide part-out value",
+          "url": "https://www.bricklink.com/catalogPOV.asp?breakType=M&incInstr=Y&itemCondition=N&itemNo=75192&itemQty=1&itemSeq=1&itemType=S",
+          "checked_at": "2026-05-19",
+          "notes": "Provides part-out value and current items for sale average; useful as a secondary reference but not directly equivalent to complete-set fair value."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2025-11",
+          "price_avg": 905.72,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2025-12",
+          "price_avg": 871.51,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-01",
+          "price_avg": 916.52,
+          "currency": "USD",
+          "sales_count": 20
+        }
+      ],
+      "recommended_action": "Do not promote to verified data. Decide whether 75192 should stay in this app as an active/retiring watchlist set, or update the catalog model to separate active sets from retired sets."
+    }
+  ]
+}

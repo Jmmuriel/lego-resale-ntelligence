@@ -1,8 +1,8 @@
 # Tareas manuales V2
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guía completa: **76/100**
+Avance contra la guía completa: **90/100**
 
 Esta lista es para separar claramente qué hace Codex y qué debe hacer Juan manualmente.
 
@@ -21,7 +21,7 @@ Dirección visual elegida:
 
 - inspiración: Linear + Stripe;
 - lenguaje LEGO adulto, no infantil;
-- posible 3D: brick/stud premium en Market Overview;
+- UI 2D premium, sin 3D;
 - nombre interno: Collector Terminal.
 
 Bloqueo resuelto:
@@ -52,6 +52,15 @@ Probablemente necesitaré que hagas estas cosas:
 1. Crear o confirmar un repo GitHub público cuando toque publicar V2.
 2. Crear cuenta o proyecto en Railway para backend y PostgreSQL.
 3. Crear cuenta o proyecto en Vercel para frontend.
+4. En Railway, configurar:
+   - `V2_DATABASE_URL` si se usa Postgres;
+   - `BACKEND_CORS_ORIGINS` con la URL final de Vercel;
+   - `V2_RUN_MIGRATIONS=1` para el primer deploy;
+   - `V2_SEED_DATABASE=1` solo para el primer seed.
+5. En Vercel, configurar:
+   - Root Directory: `frontend`;
+   - `NEXT_PUBLIC_API_URL` con la URL final de Railway.
+6. Después del primer seed en Railway, cambiar `V2_SEED_DATABASE=0`.
 4. Conseguir o confirmar la API key de Anthropic.
 5. Revisar datos reales de portfolio si quieres que el P&L sea creíble.
 6. Validar manualmente algunos precios de BrickLink antes de usarlos como seed.

@@ -1,8 +1,8 @@
 # PostgreSQL + Alembic foundation
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guia completa: **76/100**
+Avance contra la guia completa: **90/100**
 
 Esta fase inicia la parte de base de datos profesional que pide la guia completa.
 

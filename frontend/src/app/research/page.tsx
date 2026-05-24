@@ -1,10 +1,11 @@
-import { getCatalogCandidates, getDataQualityReport } from "@/lib/api";
+import { getActiveCatalogEvidence, getCatalogCandidates, getDataQualityReport } from "@/lib/api";
 import ResearchQueue from "@/components/ResearchQueue";
 
 export default async function ResearchPage() {
-  const [candidates, dataQuality] = await Promise.all([
+  const [candidates, dataQuality, activeEvidence] = await Promise.all([
     getCatalogCandidates(),
-    getDataQualityReport()
+    getDataQualityReport(),
+    getActiveCatalogEvidence()
   ]);
   const byTheme = new Map<string, number>();
   for (const candidate of candidates) {
@@ -45,8 +46,8 @@ export default async function ResearchPage() {
           <span className="stat-value">{dataQuality.metrics.candidate_ready_for_promotion}</span>
         </div>
         <div className="stat-cell">
-          <span className="stat-label">Status</span>
-          <span className="stat-value" style={{ fontSize: "14px" }}>{dataQuality.status.replace(/_/g, " ")}</span>
+          <span className="stat-label">Audit started</span>
+          <span className="stat-value">{dataQuality.metrics.active_catalog_evidence_started_sets}</span>
         </div>
       </div>
 
@@ -68,14 +69,52 @@ export default async function ResearchPage() {
 
         <article className="panel">
           <div className="panel-heading">
-            <strong>Promotion rule</strong>
+            <strong>Evidence rule</strong>
           </div>
           <p className="briefing-text" style={{ fontSize: "13px" }}>
             A candidate needs all 8 evidence checks before promotion to the active catalog:
             release year, retirement, retail price, piece count, source links, and at least
-            3 market price snapshots. No invented prices — ever.
+            3 market price snapshots. Active sets need the same evidence before being called
+            externally verified. No invented prices — ever.
           </p>
         </article>
+      </section>
+
+      <section className="panel">
+        <div className="panel-heading">
+          <span>Active audit log</span>
+          <strong>{activeEvidence.length} reviewed</strong>
+        </div>
+
+        {activeEvidence.length === 0 ? (
+          <div className="empty-state">
+            <strong>No active-set audits yet</strong>
+            <span>Verified market claims stay disabled until evidence is logged here.</span>
+          </div>
+        ) : (
+          <div className="evidence-grid">
+            {activeEvidence.map((entry) => (
+              <article className="evidence-card" key={entry.set_id}>
+                <div className="candidate-card-header">
+                  <strong>{entry.set_id}</strong>
+                  <span>{entry.theme ?? "Active catalog"}</span>
+                </div>
+                <h2>{entry.name}</h2>
+                <p>{entry.audit_summary}</p>
+                <div className="evidence-counts">
+                  <span>{entry.metadata_source_count} metadata</span>
+                  <span>{entry.price_source_count} price sources</span>
+                  <span>{entry.price_snapshot_count} snapshots</span>
+                </div>
+                <div className="readiness-meta">
+                  <strong>{entry.verification_status.replace(/_/g, " ")}</strong>
+                  <span>{entry.ready_for_verified ? "verified" : `${entry.missing_requirements.length} blockers`}</span>
+                </div>
+                {entry.recommended_action ? <em>{entry.recommended_action}</em> : null}
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       <ResearchQueue candidates={candidates} />

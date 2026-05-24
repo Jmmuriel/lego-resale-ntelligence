@@ -2,9 +2,9 @@
 
 Estado actual: **Frontend V2 funcionando en local**
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guía completa: **76/100**
+Avance contra la guía completa: **90/100**
 
 ## Qué estamos haciendo
 
@@ -37,6 +37,7 @@ Esa guía es el norte estratégico. El plan de implementación adaptado a este r
 - `docs/v2/release_checklist.md`
 - `docs/v2/portfolio_story.md`
 - `docs/v2/deploy_plan.md`
+- `docs/v2/final_handoff.md`
 - `docs/v2/guide_gap_analysis.md`
 - `docs/v2/postgres_alembic_notes.md`
 - `docs/v2/db_read_fallback_notes.md`
@@ -57,7 +58,7 @@ Dirección visual definida:
 - inspiración principal: Linear + Stripe;
 - lenguaje LEGO adulto y sobrio;
 - nombre interno: Collector Terminal;
-- primera escena 3D propuesta: brick/stud premium en Market Overview.
+- UI 2D premium, sin escena 3D.
 
 Estado técnico actual:
 
@@ -68,7 +69,7 @@ Estado técnico actual:
 5. frontend Next.js corre en `http://127.0.0.1:3000`;
 6. Market Overview ya consume la API tipada;
 7. existen rutas V2 para `Market`, `Analyze`, `Sets`, `Portfolio` y `Briefings`;
-8. la home usa una escena Three.js con un brick/stud premium;
+8. la home usa un dashboard 2D premium sin Three.js;
 9. `Set Intelligence` muestra fair price, confianza, tendencia y resumen por set;
 10. `Set Intelligence` incluye gráfico de histórico de precio medio;
 11. `Analyze` permite guardar resultados en la watchlist SQLite compartida con V1;
@@ -84,15 +85,21 @@ Estado técnico actual:
 21. existe script de carga seed a DB V2;
 22. pricing y portfolio leen DB V2 primero con fallback a JSON;
 23. existe validador de calidad para catálogo, precios y portfolio;
-24. existe lista candidata de 40 sets para investigar y llegar a 50;
+24. el catálogo activo seed ya llega a 50 sets;
 25. existe endpoint y tarjeta UI de madurez de datos;
-26. existe página `Research` con cola filtrable de candidatos;
-27. existe checklist de promoción segura por candidato;
-28. `.gitignore` protege `node_modules`, `.next` y secretos locales.
+26. existe página `Research` para futuras colas de candidatos;
+27. existe checklist de promoción segura por candidato cuando haya candidatos nuevos;
+28. `.gitignore` protege `node_modules`, `.next` y secretos locales;
+29. existe auditoría activa de evidencias en `data/catalog_active_research.json`;
+30. existe endpoint `/api/market/active-evidence`;
+31. existe preparación de deploy para Railway/Vercel con `.dockerignore`, boot script y smoke test.
+32. existe case study V2 en Markdown y HTML;
+33. existe handoff final con estado real, limites y pasos manuales.
 
 Próximo paso:
 
-1. ampliar datos curados hacia 50 sets usando el checklist de evidencias;
-2. crear CRUD real de portfolio;
-3. preparar Postgres real cuando toque deploy;
-4. preparar capturas V2 desktop/mobile.
+1. resolver la discrepancia de retirada de `75192` antes de marcarlo como verificado;
+2. ampliar hacia 300+ sets solo con evidencias;
+3. crear proyecto Railway y Vercel cuando toque publicación;
+4. preparar Postgres real cuando toque persistencia cloud;
+5. preparar capturas V2 desktop/mobile y case study final.

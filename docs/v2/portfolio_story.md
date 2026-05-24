@@ -1,6 +1,6 @@
 # V2 portfolio story
 
-Avance actual: **94/100**
+Avance actual: **99/100 demo local / 90/100 guía completa**
 
 Este documento resume la historia de LEGO Resale Intelligence para portfolio, entrevistas o case study.
 
@@ -61,8 +61,8 @@ V2 introduce:
 - Watchlist compartida con SQLite;
 - Set Intelligence con historico y fair price dinamico seed;
 - Portfolio P&L;
-- Briefings locales sin gasto de LLM;
-- escena 3D premium con lenguaje LEGO adulto.
+- Briefings locales con opción Claude Sonnet y fallback;
+- UI 2D premium con lenguaje LEGO adulto sobrio.
 
 ## Decisiones de producto
 
@@ -78,11 +78,9 @@ SQLite se mantiene mientras la V2 valida flujos.
 
 PostgreSQL queda para deploy serio con persistencia cloud, historicos reales y portfolio editable.
 
-### Briefing local antes de LLM
+### Briefing local con fallback
 
-El briefing actual es deterministico y no gasta tokens.
-
-La integracion Claude Sonnet esta preparada conceptualmente, pero se pospone hasta que el flujo de producto este validado.
+El briefing funciona localmente sin gastar tokens. Si existe `ANTHROPIC_API_KEY`, la API puede usar Claude Sonnet y volver al modelo local si falla.
 
 ### Demo sin coste
 
@@ -93,7 +91,7 @@ Esto hace que la demo sea estable y barata.
 ## Demo flow
 
 1. Abrir Market.
-2. Mostrar dashboard y 3D brick.
+2. Mostrar dashboard 2D premium.
 3. Ir a Analyze.
 4. Usar `Load no-cost demo opportunity`.
 5. Guardar en watchlist.
@@ -112,7 +110,7 @@ Next.js frontend
     -> SQLite watchlist
     -> price history seed
     -> portfolio seed
-    -> local briefing engine
+    -> local/Sonnet briefing engine
 ```
 
 ## Resultado

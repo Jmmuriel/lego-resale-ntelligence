@@ -1,8 +1,8 @@
 # V2 guide gap analysis
 
-Avance demo local: **97/100**
+Avance demo local: **99/100**
 
-Avance contra la guia completa: **84/100**
+Avance contra la guia completa: **90/100**
 
 Este documento separa dos cosas que se estaban mezclando:
 
@@ -26,8 +26,8 @@ Pero la guia completa no era solo "hacer una app local bonita". La guia apuntaba
 Por eso desde ahora usaremos dos porcentajes:
 
 ```text
-Demo local: 94/100
-Guia completa: 76/100
+Demo local: 99/100
+Guia completa: 90/100
 ```
 
 ## Matriz de cumplimiento
@@ -39,13 +39,13 @@ Guia completa: 76/100
 | Reutilizar V1 | Completo | `POST /api/analyze` usa el pipeline V1. |
 | Demo sin coste | Completo | `POST /api/analyze/demo` evita Anthropic y marketplaces. |
 | Watchlist | Parcial-alto | Funciona con SQLite compartida; falta modelo cloud dedicado. |
-| Pricing dinamico | Parcial-alto | Motor existe; 50 snapshots para 10 sets activos; falta BrickLink guide curado grande hacia 300 sets. |
+| Pricing dinamico | Parcial-alto | Motor existe; 250 snapshots para 50 sets seed activos; falta BrickLink guide con evidencia hacia 300 sets. |
 | Set Intelligence | Parcial-alto | Fair price, tendencia y chart; falta ficha profunda por set/categoria. |
 | Portfolio P&L | Parcial-alto | CRUD completo: POST/DELETE + AddPositionPanel; falta persistencia cloud y transacciones. |
 | Briefings IA | Parcial-alto | Claude Sonnet conectado con fallback local; falta persistencia DB y briefing semanal. |
 | PostgreSQL | Parcial | Capa DB preparada con URL Postgres; falta instancia real local/cloud. |
 | Alembic | Parcial-alto | Configuracion y migracion inicial creadas y verificadas en SQLite local. |
-| Catalogo 300+ sets | Pendiente | Hay quality gate, 40 candidatos, UI de madurez, Research filtrable y checklist de promoción; seguimos con catálogo activo pequeño y seed data. |
+| Catalogo 300+ sets | Pendiente | Hay quality gate, 50 sets seed, UI de madurez, Research y checklist de promoción; falta escalar con fuentes/evidencias. |
 | BrickLink data | Pendiente | No hay ingesta/curado amplio de BrickLink price guide. |
 | UI 2D premium | Completo | Rediseno completo sin 3D: stat-strip, page-header, trend-badge, AddPositionPanel. |
 | Tailwind/shadcn | No aplicado literalmente | Se uso CSS propio premium; visualmente cumple, stack exacto no. |
@@ -76,7 +76,7 @@ Dependencia manual probable:
 
 Objetivo:
 
-- ampliar catalogo primero a 50 sets;
+- revisar evidencias/fuentes de los 50 sets seed;
 - luego ir hacia 300+;
 - crear JSON/CSV curado de BrickLink price guide;
 - tener al menos 5 snapshots por set activo antes de confiar en pricing.
@@ -124,20 +124,20 @@ Objetivo:
 
 Si queremos seguir la guia de verdad, la siguiente fase debe ser:
 
-**Fase G4 - Data expansion to 50 curated sets**
+**Fase G5 - Evidence-backed data expansion**
 
 Por que:
 
 - pricing y portfolio ya leen desde DB V2;
-- el siguiente salto de valor es aumentar cobertura;
-- primero 50 sets curados antes de intentar 300+;
-- el pricing sera mas creible si hay mas historico por set.
+- el catálogo seed ya llega a 50 sets;
+- el siguiente salto de valor es evidenciar fuentes y escalar hacia 300+;
+- el pricing sera mas creible si cada set tiene historico y fuentes trazables.
 
 Antes de tocar codigo, conviene decidir:
 
-1. Validar manualmente los 40 candidatos de `data/catalog_expansion_candidates.csv`.
-2. Promover candidatos validados a `data/catalog.csv`.
-3. Ampliar `data/price_history_seed.json` con snapshots suficientes.
-4. Ejecutar `scripts/v2_check_candidate_readiness.py` para bloquear candidatos sin evidencias.
+1. Añadir evidencias/fuentes de los 50 sets seed.
+2. Etiquetar precios como seed/demo si no hay fuente verificable.
+3. Definir el siguiente lote hacia 300+ sets.
+4. Ejecutar `scripts/v2_check_candidate_readiness.py` cuando haya candidatos nuevos.
 5. Ejecutar `scripts/v2_validate_seed_data.py` antes de cargar datos.
 6. Ejecutar `scripts/v2_seed_db.py` para cargar la DB V2.

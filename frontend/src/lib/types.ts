@@ -113,6 +113,11 @@ export interface DataQualityMetrics {
   active_catalog_coverage_pct: number;
   candidate_catalog_coverage_pct: number;
   pricing_coverage_pct: number;
+  active_catalog_verified_sets: number;
+  active_catalog_verified_pct: number;
+  active_catalog_evidence_started_sets: number;
+  active_catalog_blocked_sets: number;
+  market_data_source_status: "seed_demo" | "partially_verified" | "verified";
 }
 
 export interface DataQualityReport {
@@ -141,6 +146,22 @@ export interface CandidateReadiness {
   metadata_source_count: number;
   price_source_count: number;
   price_snapshot_count: number;
+}
+
+export interface ActiveCatalogEvidence {
+  set_id: string;
+  name: string;
+  theme: string | null;
+  verification_status: string;
+  audited_at: string | null;
+  audit_summary: string;
+  recommended_action: string | null;
+  catalog_mismatches: Array<Record<string, unknown>>;
+  metadata_source_count: number;
+  price_source_count: number;
+  price_snapshot_count: number;
+  ready_for_verified: boolean;
+  missing_requirements: string[];
 }
 
 export interface PortfolioItem {

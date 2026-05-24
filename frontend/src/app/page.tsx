@@ -13,6 +13,16 @@ function pct(value: number) {
   return `${sign}${(value * 100).toFixed(1)}%`;
 }
 
+function sourceStatusLabel(status: string) {
+  if (status === "verified") {
+    return "Verified";
+  }
+  if (status === "partially_verified") {
+    return "Partially verified";
+  }
+  return "Seed/demo";
+}
+
 export default async function MarketOverviewPage() {
   const [portfolio, trends, briefings, dataQuality] = await Promise.all([
     getPortfolio(),
@@ -27,7 +37,7 @@ export default async function MarketOverviewPage() {
       <header className="page-header">
         <div>
           <h1>Market Overview</h1>
-          <p>Collector-grade signals for retired LEGO sets — prices, P&amp;L, and briefing context.</p>
+          <p>Collector-grade seed signals for retired LEGO sets — prices, P&amp;L, and briefing context.</p>
         </div>
         <div className="page-header-actions">
           <span
@@ -131,6 +141,20 @@ export default async function MarketOverviewPage() {
                 </div>
                 <em style={{ fontWeight: 700 }}>
                   {dataQuality.metrics.pricing_coverage_pct.toFixed(0)}%
+                </em>
+              </div>
+              <div className="data-row">
+                <div>
+                  <strong style={{ fontSize: "14px" }}>
+                    {sourceStatusLabel(dataQuality.metrics.market_data_source_status)}
+                  </strong>
+                  <span style={{ color: "var(--muted)", fontSize: "12px" }}>
+                    {dataQuality.metrics.active_catalog_verified_sets}/{dataQuality.metrics.catalog_sets} verified,
+                    {" "}{dataQuality.metrics.active_catalog_evidence_started_sets} under audit
+                  </span>
+                </div>
+                <em style={{ fontWeight: 700 }}>
+                  {dataQuality.metrics.active_catalog_verified_pct.toFixed(0)}%
                 </em>
               </div>
             </div>

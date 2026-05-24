@@ -1,8 +1,8 @@
 # DB read fallback notes
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guia completa: **76/100**
+Avance contra la guia completa: **90/100**
 
 ## Qué se ha hecho
 
@@ -43,6 +43,6 @@ Resultado:
 
 ## Siguiente paso recomendado
 
-**G4 - Data expansion to 50 curated sets**
+**G5 - Evidence-backed data expansion**
 
-El sistema ya sabe dónde leer los datos. Ahora toca que esos datos sean más amplios y creíbles.
+El sistema ya sabe dónde leer los datos y la seed local llega a 50 sets. Ahora toca añadir evidencia/fuentes trazables y escalar con cuidado hacia 300+.

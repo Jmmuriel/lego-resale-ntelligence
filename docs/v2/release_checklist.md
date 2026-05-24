@@ -1,8 +1,8 @@
 # V2 release checklist
 
-Avance demo local: **94/100**
+Avance demo local: **99/100**
 
-Avance contra la guía completa: **76/100**
+Avance contra la guía completa: **90/100**
 
 Checklist para pasar de demo local a version ensenable/publicable.
 
@@ -15,7 +15,7 @@ Checklist para pasar de demo local a version ensenable/publicable.
 - [x] Portfolio seed con P&L.
 - [x] Briefings locales sin coste de LLM.
 - [x] Frontend Next.js con rutas principales.
-- [x] Escena 3D inicial en Market.
+- [x] Rediseño 2D premium sin 3D.
 - [x] Watchlist compartida con SQLite V1.
 - [x] Tests backend/core pasando.
 - [x] Build frontend pasando.
@@ -32,15 +32,26 @@ Checklist para pasar de demo local a version ensenable/publicable.
 - [x] Seed data migrable a tablas V2.
 - [x] Pricing y portfolio leen DB V2 con fallback JSON.
 - [x] Validación automática de seed data V2.
-- [x] Lista candidata para expandir de 10 a 50 sets.
+- [x] Catálogo seed expandido a 50 sets.
 - [x] Endpoint y UI de madurez de datos.
-- [x] Página Research filtrable para revisar candidatos sin activarlos.
+- [x] Página Research preparada para futuras colas de candidatos.
 - [x] Checklist de promoción segura para candidatos de catálogo.
+- [x] Log de auditoría activa para evidencias reales del catálogo.
+- [x] Deploy prep: `Dockerfile`, `railway.toml`, `.dockerignore`, boot script y smoke test.
+- [x] CRUD básico de portfolio: añadir y borrar posiciones.
+- [x] Claude Sonnet conectado con fallback local.
+- [x] Case study V2 en Markdown.
+- [x] Case study V2 en HTML.
+- [x] Manual simple para publicar en Railway/Vercel.
+- [x] Smoke test local de API + web.
 
 ## Antes de publicar
 
 - [ ] Hacer capturas V2 desktop.
 - [ ] Hacer capturas V2 mobile.
+- [ ] Rehacer capturas finales si cambia la UI despues del case study.
+- [x] Revisar/etiquetar evidencia de fuentes antes de afirmar que los 50 sets son datos reales verificados.
+- [ ] Resolver discrepancia de retirada de `75192` antes de marcarlo como verificado.
 - [x] Revisar copy final en ingles/espanol.
 - [x] Decidir si se publica V2 en el mismo README o en case study separado.
 - [x] Crear variables `.env.example` especificas para V2 si hacen falta.
@@ -51,6 +62,9 @@ Checklist para pasar de demo local a version ensenable/publicable.
 - [x] Migrar seed data a tablas reales si se usa Postgres o SQLite V2.
 - [x] Conectar servicios principales a DB V2 con fallback local.
 - [ ] Revisar permisos y no subir `.env`, `.next`, `node_modules` ni base SQLite local.
+- [ ] Crear proyecto Railway y configurar variables reales.
+- [ ] Crear proyecto Vercel y configurar `NEXT_PUBLIC_API_URL`.
+- [ ] Ejecutar `scripts/v2_deploy_smoke.sh` contra las URLs publicas.
 
 ## Criterio para 90/100
 
@@ -75,7 +89,7 @@ V2 alcanza 95/100 cuando:
 
 V2 alcanza 100/100 cuando:
 
-- esta publicada o lista para publicar;
+- esta publicada en Railway/Vercel o validada con URLs publicas finales;
 - README, capturas y demo estan cerrados;
 - la historia tecnica se puede explicar en entrevista en menos de 5 minutos;
 - las limitaciones estan documentadas con honestidad.
