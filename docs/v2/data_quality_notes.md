@@ -46,10 +46,10 @@ portfolio_sets: 3
 sets_with_3_plus_snapshots: 50
 sets_with_5_plus_snapshots: 50
 unpriced_catalog_sets: []
-active_catalog_verified_sets: 32
-active_catalog_verified_pct: 64.0
+active_catalog_verified_sets: 47
+active_catalog_verified_pct: 94.0
 active_catalog_evidence_started_sets: 50
-active_catalog_blocked_sets: 18
+active_catalog_blocked_sets: 3
 market_data_source_status: partially_verified
 ```
 
@@ -61,8 +61,9 @@ Esto significa:
 - la app distingue entre datos seed/demo y datos externamente verificados;
 - FASE DATA-1 ya auditó 50 sets del catálogo activo;
 - DATA-2 normalizó discrepancias seguras del CSV contra las evidencias guardadas;
-- 32 sets pasan como verificados bajo las reglas actuales de la app;
-- 18 sets quedan bloqueados o en revisión por discrepancias de fuentes;
+- DATA-3 aplicó una política conservadora de fuente canónica para discrepancias menores;
+- 47 sets pasan como verificados bajo las reglas actuales de la app;
+- 3 sets quedan bloqueados o en revisión por discrepancias materiales de fuentes;
 - ahora mismo no hay candidatos pendientes en `data/catalog_expansion_candidates.csv`.
 
 ## Por qué mejora la guía completa
@@ -71,7 +72,7 @@ Antes podíamos añadir datos, pero no teníamos una alarma clara si algo quedab
 
 Ahora podemos crecer el catálogo y el histórico con más confianza. El script nos dice si falta precio, si un set no existe o si una fila tiene formato incorrecto. El candado de candidatos evita además que pasemos futuros candidatos a catálogo activo sin evidencias mínimas.
 
-Nota honesta para portfolio: los 50 sets actuales deben presentarse como **seed/demo data** salvo que se añadan evidencias explícitas de fuentes en `data/catalog_active_research.json`. El archivo `data/catalog_candidate_research.json` queda para futuros candidatos antes de activarlos.
+Nota honesta para portfolio: el catálogo completo sigue siendo un **seed-backed partially verified prototype**. 47 sets tienen evidencia externa utilizable; 3 siguen como seed/demo pendientes de resolución. El archivo `data/catalog_candidate_research.json` queda para futuros candidatos antes de activarlos.
 
 El histórico `data/price_history_seed.json` usa ahora `manual_seed_reference` para evitar sugerir que las cifras proceden de BrickLink si no hay evidencia guardada.
 

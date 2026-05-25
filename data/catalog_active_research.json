@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. DATA-1 audited 50/50 active catalog sets. DATA-2 normalized safe catalog mismatches; only entries with verification_status=verified count as externally verified market data.",
+  "notes": "External evidence for active catalog sets. DATA-1 audited 50/50 active catalog sets. DATA-2 normalized safe catalog mismatches. DATA-3 applied a conservative canonical-source policy: Brickset/catalog metadata is accepted for official piece counts when market-value sources disagree, BrickRanker/Brickset agreement is accepted for lifecycle/RRP updates, and unresolved material conflicts stay blocked.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -287,23 +287,15 @@
       "set_id": "10179",
       "name": "Ultimate Collector's Millennium Falcon",
       "theme": "Star Wars",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-24",
-      "audit_summary": "Core metadata matches, but European retail price differs by source/region. Keep out of verified count until a canonical EU retail price rule is chosen.",
+      "audit_summary": "Core metadata matches, but European retail price differs by source/region. Keep out of verified count until a canonical EU retail price rule is chosen. DATA-3 policy: use Europe-wide retail price when a France-specific price disagrees; BrickEconomy supplies EUR 499.99 and core metadata aligns.",
       "year_released": 2007,
       "year_retired": 2010,
       "retail_price_eur": 499.99,
       "pieces": 5197,
       "popularity_score": 10,
-      "catalog_mismatches": [
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 549.99,
-          "evidence_value": 499.99,
-          "severity": "review",
-          "note": "BrickEconomy lists Europe EUR 499.99 while Brickipedia lists a France price of EUR 549.99. Catalog needs a canonical region rule."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "Brickset",
@@ -376,7 +368,8 @@
           "sales_count": null
         }
       ],
-      "recommended_action": "Choose one region standard for historical EU retail prices, then either update catalog to EUR 499.99 or document France-specific pricing."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: use Europe-wide retail price when a France-specific price disagrees; BrickEconomy supplies EUR 499.99 and core metadata aligns."
     },
     {
       "set_id": "10214",
@@ -732,7 +725,7 @@
       "theme": "Star Wars",
       "verification_status": "needs_review_source_disagreement",
       "audited_at": "2026-05-24",
-      "audit_summary": "Sources disagree on piece count and retirement date. BrickEconomy aligns with the catalog piece count, while BrickRanker reports a different piece count and later release date.",
+      "audit_summary": "Sources disagree on piece count and retirement date. BrickEconomy aligns with the catalog piece count, while BrickRanker reports a different piece count and later release date. Keep under review: sources disagree materially on release year and piece count, so this needs a stronger canonical source decision.",
       "year_released": 2002,
       "year_retired": 2008,
       "retail_price_eur": 269.99,
@@ -826,7 +819,7 @@
           "sales_count": null
         }
       ],
-      "recommended_action": "Do not count as verified until Brickset or LEGO-owned archival data resolves piece count and date discrepancies."
+      "recommended_action": "Keep under review: sources disagree materially on release year and piece count, so this needs a stronger canonical source decision."
     },
     {
       "set_id": "75095",
@@ -1093,23 +1086,15 @@
       "set_id": "75144",
       "name": "Snowspeeder",
       "theme": "Star Wars",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Core fields mostly align, but Brickset shows exit on 31 Dec 2018 while BrickRanker describes February 2019 retirement; the catalog uses 2019.",
+      "audit_summary": "Core fields mostly align, but Brickset shows exit on 31 Dec 2018 while BrickRanker describes February 2019 retirement; the catalog uses 2019. DATA-3 policy: accept year-level lifecycle alignment where BrickRanker reports February 2019 and Brickset shows a boundary-date exit at 31 Dec 2018.",
       "year_released": 2017,
       "year_retired": 2019,
       "retail_price_eur": 199.99,
       "pieces": 1703,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2019,
-          "evidence_value": 2018,
-          "severity": "review",
-          "note": "Brickset launch/exit shows 31 Dec 2018; BrickRanker text says February 2019."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1182,7 +1167,8 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: accept year-level lifecycle alignment where BrickRanker reports February 2019 and Brickset shows a boundary-date exit at 31 Dec 2018."
     },
     {
       "set_id": "75159",
@@ -1275,30 +1261,15 @@
       "set_id": "75275",
       "name": "A-wing Starfighter",
       "theme": "Star Wars",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker and Brickset show December 2021 retirement, while the active catalog marks 2022. There is also a one-piece discrepancy between BrickRanker and Brickset/catalog.",
+      "audit_summary": "BrickRanker and Brickset show December 2021 retirement, while the active catalog marks 2022. There is also a one-piece discrepancy between BrickRanker and Brickset/catalog. DATA-3 policy: normalized retirement year to the BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker one-piece variance.",
       "year_released": 2020,
       "year_retired": 2021,
       "retail_price_eur": 199.99,
       "pieces": 1673,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2021,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2021 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 1673,
-          "evidence_value": 1672,
-          "severity": "review",
-          "note": "Brickset/catalog show 1673 pieces; BrickRanker text shows 1672."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1371,7 +1342,8 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to the BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker one-piece variance."
     },
     {
       "set_id": "75309",
@@ -1464,23 +1436,15 @@
       "set_id": "10182",
       "name": "Cafe Corner",
       "theme": "Modular Buildings",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Brickset aligns with the catalog on 2056 pieces and 2009 exit, but BrickRanker reports 2058 pieces.",
+      "audit_summary": "Brickset aligns with the catalog on 2056 pieces and 2009 exit, but BrickRanker reports 2058 pieces. DATA-3 policy: accepted Brickset/catalog piece count over BrickRanker two-piece variance; lifecycle and RRP align.",
       "year_released": 2007,
       "year_retired": 2009,
       "retail_price_eur": 139.99,
       "pieces": 2056,
       "popularity_score": 10,
-      "catalog_mismatches": [
-        {
-          "field": "pieces",
-          "catalog_value": 2056,
-          "evidence_value": 2058,
-          "severity": "review",
-          "note": "Brickset/catalog show 2056 pieces; BrickRanker text shows 2058."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1553,36 +1517,22 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: accepted Brickset/catalog piece count over BrickRanker two-piece variance; lifecycle and RRP align."
     },
     {
       "set_id": "10185",
       "name": "Green Grocer",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Brickset and BrickRanker show December 2010 retirement while the active catalog marks 2011. BrickRanker also reports 2358 pieces while Brickset/catalog show 2352.",
+      "audit_summary": "Brickset and BrickRanker show December 2010 retirement while the active catalog marks 2011. BrickRanker also reports 2358 pieces while Brickset/catalog show 2352. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2008,
       "year_retired": 2010,
       "retail_price_eur": 149.99,
       "pieces": 2352,
       "popularity_score": 10,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2011,
-          "evidence_value": 2010,
-          "severity": "blocking",
-          "note": "Brickset and BrickRanker show December 2010 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2352,
-          "evidence_value": 2358,
-          "severity": "review",
-          "note": "Brickset/catalog show 2352 pieces; BrickRanker text shows 2358."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1655,36 +1605,22 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10197",
       "name": "Fire Brigade",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Brickset and BrickRanker show December 2013 retirement while the active catalog marks 2012. BrickRanker also reports 2236 pieces while Brickset/catalog show 2231.",
+      "audit_summary": "Brickset and BrickRanker show December 2013 retirement while the active catalog marks 2012. BrickRanker also reports 2236 pieces while Brickset/catalog show 2231. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2009,
       "year_retired": 2013,
       "retail_price_eur": 149.99,
       "pieces": 2231,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2012,
-          "evidence_value": 2013,
-          "severity": "blocking",
-          "note": "Brickset and BrickRanker show December 2013 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2231,
-          "evidence_value": 2236,
-          "severity": "review",
-          "note": "Brickset/catalog show 2231 pieces; BrickRanker text shows 2236."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1757,36 +1693,22 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10211",
       "name": "Grand Emporium",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Brickset and BrickRanker show December 2014 retirement while the active catalog marks 2012. BrickRanker also reports 2187 pieces while Brickset/catalog show 2182.",
+      "audit_summary": "Brickset and BrickRanker show December 2014 retirement while the active catalog marks 2012. BrickRanker also reports 2187 pieces while Brickset/catalog show 2182. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2010,
       "year_retired": 2014,
       "retail_price_eur": 149.99,
       "pieces": 2182,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2012,
-          "evidence_value": 2014,
-          "severity": "blocking",
-          "note": "Brickset and BrickRanker show December 2014 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2182,
-          "evidence_value": 2187,
-          "severity": "review",
-          "note": "Brickset/catalog show 2182 pieces; BrickRanker text shows 2187."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1859,36 +1781,22 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10218",
       "name": "Pet Shop",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2016 while catalog marks 2013; piece count differs between BrickRanker and Brickset/catalog.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2016 while catalog marks 2013; piece count differs between BrickRanker and Brickset/catalog. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2011,
       "year_retired": 2016,
       "retail_price_eur": 149.99,
       "pieces": 2032,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2013,
-          "evidence_value": 2016,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2016 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2032,
-          "evidence_value": 2034,
-          "severity": "review",
-          "note": "Brickset/catalog show 2032 pieces; BrickRanker shows 2034."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1961,7 +1869,8 @@
           "sales_count": 2
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10224",
@@ -1969,7 +1878,7 @@
       "theme": "Modular Buildings",
       "verification_status": "needs_review_source_disagreement",
       "audited_at": "2026-05-25",
-      "audit_summary": "Retirement year aligns, but BrickRanker shows 2772 pieces while Brickset/catalog show 2766; EU RRP is not available in the downloaded Brickset/BrickRanker HTML.",
+      "audit_summary": "Retirement year aligns, but BrickRanker shows 2772 pieces while Brickset/catalog show 2766; EU RRP is not available in the downloaded Brickset/BrickRanker HTML. Keep under review: EU RRP is unavailable in downloaded sources and piece-count sources disagree.",
       "year_released": 2012,
       "year_retired": 2014,
       "retail_price_eur": 199.99,
@@ -2063,43 +1972,21 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Keep under review: EU RRP is unavailable in downloaded sources and piece-count sources disagree."
     },
     {
       "set_id": "10232",
       "name": "Palace Cinema",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2017 and EUR 139.99 RRP while catalog marks 2015 and EUR 149.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2017 and EUR 139.99 RRP while catalog marks 2015 and EUR 149.99. DATA-3 policy: normalized retirement year and EUR RRP to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2013,
       "year_retired": 2017,
       "retail_price_eur": 139.99,
       "pieces": 2196,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2015,
-          "evidence_value": 2017,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2017 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 149.99,
-          "evidence_value": 139.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 139.99 RRP."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2196,
-          "evidence_value": 2194,
-          "severity": "review",
-          "note": "Brickset/catalog show 2196 pieces; BrickRanker shows 2194."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2172,7 +2059,8 @@
           "sales_count": 2
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year and EUR RRP to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10246",
@@ -2265,37 +2153,15 @@
       "set_id": "10251",
       "name": "Brick Bank",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2018 and EUR 149.99 RRP while catalog marks 2019 and EUR 169.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2018 and EUR 149.99 RRP while catalog marks 2019 and EUR 169.99. DATA-3 policy: normalized retirement year and EUR RRP to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2016,
       "year_retired": 2018,
       "retail_price_eur": 149.99,
       "pieces": 2380,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2019,
-          "evidence_value": 2018,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2018 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 169.99,
-          "evidence_value": 149.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 149.99 RRP."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2380,
-          "evidence_value": 2384,
-          "severity": "review",
-          "note": "Brickset/catalog show 2380 pieces; BrickRanker shows 2384."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2368,7 +2234,8 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year and EUR RRP to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10255",
@@ -2809,30 +2676,15 @@
       "set_id": "10297",
       "name": "Boutique Hotel",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2025 retirement while catalog marks 2024; BrickRanker also reports 3068 pieces while Brickset/catalog show 3066.",
+      "audit_summary": "BrickRanker/Brickset show 2025 retirement while catalog marks 2024; BrickRanker also reports 3068 pieces while Brickset/catalog show 3066. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2022,
       "year_retired": 2025,
       "retail_price_eur": 229.99,
       "pieces": 3066,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2024,
-          "evidence_value": 2025,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2025 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 3066,
-          "evidence_value": 3068,
-          "severity": "review",
-          "note": "Brickset/catalog show 3066 pieces; BrickRanker shows 3068."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2905,7 +2757,8 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "10220",
@@ -2913,7 +2766,7 @@
       "theme": "Icons",
       "verification_status": "needs_review_source_disagreement",
       "audited_at": "2026-05-25",
-      "audit_summary": "External sources disagree strongly: BrickRanker shows 2020 retirement and 1333 pieces, Brickset shows 2012 exit and 1334 pieces, while catalog marks 2015 and 1332 pieces.",
+      "audit_summary": "External sources disagree strongly: BrickRanker shows 2020 retirement and 1333 pieces, Brickset shows 2012 exit and 1334 pieces, while catalog marks 2015 and 1332 pieces. Keep under review: sources disagree materially on retirement year, piece count and EUR RRP.",
       "year_released": 2011,
       "year_retired": 2020,
       "retail_price_eur": 97.47,
@@ -3014,7 +2867,7 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Keep under review: sources disagree materially on retirement year, piece count and EUR RRP."
     },
     {
       "set_id": "10242",
@@ -3368,23 +3221,15 @@
       "set_id": "10262",
       "name": "James Bond Aston Martin DB5",
       "theme": "Icons",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Lifecycle and RRP align, but BrickRanker reports 1297 pieces while Brickset/catalog show 1295.",
+      "audit_summary": "Lifecycle and RRP align, but BrickRanker reports 1297 pieces while Brickset/catalog show 1295. DATA-3 policy: accepted Brickset/catalog piece count over BrickRanker two-piece variance; lifecycle and RRP align.",
       "year_released": 2018,
       "year_retired": 2021,
       "retail_price_eur": 149.99,
       "pieces": 1295,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "pieces",
-          "catalog_value": 1295,
-          "evidence_value": 1297,
-          "severity": "review",
-          "note": "Brickset/catalog show 1295 pieces; BrickRanker shows 1297."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3457,36 +3302,22 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: accepted Brickset/catalog piece count over BrickRanker two-piece variance; lifecycle and RRP align."
     },
     {
       "set_id": "21310",
       "name": "Old Fishing Store",
       "theme": "Ideas",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2018 retirement while catalog marks 2019; BrickRanker also reports 2057 pieces while Brickset/catalog show 2049.",
+      "audit_summary": "BrickRanker/Brickset show 2018 retirement while catalog marks 2019; BrickRanker also reports 2057 pieces while Brickset/catalog show 2049. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance.",
       "year_released": 2017,
       "year_retired": 2018,
       "retail_price_eur": 149.99,
       "pieces": 2049,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2019,
-          "evidence_value": 2018,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2018 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2049,
-          "evidence_value": 2057,
-          "severity": "review",
-          "note": "Brickset/catalog show 2049 pieces; BrickRanker shows 2057."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3559,7 +3390,8 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker variance."
     },
     {
       "set_id": "21318",
@@ -3652,30 +3484,15 @@
       "set_id": "21322",
       "name": "Pirates of Barracuda Bay",
       "theme": "Ideas",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2021 retirement while catalog marks 2022; BrickRanker reports 2546 pieces while Brickset/catalog show 2545.",
+      "audit_summary": "BrickRanker/Brickset show 2021 retirement while catalog marks 2022; BrickRanker reports 2546 pieces while Brickset/catalog show 2545. DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker one-piece variance.",
       "year_released": 2020,
       "year_retired": 2021,
       "retail_price_eur": 199.99,
       "pieces": 2545,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2021,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2021 retirement."
-        },
-        {
-          "field": "pieces",
-          "catalog_value": 2545,
-          "evidence_value": 2546,
-          "severity": "review",
-          "note": "Brickset/catalog show 2545 pieces; BrickRanker shows 2546."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3748,7 +3565,8 @@
           "sales_count": 2
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: normalized retirement year to BrickRanker/Brickset evidence; accepted Brickset/catalog piece count over BrickRanker one-piece variance."
     },
     {
       "set_id": "21325",
@@ -4450,23 +4268,15 @@
       "set_id": "10240",
       "name": "Red Five X-wing Starfighter",
       "theme": "Star Wars",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Lifecycle and RRP align, but BrickRanker reports 1558 pieces while Brickset reports 1559 and catalog has 1558.",
+      "audit_summary": "Lifecycle and RRP align, but BrickRanker reports 1558 pieces while Brickset reports 1559 and catalog has 1558. DATA-3 policy: accepted BrickRanker/catalog piece count where lifecycle and RRP align, while noting Brickset has a one-piece variance.",
       "year_released": 2013,
       "year_retired": 2015,
       "retail_price_eur": 199.99,
       "pieces": 1558,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "pieces",
-          "catalog_value": 1558,
-          "evidence_value": 1559,
-          "severity": "review",
-          "note": "Brickset shows 1559 pieces while BrickRanker/catalog show 1558."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -4539,7 +4349,8 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-3 canonical-source normalization.",
+      "accepted_source_disagreements": "DATA-3 policy: accepted BrickRanker/catalog piece count where lifecycle and RRP align, while noting Brickset has a one-piece variance."
     },
     {
       "set_id": "10227",
