@@ -25,8 +25,8 @@ Data provenance note:
 
 - the active V2 catalog currently contains 50 sets;
 - external verification is tracked separately in `data/catalog_active_research.json`;
-- 30 sets have been audited in FASE DATA-1;
-- 6 sets are externally verified, and 24 are blocked or need review because sources disagree with the seed catalog.
+- 40 sets have been audited in FASE DATA-1;
+- 6 sets are externally verified, and 34 are blocked or need review because sources disagree with the seed catalog.
 
 Current V2 progress:
 
@@ -260,8 +260,8 @@ V2 contains 50 active catalog rows and 250 seed price snapshots. The app now sep
 Current V2 evidence status:
 
 - `active_catalog_verified_sets: 6`
-- `active_catalog_evidence_started_sets: 30`
-- `active_catalog_blocked_sets: 24`
+- `active_catalog_evidence_started_sets: 40`
+- `active_catalog_blocked_sets: 34`
 - `market_data_source_status: partially_verified`
 - evidence file: `data/catalog_active_research.json`
 

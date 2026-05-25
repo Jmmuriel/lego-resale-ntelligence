@@ -70,8 +70,8 @@ def test_market_data_quality_endpoint_returns_coverage_metrics():
     assert payload["metrics"]["catalog_plus_candidates"] == 50
     assert payload["metrics"]["candidate_catalog_coverage_pct"] == 100.0
     assert payload["metrics"]["active_catalog_verified_sets"] == 6
-    assert payload["metrics"]["active_catalog_evidence_started_sets"] == 30
-    assert payload["metrics"]["active_catalog_blocked_sets"] == 24
+    assert payload["metrics"]["active_catalog_evidence_started_sets"] == 40
+    assert payload["metrics"]["active_catalog_blocked_sets"] == 34
     assert payload["metrics"]["market_data_source_status"] == "partially_verified"
     assert any(
         warning["code"] == "ACTIVE_CATALOG_UNVERIFIED"

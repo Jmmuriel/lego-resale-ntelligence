@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 30/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
+  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 40/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -2942,6 +2942,1019 @@
         }
       ],
       "recommended_action": "Count as verified external evidence for V2 data maturity."
+    },
+    {
+      "set_id": "10297",
+      "name": "Boutique Hotel",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2025 retirement while catalog marks 2024; BrickRanker also reports 3068 pieces while Brickset/catalog show 3066.",
+      "year_released": 2022,
+      "year_retired": 2025,
+      "retail_price_eur": 229.99,
+      "pieces": 3066,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2024,
+          "evidence_value": 2025,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2025 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 3066,
+          "evidence_value": 3068,
+          "severity": "review",
+          "note": "Brickset/catalog show 3066 pieces; BrickRanker shows 3068."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10297-1/boutique-hotel",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10297-1/Boutique-Hotel",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10297-1/boutique-hotel",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10297-1/Boutique-Hotel",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 254.773701,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 222.421485,
+          "currency": "USD",
+          "sales_count": 16
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 212.985422,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10220",
+      "name": "Volkswagen T1 Camper Van",
+      "theme": "Icons",
+      "verification_status": "needs_review_source_disagreement",
+      "audited_at": "2026-05-25",
+      "audit_summary": "External sources disagree strongly: BrickRanker shows 2020 retirement and 1333 pieces, Brickset shows 2012 exit and 1334 pieces, while catalog marks 2015 and 1332 pieces.",
+      "year_released": 2011,
+      "year_retired": 2020,
+      "retail_price_eur": 97.47,
+      "pieces": 1334,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2015,
+          "evidence_value": 2020,
+          "severity": "review",
+          "note": "BrickRanker shows 2020; Brickset shows 2012; catalog shows 2015."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 1332,
+          "evidence_value": 1334,
+          "severity": "review",
+          "note": "Brickset shows 1334, BrickRanker 1333, catalog 1332."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 119.99,
+          "evidence_value": 97.47,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 97.47 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10220-1/volkswagen-t1-camper-van",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10220-1/Volkswagen-T1-Camper-Van",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10220-1/volkswagen-t1-camper-van",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10220-1/Volkswagen-T1-Camper-Van",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 141.540945,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 150.977008,
+          "currency": "USD",
+          "sales_count": 6
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 159.065062,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10242",
+      "name": "MINI Cooper",
+      "theme": "Icons",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2015 retirement and EUR 89.99 RRP while catalog marks 2017 and EUR 99.99.",
+      "year_released": 2014,
+      "year_retired": 2015,
+      "retail_price_eur": 89.99,
+      "pieces": 1077,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2017,
+          "evidence_value": 2015,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show August 2015 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 99.99,
+          "evidence_value": 89.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 89.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10242-1/mini-cooper",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10242-1/MINI-Cooper",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10242-1/mini-cooper",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10242-1/MINI-Cooper",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 163.109089,
+          "currency": "USD",
+          "sales_count": 3
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 210.289404,
+          "currency": "USD",
+          "sales_count": 6
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 200.853341,
+          "currency": "USD",
+          "sales_count": 5
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10248",
+      "name": "Ferrari F40",
+      "theme": "Icons",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Lifecycle and pieces align, but BrickRanker/Brickset show EUR 89.99 RRP while catalog has EUR 99.99.",
+      "year_released": 2015,
+      "year_retired": 2017,
+      "retail_price_eur": 89.99,
+      "pieces": 1158,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 99.99,
+          "evidence_value": 89.99,
+          "severity": "blocking",
+          "note": "BrickRanker/Brickset show EUR 89.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10248-1/ferrari-f40",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10248-1/Ferrari-F40",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10248-1/ferrari-f40",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10248-1/Ferrari-F40",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 319.478133,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 312.738088,
+          "currency": "USD",
+          "sales_count": 3
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 359.918403,
+          "currency": "USD",
+          "sales_count": 3
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10252",
+      "name": "Volkswagen Beetle",
+      "theme": "Icons",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2020 retirement and lower EUR RRP while catalog marks 2019 and EUR 99.99.",
+      "year_released": 2016,
+      "year_retired": 2020,
+      "retail_price_eur": 87.72,
+      "pieces": 1167,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2019,
+          "evidence_value": 2020,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2020 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 99.99,
+          "evidence_value": 87.72,
+          "severity": "review",
+          "note": "Brickset shows EUR 87.72; BrickRanker shows EUR 89.99."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10252-1/volkswagen-beetle",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10252-1/Volkswagen-Beetle",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10252-1/volkswagen-beetle",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10252-1/Volkswagen-Beetle",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 140.192936,
+          "currency": "USD",
+          "sales_count": 12
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 122.668819,
+          "currency": "USD",
+          "sales_count": 27
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 144.236963,
+          "currency": "USD",
+          "sales_count": 3
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10258",
+      "name": "London Bus",
+      "theme": "Icons",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2021 retirement and EUR 119.99 RRP while catalog marks 2020 and EUR 109.99.",
+      "year_released": 2017,
+      "year_retired": 2021,
+      "retail_price_eur": 119.99,
+      "pieces": 1686,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2020,
+          "evidence_value": 2021,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2021 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 109.99,
+          "evidence_value": 119.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 119.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10258-1/london-bus",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10258-1/London-Bus",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10258-1/london-bus",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10258-1/London-Bus",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 129.408864,
+          "currency": "USD",
+          "sales_count": 9
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 128.060855,
+          "currency": "USD",
+          "sales_count": 9
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 142.888954,
+          "currency": "USD",
+          "sales_count": 8
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10262",
+      "name": "James Bond Aston Martin DB5",
+      "theme": "Icons",
+      "verification_status": "needs_review_source_disagreement",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Lifecycle and RRP align, but BrickRanker reports 1297 pieces while Brickset/catalog show 1295.",
+      "year_released": 2018,
+      "year_retired": 2021,
+      "retail_price_eur": 149.99,
+      "pieces": 1295,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "pieces",
+          "catalog_value": 1295,
+          "evidence_value": 1297,
+          "severity": "review",
+          "note": "Brickset/catalog show 1295 pieces; BrickRanker shows 1297."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10262-1/james-bond-aston-martin-db5",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10262-1/James-Bond-Aston-Martin-DB5",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10262-1/james-bond-aston-martin-db5",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10262-1/James-Bond-Aston-Martin-DB5",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 211.637413,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 215.68144,
+          "currency": "USD",
+          "sales_count": 14
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 208.941395,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "21310",
+      "name": "Old Fishing Store",
+      "theme": "Ideas",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2018 retirement while catalog marks 2019; BrickRanker also reports 2057 pieces while Brickset/catalog show 2049.",
+      "year_released": 2017,
+      "year_retired": 2018,
+      "retail_price_eur": 149.99,
+      "pieces": 2049,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2019,
+          "evidence_value": 2018,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2018 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2049,
+          "evidence_value": 2057,
+          "severity": "review",
+          "note": "Brickset/catalog show 2049 pieces; BrickRanker shows 2057."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/21310-1/old-fishing-store",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/21310-1/Old-Fishing-Store",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/21310-1/old-fishing-store",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/21310-1/Old-Fishing-Store",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 440.798943,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 430.014871,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 451.583015,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "21318",
+      "name": "Tree House",
+      "theme": "Ideas",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2024 retirement and EUR 249.99 RRP while catalog marks 2022 and EUR 199.99.",
+      "year_released": 2019,
+      "year_retired": 2024,
+      "retail_price_eur": 249.99,
+      "pieces": 3036,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2022,
+          "evidence_value": 2024,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2024 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 199.99,
+          "evidence_value": 249.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 249.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/21318-1/tree-house",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/21318-1/Tree-House",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/21318-1/tree-house",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/21318-1/Tree-House",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 186.025242,
+          "currency": "USD",
+          "sales_count": 16
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 188.72126,
+          "currency": "USD",
+          "sales_count": 17
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 194.113296,
+          "currency": "USD",
+          "sales_count": 2
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "21322",
+      "name": "Pirates of Barracuda Bay",
+      "theme": "Ideas",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2021 retirement while catalog marks 2022; BrickRanker reports 2546 pieces while Brickset/catalog show 2545.",
+      "year_released": 2020,
+      "year_retired": 2021,
+      "retail_price_eur": 199.99,
+      "pieces": 2545,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2022,
+          "evidence_value": 2021,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2021 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2545,
+          "evidence_value": 2546,
+          "severity": "review",
+          "note": "Brickset/catalog show 2545 pieces; BrickRanker shows 2546."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/21322-1/pirates-of-barracuda-bay",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/21322-1/Pirates-of-Barracuda-Bay",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/21322-1/pirates-of-barracuda-bay",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/21322-1/Pirates-of-Barracuda-Bay",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 342.394286,
+          "currency": "USD",
+          "sales_count": 15
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 345.090304,
+          "currency": "USD",
+          "sales_count": 15
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 396.314646,
+          "currency": "USD",
+          "sales_count": 2
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
     }
   ]
 }

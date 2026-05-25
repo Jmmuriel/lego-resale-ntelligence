@@ -8,7 +8,7 @@ Avance contra la guia completa: **90/100**
 
 La V2 esta lista como demo local avanzada, proyecto de portfolio ensenable y demo publica Railway/Vercel.
 
-No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, y una primera tanda de auditoria real con 30 sets revisados.
+No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, y una primera tanda de auditoria real con 40 sets revisados.
 
 ## Que esta hecho
 
@@ -61,8 +61,8 @@ Porque el catalogo de 50 sets todavia no esta verificado con evidencias externas
 Estado actual:
 
 - `active_catalog_verified_sets`: 6
-- `active_catalog_evidence_started_sets`: 30
-- `active_catalog_blocked_sets`: 24
+- `active_catalog_evidence_started_sets`: 40
+- `active_catalog_blocked_sets`: 34
 - `market_data_source_status`: `partially_verified`
 
 Primeros sets auditados en FASE DATA-1:
@@ -72,7 +72,7 @@ Primeros sets auditados en FASE DATA-1:
 
 ## Lo que falta para 100/100
 
-1. Verificar los 20 sets restantes con evidencias reales.
+1. Verificar los 10 sets restantes con evidencias reales.
 2. Resolver discrepancias de `75192`, `21309`, `10214`, `10179` y `10030`.
 3. Opcional: activar Railway Postgres y migraciones.
 4. Mantener el smoke test publico despues de cada deploy.
