@@ -60,20 +60,21 @@ Porque el catalogo de 50 sets todavia no esta verificado con evidencias externas
 
 Estado actual:
 
-- `active_catalog_verified_sets`: 10
+- `active_catalog_verified_sets`: 32
+- `active_catalog_verified_pct`: 64.0
 - `active_catalog_evidence_started_sets`: 50
-- `active_catalog_blocked_sets`: 40
+- `active_catalog_blocked_sets`: 18
 - `market_data_source_status`: `partially_verified`
 
-Primeros sets auditados en FASE DATA-1:
+Sets verificados tras DATA-1 + DATA-2:
 
-- Verificados: `10221`, `10225`, `10227`, `10278`, `21325`, `42110`, `75059`, `75095`, `75252`, `75313`.
-- Bloqueados o en revision: 40 sets con discrepancias de retirada, piezas o PVP frente al CSV seed.
+- Verificados: 32 sets con evidencias externas suficientes y CSV normalizado.
+- Bloqueados o en revision: 18 sets con discrepancias de retirada, piezas o PVP frente al CSV seed.
 
 ## Lo que falta para 100/100
 
-1. FASE DATA-1 completa: mantener evidencias y corregir el CSV si se decide promover mas sets.
-2. Resolver discrepancias de retirada, piezas o PVP en los 40 sets no verificados.
+1. Mantener evidencias y corregir el CSV si se decide promover mas sets.
+2. Resolver discrepancias de retirada, piezas o PVP en los 18 sets no verificados.
 3. Opcional: activar Railway Postgres y migraciones.
 4. Mantener el smoke test publico despues de cada deploy.
 

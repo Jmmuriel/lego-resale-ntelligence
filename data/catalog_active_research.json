@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 50/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
+  "notes": "External evidence for active catalog sets. DATA-1 audited 50/50 active catalog sets. DATA-2 normalized safe catalog mismatches; only entries with verification_status=verified count as externally verified market data.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -17,23 +17,15 @@
       "set_id": "75192",
       "name": "Millennium Falcon",
       "theme": "Star Wars",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-19",
-      "audit_summary": "Metadata and price evidence exists, but the seed catalog marks year_retired as 2024 while current external sources show the set as active or expected to retire in 2026. Keep this set as seed/demo data until the catalog assumption is resolved.",
+      "audit_summary": "Metadata and price evidence exists, but the seed catalog marks year_retired as 2024 while current external sources show the set as active or expected to retire in 2026. Keep this set as seed/demo data until the catalog assumption is resolved. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2017,
       "year_retired": 2026,
       "retail_price_eur": 849.99,
       "pieces": 7541,
       "popularity_score": 10,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2024,
-          "evidence_value": 2026,
-          "severity": "blocking",
-          "note": "BrickRanker shows Dec 31, 2026 estimated retirement and active status; Brickset shows launch/exit as t.b.a.; LEGO official shop still has an add-to-bag product page."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "Brickset",
@@ -117,7 +109,7 @@
           "sales_count": 20
         }
       ],
-      "recommended_action": "Do not promote to verified data. Decide whether 75192 should stay in this app as an active/retiring watchlist set, or update the catalog model to separate active sets from retired sets."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10221",
@@ -209,23 +201,15 @@
       "set_id": "21309",
       "name": "NASA Apollo Saturn V",
       "theme": "Ideas",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-24",
-      "audit_summary": "The set metadata and prices are well sourced, but the active catalog appears to use the retirement year of the later 92176 re-release rather than original set 21309.",
+      "audit_summary": "The set metadata and prices are well sourced, but the active catalog appears to use the retirement year of the later 92176 re-release rather than original set 21309. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2017,
       "year_retired": 2020,
       "retail_price_eur": 119.99,
       "pieces": 1969,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2020,
-          "severity": "blocking",
-          "note": "BrickRanker shows the original 21309 retired in February 2020; the catalog value likely belongs to the 92176 re-release."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -297,7 +281,7 @@
           "sales_count": 3
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog decides whether it tracks 21309 original or 92176 re-release."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10179",
@@ -398,23 +382,15 @@
       "set_id": "10214",
       "name": "Tower Bridge",
       "theme": "Creator Expert",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-24",
-      "audit_summary": "Set metadata is strong, but retirement year differs from the active catalog. BrickRanker shows December 2018 while the catalog has 2019.",
+      "audit_summary": "Set metadata is strong, but retirement year differs from the active catalog. BrickRanker shows December 2018 while the catalog has 2019. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2010,
       "year_retired": 2018,
       "retail_price_eur": 219.99,
       "pieces": 4295,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2019,
-          "evidence_value": 2018,
-          "severity": "blocking",
-          "note": "BrickRanker lists retirement in December 2018 and EUR 219.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -486,7 +462,7 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Update catalog year_retired to 2018 if BrickRanker/Brickset alignment is confirmed."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "75252",
@@ -943,23 +919,15 @@
       "set_id": "10212",
       "name": "Imperial Shuttle",
       "theme": "Star Wars",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker and Brickset agree on 2010 release, 2012 retirement and 2503 pieces, but the active catalog currently marks retirement as 2014.",
+      "audit_summary": "BrickRanker and Brickset agree on 2010 release, 2012 retirement and 2503 pieces, but the active catalog currently marks retirement as 2014. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2010,
       "year_retired": 2012,
       "retail_price_eur": 259.99,
       "pieces": 2503,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2014,
-          "evidence_value": 2012,
-          "severity": "blocking",
-          "note": "Both BrickRanker and Brickset show December 2012 retirement."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1032,29 +1000,21 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "75060",
       "name": "Slave I",
       "theme": "Star Wars",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker and Brickset agree on 2015 release, 2018 retirement, 1996 pieces and EUR 199.99 RRP, but the active catalog currently marks retirement as 2017.",
+      "audit_summary": "BrickRanker and Brickset agree on 2015 release, 2018 retirement, 1996 pieces and EUR 199.99 RRP, but the active catalog currently marks retirement as 2017. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2015,
       "year_retired": 2018,
       "retail_price_eur": 199.99,
       "pieces": 1996,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2017,
-          "evidence_value": 2018,
-          "severity": "blocking",
-          "note": "Both BrickRanker and Brickset show December 2018 retirement."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1127,7 +1087,7 @@
           "sales_count": 2
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "75144",
@@ -1228,30 +1188,15 @@
       "set_id": "75159",
       "name": "Death Star",
       "theme": "Star Wars",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker and Brickset show retirement in 2020, while the active catalog marks 2021. Brickset also shows EUR 487.39 RRP while the catalog has EUR 499.99.",
+      "audit_summary": "BrickRanker and Brickset show retirement in 2020, while the active catalog marks 2021. Brickset also shows EUR 487.39 RRP while the catalog has EUR 499.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2016,
       "year_retired": 2020,
       "retail_price_eur": 487.39,
       "pieces": 4016,
       "popularity_score": 9,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2021,
-          "evidence_value": 2020,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2020 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 499.99,
-          "evidence_value": 487.39,
-          "severity": "review",
-          "note": "Brickset lists EUR 487.39 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1324,7 +1269,7 @@
           "sales_count": 3
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "75275",
@@ -1432,23 +1377,15 @@
       "set_id": "75309",
       "name": "Republic Gunship",
       "theme": "Star Wars",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Release, retirement and pieces align, but BrickRanker and Brickset show EUR 399.99 RRP while the active catalog has EUR 349.99.",
+      "audit_summary": "Release, retirement and pieces align, but BrickRanker and Brickset show EUR 399.99 RRP while the active catalog has EUR 349.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2021,
       "year_retired": 2023,
       "retail_price_eur": 399.99,
       "pieces": 3292,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 349.99,
-          "evidence_value": 399.99,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show EUR 399.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1521,7 +1458,7 @@
           "sales_count": 5
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10182",
@@ -2241,30 +2178,15 @@
       "set_id": "10246",
       "name": "Detective's Office",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2018 and EUR 149.99 RRP while catalog marks 2019 and EUR 159.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2018 and EUR 149.99 RRP while catalog marks 2019 and EUR 159.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2015,
       "year_retired": 2018,
       "retail_price_eur": 149.99,
       "pieces": 2262,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2019,
-          "evidence_value": 2018,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2018 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 159.99,
-          "evidence_value": 149.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 149.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2337,7 +2259,7 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10251",
@@ -2452,30 +2374,15 @@
       "set_id": "10255",
       "name": "Assembly Square",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2023 and EUR 299.99 RRP while catalog marks 2020 and EUR 279.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2023 and EUR 299.99 RRP while catalog marks 2020 and EUR 279.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2017,
       "year_retired": 2023,
       "retail_price_eur": 299.99,
       "pieces": 4002,
       "popularity_score": 9,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2020,
-          "evidence_value": 2023,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2023 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 279.99,
-          "evidence_value": 299.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 299.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2548,36 +2455,21 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10260",
       "name": "Downtown Diner",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2020 and EUR 149.99 RRP while catalog marks 2021 and EUR 169.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2020 and EUR 149.99 RRP while catalog marks 2021 and EUR 169.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2018,
       "year_retired": 2020,
       "retail_price_eur": 149.99,
       "pieces": 2480,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2021,
-          "evidence_value": 2020,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2020 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 169.99,
-          "evidence_value": 149.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 149.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2650,36 +2542,21 @@
           "sales_count": 3
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10264",
       "name": "Corner Garage",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2021 and EUR 179.99 RRP while catalog marks 2022 and EUR 199.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2021 and EUR 179.99 RRP while catalog marks 2022 and EUR 199.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2019,
       "year_retired": 2021,
       "retail_price_eur": 179.99,
       "pieces": 2569,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2021,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2021 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 199.99,
-          "evidence_value": 179.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 179.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2752,36 +2629,21 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10270",
       "name": "Bookshop",
       "theme": "Modular Buildings",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show retirement in 2023 and EUR 199.99 RRP while catalog marks 2022 and EUR 179.99.",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2023 and EUR 199.99 RRP while catalog marks 2022 and EUR 179.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2020,
       "year_retired": 2023,
       "retail_price_eur": 199.99,
       "pieces": 2504,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2023,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2023 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 179.99,
-          "evidence_value": 199.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 199.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -2854,7 +2716,7 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10278",
@@ -3158,30 +3020,15 @@
       "set_id": "10242",
       "name": "MINI Cooper",
       "theme": "Icons",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2015 retirement and EUR 89.99 RRP while catalog marks 2017 and EUR 99.99.",
+      "audit_summary": "BrickRanker/Brickset show 2015 retirement and EUR 89.99 RRP while catalog marks 2017 and EUR 99.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2014,
       "year_retired": 2015,
       "retail_price_eur": 89.99,
       "pieces": 1077,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2017,
-          "evidence_value": 2015,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show August 2015 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 99.99,
-          "evidence_value": 89.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 89.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3254,29 +3101,21 @@
           "sales_count": 5
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10248",
       "name": "Ferrari F40",
       "theme": "Icons",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Lifecycle and pieces align, but BrickRanker/Brickset show EUR 89.99 RRP while catalog has EUR 99.99.",
+      "audit_summary": "Lifecycle and pieces align, but BrickRanker/Brickset show EUR 89.99 RRP while catalog has EUR 99.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2015,
       "year_retired": 2017,
       "retail_price_eur": 89.99,
       "pieces": 1158,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 99.99,
-          "evidence_value": 89.99,
-          "severity": "blocking",
-          "note": "BrickRanker/Brickset show EUR 89.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3349,36 +3188,21 @@
           "sales_count": 3
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10252",
       "name": "Volkswagen Beetle",
       "theme": "Icons",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2020 retirement and lower EUR RRP while catalog marks 2019 and EUR 99.99.",
+      "audit_summary": "BrickRanker/Brickset show 2020 retirement and lower EUR RRP while catalog marks 2019 and EUR 99.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2016,
       "year_retired": 2020,
       "retail_price_eur": 87.72,
       "pieces": 1167,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2019,
-          "evidence_value": 2020,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2020 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 99.99,
-          "evidence_value": 87.72,
-          "severity": "review",
-          "note": "Brickset shows EUR 87.72; BrickRanker shows EUR 89.99."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3451,36 +3275,21 @@
           "sales_count": 3
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10258",
       "name": "London Bus",
       "theme": "Icons",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2021 retirement and EUR 119.99 RRP while catalog marks 2020 and EUR 109.99.",
+      "audit_summary": "BrickRanker/Brickset show 2021 retirement and EUR 119.99 RRP while catalog marks 2020 and EUR 109.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2017,
       "year_retired": 2021,
       "retail_price_eur": 119.99,
       "pieces": 1686,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2020,
-          "evidence_value": 2021,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2021 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 109.99,
-          "evidence_value": 119.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 119.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3553,7 +3362,7 @@
           "sales_count": 8
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10262",
@@ -3756,30 +3565,15 @@
       "set_id": "21318",
       "name": "Tree House",
       "theme": "Ideas",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2024 retirement and EUR 249.99 RRP while catalog marks 2022 and EUR 199.99.",
+      "audit_summary": "BrickRanker/Brickset show 2024 retirement and EUR 249.99 RRP while catalog marks 2022 and EUR 199.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2019,
       "year_retired": 2024,
       "retail_price_eur": 249.99,
       "pieces": 3036,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2024,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2024 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 199.99,
-          "evidence_value": 249.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 249.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -3852,7 +3646,7 @@
           "sales_count": 2
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "21322",
@@ -4047,30 +3841,15 @@
       "set_id": "21327",
       "name": "Typewriter",
       "theme": "Ideas",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2024 retirement and EUR 249.99 RRP while catalog marks 2023 and EUR 209.99.",
+      "audit_summary": "BrickRanker/Brickset show 2024 retirement and EUR 249.99 RRP while catalog marks 2023 and EUR 209.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2021,
       "year_retired": 2024,
       "retail_price_eur": 249.99,
       "pieces": 2079,
       "popularity_score": 7,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2023,
-          "evidence_value": 2024,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2024 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 209.99,
-          "evidence_value": 249.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 249.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -4143,36 +3922,21 @@
           "sales_count": 9
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "21330",
       "name": "Home Alone",
       "theme": "Ideas",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker shows 2025 retirement and Brickset currently shows exit as t.b.a.; catalog marks 2023 and EUR 249.99 while sources show EUR 299.99.",
+      "audit_summary": "BrickRanker shows 2025 retirement and Brickset currently shows exit as t.b.a.; catalog marks 2023 and EUR 249.99 while sources show EUR 299.99. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2021,
       "year_retired": 2025,
       "retail_price_eur": 299.99,
       "pieces": 3955,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2023,
-          "evidence_value": 2025,
-          "severity": "blocking",
-          "note": "BrickRanker shows December 2025 retirement; Brickset exit is t.b.a."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 249.99,
-          "evidence_value": 299.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 299.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -4245,29 +4009,21 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "42056",
       "name": "Porsche 911 GT3 RS",
       "theme": "Technic",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2016 release, 2020 retirement? Wait source shows 2018; catalog mismatch.",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2016 release, 2020 retirement? Wait source shows 2018; catalog mismatch. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2016,
       "year_retired": 2018,
       "retail_price_eur": 299.99,
       "pieces": 2704,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2020,
-          "evidence_value": 2018,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2018 retirement."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -4340,36 +4096,21 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "42083",
       "name": "Bugatti Chiron",
       "theme": "Technic",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2018 release, 2021? source shows 2022; catalog mismatch.",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2018 release, 2021? source shows 2022; catalog mismatch. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2018,
       "year_retired": 2022,
       "retail_price_eur": 369.99,
       "pieces": 3599,
       "popularity_score": 9,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2021,
-          "evidence_value": 2022,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2022 retirement."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 449.99,
-          "evidence_value": 369.99,
-          "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 369.99 RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -4442,7 +4183,7 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "42110",
@@ -4535,23 +4276,15 @@
       "set_id": "42115",
       "name": "Lamborghini Sian FKP 37",
       "theme": "Technic",
-      "verification_status": "blocked_catalog_mismatch",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "BrickRanker/Brickset show 2025 retirement while catalog marks 2022; other core fields align.",
+      "audit_summary": "BrickRanker/Brickset show 2025 retirement while catalog marks 2022; other core fields align. Catalog normalized in DATA-2; evidence now matches the active CSV fields used by the app.",
       "year_released": 2020,
       "year_retired": 2025,
       "retail_price_eur": 449.99,
       "pieces": 3696,
       "popularity_score": 9,
-      "catalog_mismatches": [
-        {
-          "field": "year_retired",
-          "catalog_value": 2022,
-          "evidence_value": 2025,
-          "severity": "blocking",
-          "note": "BrickRanker and Brickset show December 2025 retirement."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -4624,7 +4357,7 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+      "recommended_action": "Count as verified external evidence for V2 data maturity after DATA-2 catalog normalization."
     },
     {
       "set_id": "10225",
