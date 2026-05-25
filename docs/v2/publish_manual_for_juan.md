@@ -48,7 +48,7 @@ sh scripts/v2_boot_api.sh
 ```env
 ANTHROPIC_API_KEY=
 ANTHROPIC_MODEL=claude-haiku-4-5-20251001
-BACKEND_CORS_ORIGINS=https://TU-WEB-DE-VERCEL.vercel.app
+BACKEND_CORS_ORIGINS=https://lego-resale-ntelligence.vercel.app
 V2_RUN_MIGRATIONS=0
 V2_SEED_DATABASE=0
 ```
@@ -102,7 +102,7 @@ npm run build
 6. Añadir variable:
 
 ```env
-NEXT_PUBLIC_API_URL=https://TU-API-DE-RAILWAY.up.railway.app
+NEXT_PUBLIC_API_URL=https://lego-resale-ntelligence-production.up.railway.app
 ```
 
 ## Paso 4 - Conectar Railway y Vercel
@@ -110,13 +110,13 @@ NEXT_PUBLIC_API_URL=https://TU-API-DE-RAILWAY.up.railway.app
 Cuando Vercel ya tenga URL final, volver a Railway y actualizar:
 
 ```env
-BACKEND_CORS_ORIGINS=https://TU-WEB-DE-VERCEL.vercel.app
+BACKEND_CORS_ORIGINS=https://lego-resale-ntelligence.vercel.app
 ```
 
 Si se usa dominio propio, añadir ese dominio tambien separado por coma:
 
 ```env
-BACKEND_CORS_ORIGINS=https://TU-WEB-DE-VERCEL.vercel.app,https://tudominio.com
+BACKEND_CORS_ORIGINS=https://lego-resale-ntelligence.vercel.app,https://tudominio.com
 ```
 
 ## Paso 5 - Probar publicacion
@@ -124,8 +124,8 @@ BACKEND_CORS_ORIGINS=https://TU-WEB-DE-VERCEL.vercel.app,https://tudominio.com
 Cuando tengas las dos URLs:
 
 ```bash
-API_URL=https://TU-API-DE-RAILWAY.up.railway.app \
-WEB_URL=https://TU-WEB-DE-VERCEL.vercel.app \
+API_URL=https://lego-resale-ntelligence-production.up.railway.app \
+WEB_URL=https://lego-resale-ntelligence.vercel.app \
 sh scripts/v2_deploy_smoke.sh
 ```
 
@@ -148,4 +148,3 @@ No decir todavia:
 - Probar URLs publicas con `scripts/v2_deploy_smoke.sh`.
 - Decidir si `75192` debe estar como set activo/retiring o retirado.
 - Verificar mas sets con fuentes reales.
-

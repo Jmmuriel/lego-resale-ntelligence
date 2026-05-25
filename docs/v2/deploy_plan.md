@@ -54,7 +54,7 @@ Output:
 Variable:
 
 ```env
-NEXT_PUBLIC_API_URL=https://your-api-domain.example.com
+NEXT_PUBLIC_API_URL=https://lego-resale-ntelligence-production.up.railway.app
 ```
 
 Si se importa el repo completo en Vercel, configurar **Root Directory** como:
