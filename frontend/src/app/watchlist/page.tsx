@@ -1,6 +1,8 @@
 import WatchlistDesk from "@/components/WatchlistDesk";
 import { getWatchlist } from "@/lib/api";
 
+export const dynamic = "force-dynamic";
+
 export default async function WatchlistPage() {
   const records = await getWatchlist(50);
 

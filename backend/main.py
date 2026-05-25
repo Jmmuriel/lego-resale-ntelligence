@@ -9,6 +9,7 @@ from backend.routers import analyze, briefings, market, portfolio, watchlist
 APP_TITLE = "LEGO Resale Intelligence API"
 APP_VERSION = "0.1.0"
 DEFAULT_CORS_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
+PUBLIC_CORS_ORIGINS = ["https://lego-resale-ntelligence.vercel.app"]
 
 
 def create_app() -> FastAPI:
@@ -39,7 +40,9 @@ def create_app() -> FastAPI:
 def _get_cors_origins() -> list[str]:
     raw_origins = os.getenv("BACKEND_CORS_ORIGINS", "")
     configured = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
-    return configured or DEFAULT_CORS_ORIGINS
+    if configured:
+        return configured
+    return [*DEFAULT_CORS_ORIGINS, *PUBLIC_CORS_ORIGINS]
 
 
 app = create_app()

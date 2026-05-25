@@ -1,5 +1,7 @@
 import { getDataQualityReport, getLatestBriefing, getMarketTrends, getPortfolio } from "@/lib/api";
 
+export const dynamic = "force-dynamic";
+
 function eur(value: number) {
   return new Intl.NumberFormat("en-GB", {
     style: "currency",

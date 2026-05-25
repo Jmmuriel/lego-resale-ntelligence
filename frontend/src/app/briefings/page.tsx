@@ -1,5 +1,7 @@
 import { getLatestBriefing } from "@/lib/api";
 
+export const dynamic = "force-dynamic";
+
 export default async function BriefingsPage() {
   const briefings = await getLatestBriefing();
   const briefing = briefings[0];

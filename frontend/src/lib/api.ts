@@ -14,7 +14,28 @@ import type {
   WatchlistStatus
 } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
+const LOCAL_API_URL = "http://127.0.0.1:8000";
+const PUBLIC_API_URL = "https://lego-resale-ntelligence-production.up.railway.app";
+
+function getApiUrl(): string {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+
+  if (process.env.VERCEL === "1") {
+    return PUBLIC_API_URL;
+  }
+
+  if (typeof window !== "undefined") {
+    const hostname = window.location.hostname;
+    if (hostname === "localhost" || hostname === "127.0.0.1") {
+      return LOCAL_API_URL;
+    }
+    return PUBLIC_API_URL;
+  }
+
+  return LOCAL_API_URL;
+}
 
 export class ApiError extends Error {
   status: number;
@@ -27,14 +48,23 @@ export class ApiError extends Error {
 }
 
 async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...init?.headers
-    },
-    cache: "no-store"
-  });
+  let response: Response;
+
+  try {
+    response = await fetch(`${getApiUrl()}${path}`, {
+      ...init,
+      headers: {
+        "Content-Type": "application/json",
+        ...init?.headers
+      },
+      cache: "no-store"
+    });
+  } catch (error) {
+    throw new ApiError(
+      0,
+      "Could not reach the LEGO Resale Intelligence API. Please try the demo opportunity, or retry in a moment if the Railway backend is waking up."
+    );
+  }
 
   if (!response.ok) {
     const detail = await response.text();

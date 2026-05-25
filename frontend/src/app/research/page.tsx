@@ -1,6 +1,8 @@
 import { getActiveCatalogEvidence, getCatalogCandidates, getDataQualityReport } from "@/lib/api";
 import ResearchQueue from "@/components/ResearchQueue";
 
+export const dynamic = "force-dynamic";
+
 export default async function ResearchPage() {
   const [candidates, dataQuality, activeEvidence] = await Promise.all([
     getCatalogCandidates(),

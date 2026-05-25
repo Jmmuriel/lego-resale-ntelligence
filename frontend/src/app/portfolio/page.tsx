@@ -1,6 +1,8 @@
 import { getPortfolio } from "@/lib/api";
 import AddPositionPanel from "@/components/AddPositionPanel";
 
+export const dynamic = "force-dynamic";
+
 function eur(value: number) {
   return new Intl.NumberFormat("en-GB", {
     style: "currency",
