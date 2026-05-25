@@ -8,7 +8,7 @@ Avance contra la guia completa: **90/100**
 
 La V2 esta lista como demo local avanzada, proyecto de portfolio ensenable y demo publica Railway/Vercel.
 
-No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, y una auditoria real DATA-1 completa con 50 sets revisados.
+No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, una auditoria real DATA-1 completa con 50 sets revisados y DATA-2 normalizado para 32 sets verificados.
 
 ## Que esta hecho
 

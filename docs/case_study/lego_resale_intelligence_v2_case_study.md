@@ -91,9 +91,9 @@ Current status:
 
 - 50 active catalog sets;
 - 250 seed price snapshots;
-- 50 active evidence audits completed in FASE DATA-1;
-- 10 externally verified active sets;
-- 40 blocked or under review because sources disagree with the seed catalog.
+- 50 active evidence audits completed in DATA-1;
+- 32 externally verified active sets after DATA-2 catalog normalization;
+- 18 blocked or under review because sources disagree with the seed catalog.
 
 This means the project can be presented as a partially verified seed-backed prototype, but not as a fully verified live market data platform yet.
 
@@ -113,15 +113,15 @@ The Research page displays the audit log directly in the UI.
 
 ## Example Audit Finding
 
-Set `75192` had enough metadata and pricing source candidates to start an evidence review, but it was not promoted to verified status.
+Set `75192` started as a useful audit finding because the seed catalog did not match external evidence.
 
 Reason:
 
 - the seed catalog marks `year_retired = 2024`;
 - external sources indicate active status or estimated retirement in 2026;
-- therefore the app keeps it as seed/demo data until the catalog assumption is resolved.
+- DATA-2 normalized the active catalog to the evidence-backed value used by the app.
 
-This is a useful portfolio point: the system does not just collect data; it prevents unsafe claims.
+This is a useful portfolio point: the system does not just collect data; it shows when catalog assumptions need to be corrected before public claims are made.
 
 ## Deployment Readiness
 
@@ -161,13 +161,11 @@ The most important engineering decision was data honesty. Instead of claiming th
 
 ## Remaining Work
 
-- Publish backend on Railway.
-- Publish frontend on Vercel.
-- Decide whether active/retiring sets belong in the same catalog as retired sets.
-- Resolve the `75192` retirement-date mismatch.
-- Add verified evidence for more sets.
+- Resolve the 18 remaining blocked or review-needed catalog evidence entries.
+- Decide whether active/retiring sets need a separate lifecycle model from retired sets.
+- Add verified evidence for the remaining sets.
 - Move from seed/demo price history to externally sourced market snapshots.
-- Turn the Markdown case study into a final visual PDF/web case study.
+- Refresh any exported PDF/screenshots after final copy changes.
 
 ## Honest Positioning
 
