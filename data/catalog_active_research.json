@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 20/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
+  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 30/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -1923,6 +1923,1025 @@
         }
       ],
       "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10218",
+      "name": "Pet Shop",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2016 while catalog marks 2013; piece count differs between BrickRanker and Brickset/catalog.",
+      "year_released": 2011,
+      "year_retired": 2016,
+      "retail_price_eur": 149.99,
+      "pieces": 2032,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2013,
+          "evidence_value": 2016,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2016 retirement."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2032,
+          "evidence_value": 2034,
+          "severity": "review",
+          "note": "Brickset/catalog show 2032 pieces; BrickRanker shows 2034."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10218-1/pet-shop",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10218-1/Pet-Shop",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10218-1/pet-shop",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10218-1/Pet-Shop",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 272.297818,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 274.993836,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 281.733881,
+          "currency": "USD",
+          "sales_count": 2
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10224",
+      "name": "Town Hall",
+      "theme": "Modular Buildings",
+      "verification_status": "needs_review_source_disagreement",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Retirement year aligns, but BrickRanker shows 2772 pieces while Brickset/catalog show 2766; EU RRP is not available in the downloaded Brickset/BrickRanker HTML.",
+      "year_released": 2012,
+      "year_retired": 2014,
+      "retail_price_eur": 199.99,
+      "pieces": 2766,
+      "popularity_score": 9,
+      "catalog_mismatches": [
+        {
+          "field": "pieces",
+          "catalog_value": 2766,
+          "evidence_value": 2772,
+          "severity": "review",
+          "note": "Brickset/catalog show 2766 pieces; BrickRanker shows 2772."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 199.99,
+          "evidence_value": null,
+          "severity": "review",
+          "note": "Downloaded sources provide USD/GBP RRP but not a direct EUR RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10224-1/town-hall",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10224-1/Town-Hall",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10224-1/town-hall",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10224-1/Town-Hall",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 784.541238,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 758.929067,
+          "currency": "USD",
+          "sales_count": 4
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 1029.878876,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10232",
+      "name": "Palace Cinema",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2017 and EUR 139.99 RRP while catalog marks 2015 and EUR 149.99.",
+      "year_released": 2013,
+      "year_retired": 2017,
+      "retail_price_eur": 139.99,
+      "pieces": 2196,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2015,
+          "evidence_value": 2017,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2017 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 149.99,
+          "evidence_value": 139.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 139.99 RRP."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2196,
+          "evidence_value": 2194,
+          "severity": "review",
+          "note": "Brickset/catalog show 2196 pieces; BrickRanker shows 2194."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10232-1/palace-cinema",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10232-1/Palace-Cinema",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10232-1/palace-cinema",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10232-1/Palace-Cinema",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 434.058898,
+          "currency": "USD",
+          "sales_count": 5
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 339.698268,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 393.618628,
+          "currency": "USD",
+          "sales_count": 2
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10246",
+      "name": "Detective's Office",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2018 and EUR 149.99 RRP while catalog marks 2019 and EUR 159.99.",
+      "year_released": 2015,
+      "year_retired": 2018,
+      "retail_price_eur": 149.99,
+      "pieces": 2262,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2019,
+          "evidence_value": 2018,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2018 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 159.99,
+          "evidence_value": 149.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 149.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10246-1/detective-s-office",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10246-1/Detective-s-Office",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10246-1/detective-s-office",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10246-1/Detective-s-Office",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 458.32306,
+          "currency": "USD",
+          "sales_count": 6
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 370.702475,
+          "currency": "USD",
+          "sales_count": 5
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 469.107132,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10251",
+      "name": "Brick Bank",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2018 and EUR 149.99 RRP while catalog marks 2019 and EUR 169.99.",
+      "year_released": 2016,
+      "year_retired": 2018,
+      "retail_price_eur": 149.99,
+      "pieces": 2380,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2019,
+          "evidence_value": 2018,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2018 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 169.99,
+          "evidence_value": 149.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 149.99 RRP."
+        },
+        {
+          "field": "pieces",
+          "catalog_value": 2380,
+          "evidence_value": 2384,
+          "severity": "review",
+          "note": "Brickset/catalog show 2380 pieces; BrickRanker shows 2384."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10251-1/brick-bank",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10251-1/Brick-Bank",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10251-1/brick-bank",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10251-1/Brick-Bank",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 621.432149,
+          "currency": "USD",
+          "sales_count": 6
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 572.903825,
+          "currency": "USD",
+          "sales_count": 7
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 698.268662,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10255",
+      "name": "Assembly Square",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2023 and EUR 299.99 RRP while catalog marks 2020 and EUR 279.99.",
+      "year_released": 2017,
+      "year_retired": 2023,
+      "retail_price_eur": 299.99,
+      "pieces": 4002,
+      "popularity_score": 9,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2020,
+          "evidence_value": 2023,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2023 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 279.99,
+          "evidence_value": 299.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 299.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10255-1/assembly-square",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10255-1/Assembly-Square",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10255-1/assembly-square",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10255-1/Assembly-Square",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 285.777908,
+          "currency": "USD",
+          "sales_count": 19
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 305.998043,
+          "currency": "USD",
+          "sales_count": 23
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 307.346052,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10260",
+      "name": "Downtown Diner",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2020 and EUR 149.99 RRP while catalog marks 2021 and EUR 169.99.",
+      "year_released": 2018,
+      "year_retired": 2020,
+      "retail_price_eur": 149.99,
+      "pieces": 2480,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2021,
+          "evidence_value": 2020,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2020 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 169.99,
+          "evidence_value": 149.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 149.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10260-1/downtown-diner",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10260-1/Downtown-Diner",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10260-1/downtown-diner",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10260-1/Downtown-Diner",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 331.610214,
+          "currency": "USD",
+          "sales_count": 28
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 324.870169,
+          "currency": "USD",
+          "sales_count": 16
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 331.610214,
+          "currency": "USD",
+          "sales_count": 3
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10264",
+      "name": "Corner Garage",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2021 and EUR 179.99 RRP while catalog marks 2022 and EUR 199.99.",
+      "year_released": 2019,
+      "year_retired": 2021,
+      "retail_price_eur": 179.99,
+      "pieces": 2569,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2022,
+          "evidence_value": 2021,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2021 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 199.99,
+          "evidence_value": 179.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 179.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10264-1/corner-garage",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10264-1/Corner-Garage",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10264-1/corner-garage",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10264-1/Corner-Garage",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 260.165737,
+          "currency": "USD",
+          "sales_count": 17
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 274.993836,
+          "currency": "USD",
+          "sales_count": 15
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 256.12171,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10270",
+      "name": "Bookshop",
+      "theme": "Modular Buildings",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show retirement in 2023 and EUR 199.99 RRP while catalog marks 2022 and EUR 179.99.",
+      "year_released": 2020,
+      "year_retired": 2023,
+      "retail_price_eur": 199.99,
+      "pieces": 2504,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2022,
+          "evidence_value": 2023,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2023 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 179.99,
+          "evidence_value": 199.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 199.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10270-1/bookshop",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10270-1/Bookshop",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10270-1/bookshop",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10270-1/Bookshop",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 222.421485,
+          "currency": "USD",
+          "sales_count": 25
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 206.245377,
+          "currency": "USD",
+          "sales_count": 18
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 163.109089,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10278",
+      "name": "Police Station",
+      "theme": "Modular Buildings",
+      "verification_status": "verified",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2021 release, 2023 retirement, EUR 199.99 RRP and 2923 pieces.",
+      "year_released": 2021,
+      "year_retired": 2023,
+      "retail_price_eur": 199.99,
+      "pieces": 2923,
+      "popularity_score": 8,
+      "catalog_mismatches": [],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10278-1/police-station",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10278-1/Police-Station",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10278-1/police-station",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10278-1/Police-Station",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 296.56198,
+          "currency": "USD",
+          "sales_count": 20
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 308.694061,
+          "currency": "USD",
+          "sales_count": 22
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 349.134331,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Count as verified external evidence for V2 data maturity."
     }
   ]
 }
