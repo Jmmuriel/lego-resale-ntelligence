@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </div>
             </div>
             <SidebarNav />
-            <div className="sidebar-footer">V2 · alpha · local</div>
+            <div className="sidebar-footer">V2 · public demo</div>
           </aside>
           <main className="main-stage">{children}</main>
         </div>

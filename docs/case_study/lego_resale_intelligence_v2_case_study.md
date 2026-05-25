@@ -1,28 +1,28 @@
 # LEGO Resale Intelligence V2 Case Study
 
-## One-line Summary
+## One-line summary
 
-LEGO Resale Intelligence evolved from a Streamlit URL analyzer into a product-style market intelligence dashboard with FastAPI, Next.js, portfolio P&L, seeded price history, research governance and deploy-ready architecture.
+LEGO Resale Intelligence evolved from a working Streamlit URL analyzer into a deployed collector intelligence product with FastAPI, Next.js, dynamic seed pricing, watchlists, portfolio P&L, analyst briefings and explicit data-quality governance.
 
 ## Role
 
-Solo builder: product strategy, backend, frontend, data modeling, UX direction, testing, documentation and deployment preparation.
+Solo builder: product strategy, backend, frontend, data modeling, UX direction, testing, deployment preparation, public smoke validation and portfolio storytelling.
 
 ## Context
 
 V1 proved the core workflow:
 
 - capture a marketplace listing;
-- extract structured data with an LLM;
+- extract structured listing data with an LLM;
 - identify the LEGO set;
-- calculate fair price, margin, risk and opportunity score;
+- calculate fair price, net margin, risk and opportunity score;
 - save the result to a local archive.
 
-V2 was designed as an incremental evolution, not a rewrite. The goal was to preserve the working V1 pipeline while adding a more professional product surface around it.
+V2 was intentionally incremental. The working V1 pipeline remains useful while the new product layer expands around it.
 
-## Product Problem
+## Product problem
 
-Collectors and resellers do not just need one-off listing analysis. They need a repeatable operating system:
+Collectors and resellers do not only need one-off listing analysis. They need a repeatable operating system:
 
 - which sets are worth watching;
 - how prices are moving;
@@ -30,31 +30,33 @@ Collectors and resellers do not just need one-off listing analysis. They need a 
 - when an opportunity is attractive;
 - which data is reliable enough to trust.
 
-## V2 Scope
+## V2 scope
 
 V2 adds:
 
 - FastAPI backend;
 - Next.js frontend;
 - market overview dashboard;
-- set intelligence and price history charts;
+- set intelligence and price-history charts;
 - watchlist workflow;
 - portfolio P&L;
-- local analyst briefings;
+- analyst briefings with local fallback;
 - Research page for data maturity;
 - active evidence audit log;
-- Railway/Vercel deploy preparation;
-- Postgres/Alembic foundation.
+- Railway backend deployment;
+- Vercel frontend deployment;
+- Postgres/Alembic foundation with local seed fallback.
 
-## Design Direction
+## Design direction
 
-The UI direction moved away from toy-like LEGO styling and toward a premium collector terminal:
+The UI direction keeps restrained LEGO cues while moving toward a premium collector terminal:
 
 - Linear/Stripe-inspired structure;
-- restrained LEGO cues;
+- red/yellow LEGO accents;
 - dense dashboard layout;
-- professional 2D interface;
-- no 3D in the final direction.
+- product-grade 2D interface;
+- no final 3D direction;
+- same case-study deck style as V1.
 
 ## Architecture
 
@@ -83,7 +85,7 @@ V2 frontend
 
 The system keeps JSON/CSV seed data as a local fallback while introducing SQLAlchemy models, Alembic migrations and a seed-to-database path for SQLite or Postgres.
 
-## Data Governance
+## Data governance
 
 The most important V2 decision was not to overclaim the data.
 
@@ -91,13 +93,13 @@ Current status:
 
 - 50 active catalog sets;
 - 250 seed price snapshots;
-- 50 active evidence audits completed in DATA-1;
-- 49 externally verified active sets after DATA-2, DATA-3 and DATA-4 catalog normalization;
-- 1 blocked or under review because sources materially disagree with the seed catalog.
+- 50 active evidence audits started;
+- 49 externally verified active sets under the current app rules;
+- 1 set remains under review because sources materially disagree with the seed catalog.
 
-This means the project can be presented as a partially verified seed-backed prototype, but not as a fully verified live market data platform yet.
+This means the project should be presented as a seed-backed, partially verified prototype, not as a fully verified live market data platform.
 
-Evidence tracking now lives in:
+Evidence tracking lives in:
 
 ```text
 data/catalog_active_research.json
@@ -111,63 +113,58 @@ The app exposes this through:
 
 The Research page displays the audit log directly in the UI.
 
-## Example Audit Finding
+## Example audit finding
 
-Set `75192` started as a useful audit finding because the seed catalog did not match external evidence.
+Set `10220` Volkswagen T1 Camper Van remains intentionally under review.
 
 Reason:
 
-- the seed catalog marks `year_retired = 2024`;
-- external sources indicate active status or estimated retirement in 2026;
-- DATA-2 normalized the active catalog to the evidence-backed value used by the app.
+- external sources materially disagree on lifecycle, piece count and EUR/RRP assumptions;
+- forcing a weak verification claim would make the portfolio story less credible;
+- keeping it as seed/demo data shows better product judgment.
 
-This is a useful portfolio point: the system does not just collect data; it shows when catalog assumptions need to be corrected before public claims are made.
+## Deployment status
 
-## Deployment Readiness
+The V2 public demo is live as a split deployment:
 
-The repo is prepared for:
+- Web: `https://lego-resale-ntelligence.vercel.app/`
+- API: `https://lego-resale-ntelligence-production.up.railway.app/`
 
-- Railway backend deployment using `Dockerfile`;
-- Vercel frontend deployment from `frontend/`;
+The repo includes:
+
+- Railway backend setup via `Dockerfile`;
+- Vercel frontend setup from `frontend/`;
+- CORS configuration for the public frontend;
 - optional Railway Postgres through `V2_DATABASE_URL`;
-- CORS configuration via `BACKEND_CORS_ORIGINS`;
-- optional first-run migrations and seed through:
-  - `V2_RUN_MIGRATIONS=1`;
-  - `V2_SEED_DATABASE=1`;
 - production smoke testing through `scripts/v2_deploy_smoke.sh`.
 
-## Quality Bar
+## Quality bar
 
-Verified locally:
-
-- backend/core tests passing;
-- frontend production build passing;
-- V2 doctor passing;
-- browser check passing for Market and Research data status.
-
-Latest local verification:
+Verified:
 
 ```text
 116 passed
 npm run build OK
-bash scripts/v2_doctor.sh OK
+public smoke OK
 ```
 
-## What I Would Say In An Interview
+Tests cover the core pipeline, API routes, dynamic pricing, seed validation, data quality APIs, research queue, watchlist workflows, portfolio logic and briefing fallback.
+
+## Interview framing
 
 I first built a working Streamlit V1 to prove the end-to-end pipeline. Then I evolved it into V2 without throwing away the stable core. The key product shift was moving from a single listing analyzer to a collector intelligence terminal: market trends, portfolio P&L, watchlist, briefings and data maturity.
 
-The most important engineering decision was data honesty. Instead of claiming that 50 sets were verified market data, I added explicit provenance tracking and an audit log. That made the product more credible, because it can show what is seed data, what is under review and what is actually verified.
+The most important engineering decision was data honesty. Instead of claiming that 50 sets were verified live market data, I added provenance tracking and an audit log. That made the product more credible, because it can show what is seed data, what is under review and what is actually verified.
 
-## Remaining Work
+## Remaining work
 
-- Resolve the remaining `10220` blocked or review-needed catalog evidence entry.
-- Decide whether active/retiring sets need a separate lifecycle model from retired sets.
-- Add verified evidence for the remaining sets.
+- Resolve the remaining `10220` evidence conflict.
 - Move from seed/demo price history to externally sourced market snapshots.
-- Refresh any exported PDF/screenshots after final copy changes.
+- Add more sets only through the candidate evidence gate.
+- Decide whether active, retiring and retired sets need separate lifecycle models.
+- Refresh screenshots if the UI changes again.
 
-## Honest Positioning
+## Honest positioning
 
 Use this phrase:
 
