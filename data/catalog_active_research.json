@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. DATA-1 audited 50/50 active catalog sets. DATA-2 normalized safe catalog mismatches. DATA-3 applied a conservative canonical-source policy: Brickset/catalog metadata is accepted for official piece counts when market-value sources disagree, BrickRanker/Brickset agreement is accepted for lifecycle/RRP updates, and unresolved material conflicts stay blocked.",
+  "notes": "External evidence for active catalog sets. DATA-1 audited 50/50 active catalog sets. DATA-2 normalized safe catalog mismatches. DATA-3 applied a conservative canonical-source policy. DATA-4 resolved 10030 and 10224 with additional Brickset/BrickEconomy evidence; 10220 remains under review because sources materially disagree.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -723,30 +723,15 @@
       "set_id": "10030",
       "name": "Imperial Star Destroyer",
       "theme": "Star Wars",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-24",
-      "audit_summary": "Sources disagree on piece count and retirement date. BrickEconomy aligns with the catalog piece count, while BrickRanker reports a different piece count and later release date. Keep under review: sources disagree materially on release year and piece count, so this needs a stronger canonical source decision.",
+      "audit_summary": "Brickset and BrickEconomy align on the canonical metadata used by the app: 2002 release, 3096 pieces and USD 269.99 RRP. BrickRanker remains useful for value history but conflicts on legacy metadata, so DATA-4 accepts Brickset/BrickEconomy as canonical for this set.",
       "year_released": 2002,
       "year_retired": 2008,
       "retail_price_eur": 269.99,
       "pieces": 3096,
       "popularity_score": 8,
-      "catalog_mismatches": [
-        {
-          "field": "pieces",
-          "catalog_value": 3096,
-          "evidence_value": 3116,
-          "severity": "review",
-          "note": "BrickEconomy lists 3096 pieces, while BrickRanker lists 3116 pieces. Brickipedia lists 3104 pieces. Needs a canonical source decision."
-        },
-        {
-          "field": "year_released",
-          "catalog_value": 2002,
-          "evidence_value": 2007,
-          "severity": "review",
-          "note": "BrickEconomy lists September 2002, while BrickRanker page currently lists October 2007."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickEconomy",
@@ -777,6 +762,20 @@
             "market_value"
           ],
           "notes": "Provides value history but disagrees on release year and piece count for this set."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10030-1/Imperial-Star-Destroyer",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Shows 10030-1 Imperial Star Destroyer, 2002 release, 3096 pieces and USD 269.99 RRP; aligns with BrickEconomy/catalog on core identity and piece count."
         }
       ],
       "price_sources": [
@@ -791,6 +790,12 @@
           "url": "https://www.brickeconomy.com/set/10030-1/lego-star-wars-imperial-star-destroyer",
           "checked_at": "2026-05-24",
           "notes": "Provides current new/sealed value and 90-day change."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10030-1/Imperial-Star-Destroyer",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide; used as secondary market context."
         }
       ],
       "price_snapshots": [
@@ -819,7 +824,8 @@
           "sales_count": null
         }
       ],
-      "recommended_action": "Keep under review: sources disagree materially on release year and piece count, so this needs a stronger canonical source decision."
+      "recommended_action": "Count as verified external evidence after DATA-4 canonical-source resolution.",
+      "accepted_source_disagreements": "DATA-4 policy: Brickset and BrickEconomy align with catalog on 2002 release and 3096 pieces. BrickRanker appears to conflict on this legacy set, so it is retained for value history but not used as canonical metadata."
     },
     {
       "set_id": "75095",
@@ -1876,30 +1882,15 @@
       "set_id": "10224",
       "name": "Town Hall",
       "theme": "Modular Buildings",
-      "verification_status": "needs_review_source_disagreement",
+      "verification_status": "verified",
       "audited_at": "2026-05-25",
-      "audit_summary": "Retirement year aligns, but BrickRanker shows 2772 pieces while Brickset/catalog show 2766; EU RRP is not available in the downloaded Brickset/BrickRanker HTML. Keep under review: EU RRP is unavailable in downloaded sources and piece-count sources disagree.",
+      "audit_summary": "Brickset and BrickEconomy align on core metadata: 2012 release, 2014 retirement and 2766 pieces. BrickEconomy provides Europe EUR 179.99 RRP, so DATA-4 normalizes the catalog EUR value and promotes the set.",
       "year_released": 2012,
       "year_retired": 2014,
-      "retail_price_eur": 199.99,
+      "retail_price_eur": 179.99,
       "pieces": 2766,
       "popularity_score": 9,
-      "catalog_mismatches": [
-        {
-          "field": "pieces",
-          "catalog_value": 2766,
-          "evidence_value": 2772,
-          "severity": "review",
-          "note": "Brickset/catalog show 2766 pieces; BrickRanker shows 2772."
-        },
-        {
-          "field": "retail_price_eur",
-          "catalog_value": 199.99,
-          "evidence_value": null,
-          "severity": "review",
-          "note": "Downloaded sources provide USD/GBP RRP but not a direct EUR RRP."
-        }
-      ],
+      "catalog_mismatches": [],
       "metadata_sources": [
         {
           "name": "BrickRanker",
@@ -1930,6 +1921,21 @@
             "pieces"
           ],
           "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        },
+        {
+          "name": "BrickEconomy",
+          "url": "https://www.brickeconomy.com/set/10224-1/lego-town-hall",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_eur",
+            "pieces"
+          ],
+          "notes": "Shows 2012 release, October 2014 retirement, 2766 pieces and Europe EUR 179.99 RRP; resolves missing EUR RRP from the previous audit."
         }
       ],
       "price_sources": [
@@ -1944,6 +1950,12 @@
           "url": "https://brickset.com/sets/10224-1/Town-Hall",
           "checked_at": "2026-05-25",
           "notes": "Provides current value references and links to BrickLink price guide for the set."
+        },
+        {
+          "name": "BrickEconomy set value",
+          "url": "https://www.brickeconomy.com/set/10224-1/lego-town-hall",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current new/sealed and used values plus regional retail prices."
         }
       ],
       "price_snapshots": [
@@ -1972,7 +1984,8 @@
           "sales_count": 4
         }
       ],
-      "recommended_action": "Keep under review: EU RRP is unavailable in downloaded sources and piece-count sources disagree."
+      "recommended_action": "Count as verified external evidence after DATA-4 canonical-source resolution.",
+      "accepted_source_disagreements": "DATA-4 policy: Brickset and BrickEconomy align on 2766 pieces and 2014 retirement; BrickEconomy supplies the missing Europe EUR 179.99 RRP."
     },
     {
       "set_id": "10232",
@@ -2766,7 +2779,7 @@
       "theme": "Icons",
       "verification_status": "needs_review_source_disagreement",
       "audited_at": "2026-05-25",
-      "audit_summary": "External sources disagree strongly: BrickRanker shows 2020 retirement and 1333 pieces, Brickset shows 2012 exit and 1334 pieces, while catalog marks 2015 and 1332 pieces. Keep under review: sources disagree materially on retirement year, piece count and EUR RRP.",
+      "audit_summary": "Still unresolved after DATA-4: Brickset, BrickRanker and BrickEconomy materially disagree on lifecycle, piece count and Europe RRP. The app keeps this set as seed/demo rather than forcing a weak verification claim.",
       "year_released": 2011,
       "year_retired": 2020,
       "retail_price_eur": 97.47,
@@ -2867,7 +2880,7 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Keep under review: sources disagree materially on retirement year, piece count and EUR RRP."
+      "recommended_action": "Keep as the only unresolved active-catalog evidence item. Brickset, BrickRanker and BrickEconomy materially disagree on retirement year, piece count and Europe RRP; do not count as verified until a stronger canonical source decision is made."
     },
     {
       "set_id": "10242",

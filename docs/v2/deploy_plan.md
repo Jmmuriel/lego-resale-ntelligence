@@ -195,9 +195,9 @@ La app está lista para demo pública como **partially verified seed-backed prot
 
 No afirmar todavía que los 50 sets son datos reales verificados:
 
-- `active_catalog_verified_sets: 47`;
-- `active_catalog_verified_pct: 94.0`;
+- `active_catalog_verified_sets: 49`;
+- `active_catalog_verified_pct: 98.0`;
 - `active_catalog_evidence_started_sets: 50`;
-- `active_catalog_blocked_sets: 3`;
+- `active_catalog_blocked_sets: 1`;
 - `market_data_source_status: partially_verified`;
-- 3 sets no cuentan como verificados hasta resolver discrepancias materiales de retirada, piezas o PVP.
+- `10220` no cuenta como verificado hasta resolver discrepancias materiales de retirada, piezas y PVP.

@@ -92,8 +92,8 @@ Current status:
 - 50 active catalog sets;
 - 250 seed price snapshots;
 - 50 active evidence audits completed in DATA-1;
-- 47 externally verified active sets after DATA-2 and DATA-3 catalog normalization;
-- 3 blocked or under review because sources materially disagree with the seed catalog.
+- 49 externally verified active sets after DATA-2, DATA-3 and DATA-4 catalog normalization;
+- 1 blocked or under review because sources materially disagree with the seed catalog.
 
 This means the project can be presented as a partially verified seed-backed prototype, but not as a fully verified live market data platform yet.
 
@@ -161,7 +161,7 @@ The most important engineering decision was data honesty. Instead of claiming th
 
 ## Remaining Work
 
-- Resolve the 3 remaining blocked or review-needed catalog evidence entries.
+- Resolve the remaining `10220` blocked or review-needed catalog evidence entry.
 - Decide whether active/retiring sets need a separate lifecycle model from retired sets.
 - Add verified evidence for the remaining sets.
 - Move from seed/demo price history to externally sourced market snapshots.

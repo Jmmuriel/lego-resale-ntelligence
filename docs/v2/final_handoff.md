@@ -2,13 +2,13 @@
 
 Avance demo local: **99/100**
 
-Avance contra la guia completa: **96/100**
+Avance contra la guia completa: **98/100**
 
 ## Estado real
 
 La V2 esta lista como demo local avanzada, proyecto de portfolio ensenable y demo publica Railway/Vercel.
 
-No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, una auditoria real DATA-1 completa con 50 sets revisados, DATA-2 normalizado y DATA-3 aplicado para 47 sets verificados.
+No es todavia una plataforma publica de datos verificados en tiempo real. El catalogo activo tiene 50 sets, un sistema de calidad de datos, una auditoria real DATA-1 completa con 50 sets revisados, DATA-2/DATA-3 normalizados y DATA-4 aplicado para 49 sets verificados.
 
 ## Que esta hecho
 
@@ -60,21 +60,21 @@ Porque el catalogo de 50 sets todavia no esta verificado con evidencias externas
 
 Estado actual:
 
-- `active_catalog_verified_sets`: 47
-- `active_catalog_verified_pct`: 94.0
+- `active_catalog_verified_sets`: 49
+- `active_catalog_verified_pct`: 98.0
 - `active_catalog_evidence_started_sets`: 50
-- `active_catalog_blocked_sets`: 3
+- `active_catalog_blocked_sets`: 1
 - `market_data_source_status`: `partially_verified`
 
-Sets verificados tras DATA-1 + DATA-2 + DATA-3:
+Sets verificados tras DATA-1 + DATA-2 + DATA-3 + DATA-4:
 
-- Verificados: 47 sets con evidencias externas suficientes y CSV normalizado.
-- Bloqueados o en revision: 3 sets con discrepancias materiales de retirada, piezas o PVP frente al CSV seed.
+- Verificados: 49 sets con evidencias externas suficientes y CSV normalizado.
+- Bloqueados o en revision: `10220`, por discrepancias materiales de retirada, piezas y PVP frente al CSV seed.
 
 ## Lo que falta para 100/100
 
 1. Mantener evidencias y corregir el CSV si se decide promover mas sets.
-2. Resolver discrepancias materiales de retirada, piezas o PVP en los 3 sets no verificados.
+2. Resolver discrepancias materiales de retirada, piezas o PVP en `10220`.
 3. Opcional: activar Railway Postgres y migraciones.
 4. Mantener el smoke test publico despues de cada deploy.
 

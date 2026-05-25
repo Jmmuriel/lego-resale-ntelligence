@@ -28,12 +28,13 @@ Data provenance note:
 - 50 sets have been audited in DATA-1;
 - DATA-2 normalized evidence-backed catalog mismatches;
 - DATA-3 applied a conservative canonical-source policy for minor source disagreements;
-- 47 sets are externally verified under the current app rules, and 3 remain blocked or need review because sources disagree materially with the seed catalog.
+- DATA-4 resolved two of the three remaining material conflicts with additional Brickset/BrickEconomy evidence;
+- 49 sets are externally verified under the current app rules, and 1 remains blocked because sources disagree materially with the seed catalog.
 
 Current V2 progress:
 
 - Demo local: **99/100**
-- Full guide: **96/100**
+- Full guide: **98/100**
 
 Start V2 locally:
 
@@ -261,10 +262,10 @@ V2 contains 50 active catalog rows and 250 seed price snapshots. The app now sep
 
 Current V2 evidence status:
 
-- `active_catalog_verified_sets: 47`
-- `active_catalog_verified_pct: 94.0`
+- `active_catalog_verified_sets: 49`
+- `active_catalog_verified_pct: 98.0`
 - `active_catalog_evidence_started_sets: 50`
-- `active_catalog_blocked_sets: 3`
+- `active_catalog_blocked_sets: 1`
 - `market_data_source_status: partially_verified`
 - evidence file: `data/catalog_active_research.json`
 
