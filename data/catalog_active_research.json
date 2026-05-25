@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 40/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
+  "notes": "External evidence for active catalog sets. FASE DATA-1 has audited 50/50 active catalog sets; only entries with verification_status=verified count as externally verified market data.",
   "required_checks": [
     "year_released",
     "year_retired",
@@ -3955,6 +3955,945 @@
         }
       ],
       "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "21325",
+      "name": "Medieval Blacksmith",
+      "theme": "Ideas",
+      "verification_status": "verified",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2021 release, 2023 retirement, EUR 179.99 RRP and 2164 pieces.",
+      "year_released": 2021,
+      "year_retired": 2023,
+      "retail_price_eur": 179.99,
+      "pieces": 2164,
+      "popularity_score": 7,
+      "catalog_mismatches": [],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/21325-1/medieval-blacksmith",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/21325-1/Medieval-Blacksmith",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/21325-1/medieval-blacksmith",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/21325-1/Medieval-Blacksmith",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 186.025242,
+          "currency": "USD",
+          "sales_count": 24
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 191.417278,
+          "currency": "USD",
+          "sales_count": 15
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 194.113296,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Count as verified external evidence for V2 data maturity."
+    },
+    {
+      "set_id": "21327",
+      "name": "Typewriter",
+      "theme": "Ideas",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2024 retirement and EUR 249.99 RRP while catalog marks 2023 and EUR 209.99.",
+      "year_released": 2021,
+      "year_retired": 2024,
+      "retail_price_eur": 249.99,
+      "pieces": 2079,
+      "popularity_score": 7,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2023,
+          "evidence_value": 2024,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2024 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 209.99,
+          "evidence_value": 249.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 249.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/21327-1/typewriter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/21327-1/Typewriter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/21327-1/typewriter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/21327-1/Typewriter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 243.989629,
+          "currency": "USD",
+          "sales_count": 16
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 234.553566,
+          "currency": "USD",
+          "sales_count": 14
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 250.729674,
+          "currency": "USD",
+          "sales_count": 9
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "21330",
+      "name": "Home Alone",
+      "theme": "Ideas",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker shows 2025 retirement and Brickset currently shows exit as t.b.a.; catalog marks 2023 and EUR 249.99 while sources show EUR 299.99.",
+      "year_released": 2021,
+      "year_retired": 2025,
+      "retail_price_eur": 299.99,
+      "pieces": 3955,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2023,
+          "evidence_value": 2025,
+          "severity": "blocking",
+          "note": "BrickRanker shows December 2025 retirement; Brickset exit is t.b.a."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 249.99,
+          "evidence_value": 299.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 299.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/21330-1/home-alone",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/21330-1/Home-Alone",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/21330-1/home-alone",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/21330-1/Home-Alone",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-01",
+          "price_avg": 293.865962,
+          "currency": "USD",
+          "sales_count": 9
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 264.209764,
+          "currency": "USD",
+          "sales_count": 10
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 230.509539,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "42056",
+      "name": "Porsche 911 GT3 RS",
+      "theme": "Technic",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2016 release, 2020 retirement? Wait source shows 2018; catalog mismatch.",
+      "year_released": 2016,
+      "year_retired": 2018,
+      "retail_price_eur": 299.99,
+      "pieces": 2704,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2020,
+          "evidence_value": 2018,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2018 retirement."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/42056-1/porsche-911-gt3-rs",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/42056-1/Porsche-911-GT3-RS",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/42056-1/porsche-911-gt3-rs",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/42056-1/Porsche-911-GT3-RS",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 834.417571,
+          "currency": "USD",
+          "sales_count": 11
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 869.465805,
+          "currency": "USD",
+          "sales_count": 11
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 893.729967,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "42083",
+      "name": "Bugatti Chiron",
+      "theme": "Technic",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2018 release, 2021? source shows 2022; catalog mismatch.",
+      "year_released": 2018,
+      "year_retired": 2022,
+      "retail_price_eur": 369.99,
+      "pieces": 3599,
+      "popularity_score": 9,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2021,
+          "evidence_value": 2022,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2022 retirement."
+        },
+        {
+          "field": "retail_price_eur",
+          "catalog_value": 449.99,
+          "evidence_value": 369.99,
+          "severity": "review",
+          "note": "BrickRanker/Brickset show EUR 369.99 RRP."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/42083-1/bugatti-chiron",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/42083-1/Bugatti-Chiron",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/42083-1/bugatti-chiron",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/42083-1/Bugatti-Chiron",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 374.746502,
+          "currency": "USD",
+          "sales_count": 20
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 388.226592,
+          "currency": "USD",
+          "sales_count": 9
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 389.574601,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "42110",
+      "name": "Land Rover Defender",
+      "theme": "Technic",
+      "verification_status": "verified",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset: 2019 release, 2022 retirement, EUR 199.99 RRP and 2573 pieces.",
+      "year_released": 2019,
+      "year_retired": 2022,
+      "retail_price_eur": 199.99,
+      "pieces": 2573,
+      "popularity_score": 8,
+      "catalog_mismatches": [],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/42110-1/land-rover-defender",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/42110-1/Land-Rover-Defender",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/42110-1/land-rover-defender",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/42110-1/Land-Rover-Defender",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 223.769494,
+          "currency": "USD",
+          "sales_count": 13
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 214.333431,
+          "currency": "USD",
+          "sales_count": 22
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 227.813521,
+          "currency": "USD",
+          "sales_count": 3
+        }
+      ],
+      "recommended_action": "Count as verified external evidence for V2 data maturity."
+    },
+    {
+      "set_id": "42115",
+      "name": "Lamborghini Sian FKP 37",
+      "theme": "Technic",
+      "verification_status": "blocked_catalog_mismatch",
+      "audited_at": "2026-05-25",
+      "audit_summary": "BrickRanker/Brickset show 2025 retirement while catalog marks 2022; other core fields align.",
+      "year_released": 2020,
+      "year_retired": 2025,
+      "retail_price_eur": 449.99,
+      "pieces": 3696,
+      "popularity_score": 9,
+      "catalog_mismatches": [
+        {
+          "field": "year_retired",
+          "catalog_value": 2022,
+          "evidence_value": 2025,
+          "severity": "blocking",
+          "note": "BrickRanker and Brickset show December 2025 retirement."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/42115-1/lamborghini-sian-fkp-37",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/42115-1/Lamborghini-Sian-FKP-37",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/42115-1/lamborghini-sian-fkp-37",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/42115-1/Lamborghini-Sian-FKP-37",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 343.742295,
+          "currency": "USD",
+          "sales_count": 8
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 346.438313,
+          "currency": "USD",
+          "sales_count": 38
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 372.050484,
+          "currency": "USD",
+          "sales_count": 4
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10225",
+      "name": "R2-D2",
+      "theme": "Star Wars",
+      "verification_status": "verified",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset at the year level with matching pieces and USD RRP; EUR RRP is unavailable in downloaded sources, so catalog EUR value remains a local reference.",
+      "year_released": 2012,
+      "year_retired": 2015,
+      "retail_price_eur": 179.99,
+      "pieces": 2127,
+      "popularity_score": 8,
+      "catalog_mismatches": [],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10225-1/r2-d2",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10225-1/R2-D2",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10225-1/r2-d2",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10225-1/R2-D2",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 223.769494,
+          "currency": "USD",
+          "sales_count": 6
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 200.853341,
+          "currency": "USD",
+          "sales_count": 0
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 179.285197,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Count as verified external evidence for V2 data maturity."
+    },
+    {
+      "set_id": "10240",
+      "name": "Red Five X-wing Starfighter",
+      "theme": "Star Wars",
+      "verification_status": "needs_review_source_disagreement",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Lifecycle and RRP align, but BrickRanker reports 1558 pieces while Brickset reports 1559 and catalog has 1558.",
+      "year_released": 2013,
+      "year_retired": 2015,
+      "retail_price_eur": 199.99,
+      "pieces": 1558,
+      "popularity_score": 8,
+      "catalog_mismatches": [
+        {
+          "field": "pieces",
+          "catalog_value": 1558,
+          "evidence_value": 1559,
+          "severity": "review",
+          "note": "Brickset shows 1559 pieces while BrickRanker/catalog show 1558."
+        }
+      ],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10240-1/red-five-x-wing-starfighter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10240-1/Red-Five-X-wing-Starfighter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10240-1/red-five-x-wing-starfighter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10240-1/Red-Five-X-wing-Starfighter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 249.381665,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 210.289404,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-05",
+          "price_avg": 269.6018,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Do not count as verified until the catalog mismatches/source disagreements are resolved."
+    },
+    {
+      "set_id": "10227",
+      "name": "B-wing Starfighter",
+      "theme": "Star Wars",
+      "verification_status": "verified",
+      "audited_at": "2026-05-25",
+      "audit_summary": "Catalog metadata agrees with BrickRanker and Brickset at the year level with matching pieces and USD RRP; EUR RRP is unavailable in downloaded sources, so catalog EUR value remains a local reference.",
+      "year_released": 2012,
+      "year_retired": 2014,
+      "retail_price_eur": 199.99,
+      "pieces": 1487,
+      "popularity_score": 7,
+      "catalog_mismatches": [],
+      "metadata_sources": [
+        {
+          "name": "BrickRanker",
+          "url": "https://brickranker.com/rankings/set/10227-1/b-wing-starfighter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used for lifecycle text, RRP where available, piece count and market value history."
+        },
+        {
+          "name": "Brickset",
+          "url": "https://brickset.com/sets/10227-1/B-wing-Starfighter",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price",
+            "pieces"
+          ],
+          "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        }
+      ],
+      "price_sources": [
+        {
+          "name": "BrickRanker value history",
+          "url": "https://brickranker.com/rankings/set/10227-1/b-wing-starfighter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides monthly new-condition average sale prices and sales counts."
+        },
+        {
+          "name": "Brickset current value / BrickLink links",
+          "url": "https://brickset.com/sets/10227-1/B-wing-Starfighter",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current value references and links to BrickLink price guide for the set."
+        }
+      ],
+      "price_snapshots": [
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-02",
+          "price_avg": 571.555816,
+          "currency": "USD",
+          "sales_count": 1
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-03",
+          "price_avg": 620.08414,
+          "currency": "USD",
+          "sales_count": 2
+        },
+        {
+          "source": "BrickRanker value history",
+          "condition": "NEW",
+          "period": "2026-04",
+          "price_avg": 349.134331,
+          "currency": "USD",
+          "sales_count": 1
+        }
+      ],
+      "recommended_action": "Count as verified external evidence for V2 data maturity."
     }
   ]
 }

@@ -69,9 +69,9 @@ def test_market_data_quality_endpoint_returns_coverage_metrics():
     assert payload["metrics"]["catalog_candidate_sets"] == 0
     assert payload["metrics"]["catalog_plus_candidates"] == 50
     assert payload["metrics"]["candidate_catalog_coverage_pct"] == 100.0
-    assert payload["metrics"]["active_catalog_verified_sets"] == 6
-    assert payload["metrics"]["active_catalog_evidence_started_sets"] == 40
-    assert payload["metrics"]["active_catalog_blocked_sets"] == 34
+    assert payload["metrics"]["active_catalog_verified_sets"] == 10
+    assert payload["metrics"]["active_catalog_evidence_started_sets"] == 50
+    assert payload["metrics"]["active_catalog_blocked_sets"] == 40
     assert payload["metrics"]["market_data_source_status"] == "partially_verified"
     assert any(
         warning["code"] == "ACTIVE_CATALOG_UNVERIFIED"
@@ -101,7 +101,7 @@ def test_market_active_evidence_endpoint_returns_audit_log():
     verified_sets = [item for item in payload if item["ready_for_verified"] is True]
     assert blocked_falcon["verification_status"] == "blocked_catalog_mismatch"
     assert blocked_falcon["ready_for_verified"] is False
-    assert len(verified_sets) == 6
+    assert len(verified_sets) == 10
 
 
 def test_market_set_intelligence_endpoint_returns_set_summary():

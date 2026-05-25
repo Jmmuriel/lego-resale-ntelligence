@@ -91,9 +91,9 @@ Current status:
 
 - 50 active catalog sets;
 - 250 seed price snapshots;
-- 40 active evidence audits completed in FASE DATA-1;
-- 6 externally verified active sets;
-- 34 blocked or under review because sources disagree with the seed catalog.
+- 50 active evidence audits completed in FASE DATA-1;
+- 10 externally verified active sets;
+- 40 blocked or under review because sources disagree with the seed catalog.
 
 This means the project can be presented as a partially verified seed-backed prototype, but not as a fully verified live market data platform yet.
 
