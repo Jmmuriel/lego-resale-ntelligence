@@ -2779,7 +2779,7 @@
       "theme": "Icons",
       "verification_status": "needs_review_source_disagreement",
       "audited_at": "2026-05-25",
-      "audit_summary": "Still unresolved after DATA-4: Brickset, BrickRanker and BrickEconomy materially disagree on lifecycle, piece count and Europe RRP. The app keeps this set as seed/demo rather than forcing a weak verification claim.",
+      "audit_summary": "Final DATA-4 decision: keep 10220 under review. Brickset, BrickRanker and BrickEconomy materially disagree on lifecycle and piece count, while EUR RRP is not consistently evidenced. The app keeps this set as seed/demo rather than forcing a weak verification claim.",
       "year_released": 2011,
       "year_retired": 2020,
       "retail_price_eur": 97.47,
@@ -2789,23 +2789,23 @@
         {
           "field": "year_retired",
           "catalog_value": 2015,
-          "evidence_value": 2020,
+          "evidence_value": "2012/2020/2022 depending on source",
           "severity": "review",
-          "note": "BrickRanker shows 2020; Brickset shows 2012; catalog shows 2015."
+          "note": "Brickset, BrickRanker and BrickEconomy disagree materially on lifecycle/retirement timing."
         },
         {
           "field": "pieces",
           "catalog_value": 1332,
-          "evidence_value": 1334,
+          "evidence_value": "1332/1333/1334 depending on source",
           "severity": "review",
-          "note": "Brickset shows 1334, BrickRanker 1333, catalog 1332."
+          "note": "BrickEconomy/catalog show 1332, BrickRanker shows 1333 and Brickset references show 1334."
         },
         {
           "field": "retail_price_eur",
           "catalog_value": 119.99,
-          "evidence_value": 97.47,
+          "evidence_value": null,
           "severity": "review",
-          "note": "BrickRanker/Brickset show EUR 97.47 RRP."
+          "note": "Downloaded/current evidence does not provide a stable Europe-wide EUR RRP rule for this set."
         }
       ],
       "metadata_sources": [
@@ -2838,6 +2838,21 @@
             "pieces"
           ],
           "notes": "Used as independent metadata reference for launch/exit, pieces and RRP where available."
+        },
+        {
+          "name": "BrickEconomy",
+          "url": "https://www.brickeconomy.com/set/10220-1/lego-volkswagen-t1-camper-van",
+          "checked_at": "2026-05-25",
+          "supports": [
+            "set_id",
+            "name",
+            "theme",
+            "year_released",
+            "year_retired",
+            "retail_price_usd",
+            "pieces"
+          ],
+          "notes": "Shows 2011 release, 2022 retirement, 1332 pieces and USD 119.99 retail price, which conflicts with other source assumptions used in the audit."
         }
       ],
       "price_sources": [
@@ -2852,6 +2867,12 @@
           "url": "https://brickset.com/sets/10220-1/Volkswagen-T1-Camper-Van",
           "checked_at": "2026-05-25",
           "notes": "Provides current value references and links to BrickLink price guide for the set."
+        },
+        {
+          "name": "BrickEconomy set value",
+          "url": "https://www.brickeconomy.com/set/10220-1/lego-volkswagen-t1-camper-van",
+          "checked_at": "2026-05-25",
+          "notes": "Provides current new/sealed value and listings; retained as evidence but not enough to resolve conflicting canonical metadata."
         }
       ],
       "price_snapshots": [
@@ -2880,7 +2901,7 @@
           "sales_count": 1
         }
       ],
-      "recommended_action": "Keep as the only unresolved active-catalog evidence item. Brickset, BrickRanker and BrickEconomy materially disagree on retirement year, piece count and Europe RRP; do not count as verified until a stronger canonical source decision is made."
+      "recommended_action": "Leave as the single unresolved active-catalog evidence item. Count 49/50 sets as verified and present 10220 as intentionally under review until a stronger canonical source decision is available."
     },
     {
       "set_id": "10242",

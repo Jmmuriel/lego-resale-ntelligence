@@ -73,7 +73,17 @@ V2 documentation:
 
 ---
 
-## Live demo
+## Public V2 Demo
+
+- Web app: [https://lego-resale-ntelligence.vercel.app](https://lego-resale-ntelligence.vercel.app)
+- API health: [https://lego-resale-ntelligence-production.up.railway.app/health](https://lego-resale-ntelligence-production.up.railway.app/health)
+- Data quality: [https://lego-resale-ntelligence-production.up.railway.app/api/market/data-quality](https://lego-resale-ntelligence-production.up.railway.app/api/market/data-quality)
+
+The public V2 demo runs as a split deployment: FastAPI on Railway and Next.js on Vercel.
+
+---
+
+## V1 Streamlit Demo
 
 🔗 [https://lego-resale-ntelligence-gybrigvpvh9aa9epszcdul.streamlit.app](https://lego-resale-ntelligence-gybrigvpvh9aa9epszcdul.streamlit.app)
 
@@ -269,6 +279,12 @@ Current V2 evidence status:
 - `market_data_source_status: partially_verified`
 - evidence file: `data/catalog_active_research.json`
 
+Final `10220` decision:
+
+- `10220` Volkswagen T1 Camper Van remains intentionally under review;
+- Brickset, BrickRanker and BrickEconomy materially disagree on lifecycle and piece-count assumptions;
+- the app keeps this single set as seed/demo rather than forcing a weak verification claim.
+
 ---
 
 ## Known limits
@@ -276,6 +292,7 @@ Current V2 evidence status:
 These are documented constraints, not hidden failures.
 
 - **V2 market data is seed/demo** — the app now labels this explicitly and tracks external evidence separately.
+- **49/50 active sets are externally verified** — `10220` remains intentionally under review.
 - **HTML parsing is basic** — marketplaces can change page structure; this is a known fragility.
 - **eBay may block requests** — 403 errors are an external constraint, not a bug.
 - **Score is explainable, not financial advice** — every signal is visible and traceable.
