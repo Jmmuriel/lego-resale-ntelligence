@@ -10,6 +10,7 @@ from backend.services.price_engine import (
     load_price_snapshots,
     load_price_snapshots_from_db,
     load_price_snapshots_from_json,
+    market_reference_date,
 )
 from scripts.v2_seed_db import seed_database
 
@@ -37,7 +38,7 @@ def test_compute_fair_price_with_complete_history_has_high_confidence():
     assert fair_price.set_id == "75192"
     assert fair_price.confidence == "HIGH"
     assert fair_price.snapshot_count == 5
-    assert fair_price.sample_count == 100
+    assert fair_price.sample_count == 97  # 16 + 18 + 20 + 22 + 21 in the seed history
     assert fair_price.avg_eur is not None
     assert 720.0 < fair_price.avg_eur < 742.0
     assert fair_price.days_since_update == 0
@@ -154,3 +155,44 @@ def test_load_price_snapshots_prefers_db_when_available(monkeypatch):
     )
 
     assert load_price_snapshots() == [db_snapshot]
+
+
+def _snapshot(recorded_at: date) -> PriceSnapshot:
+    return PriceSnapshot(
+        set_id="75192",
+        condition="USED_COMPLETE",
+        source="test",
+        price_min_eur=600.0,
+        price_avg_eur=700.0,
+        price_max_eur=800.0,
+        sample_count=10,
+        recorded_at=recorded_at,
+    )
+
+
+def test_market_reference_date_follows_stale_demo_history(monkeypatch):
+    monkeypatch.delenv("LRI_MARKET_REFERENCE_DATE", raising=False)
+    snapshots = [_snapshot(date(2026, 4, 14)), _snapshot(date(2026, 5, 14))]
+
+    assert market_reference_date(snapshots, today=date(2026, 10, 15)) == date(2026, 5, 15)
+
+
+def test_market_reference_date_is_today_with_live_data(monkeypatch):
+    monkeypatch.delenv("LRI_MARKET_REFERENCE_DATE", raising=False)
+    snapshots = [_snapshot(date(2026, 10, 15))]
+
+    assert market_reference_date(snapshots, today=date(2026, 10, 15)) == date(2026, 10, 15)
+
+
+def test_market_reference_date_can_be_pinned(monkeypatch):
+    monkeypatch.setenv("LRI_MARKET_REFERENCE_DATE", "2026-03-01")
+
+    assert market_reference_date([_snapshot(date(2026, 5, 14))], today=date(2026, 10, 15)) == date(2026, 3, 1)
+
+
+def test_default_windows_keep_demo_trends_after_the_seed_period(monkeypatch):
+    monkeypatch.delenv("LRI_MARKET_REFERENCE_DATE", raising=False)
+    seed = load_price_snapshots_from_json()
+
+    assert get_price_changes(snapshots=seed)
+    assert compute_fair_price("75192", "USED_COMPLETE", snapshots=seed).confidence == "HIGH"

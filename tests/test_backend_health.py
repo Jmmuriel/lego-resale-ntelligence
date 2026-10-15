@@ -295,7 +295,8 @@ def test_analyze_endpoint_falls_back_to_manual_price_without_dynamic_history(mon
             url=url,
             marketplace="ebay",
             set_id="10221",
-            condition="USED_COMPLETE",
+            # No seed history exists for incomplete sets, so the dynamic price cannot apply.
+            condition="USED_INCOMPLETE",
             asking_price_eur=500.0,
             shipping_eur=20.0,
             fair_price_eur=430.0,

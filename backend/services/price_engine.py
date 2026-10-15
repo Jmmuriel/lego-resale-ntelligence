@@ -1,5 +1,6 @@
 import json
-from datetime import date, datetime, timezone
+import os
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Literal
 
@@ -13,6 +14,7 @@ from backend.db.models import PriceHistory as PriceHistoryRecord
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PRICE_HISTORY_PATH = PROJECT_ROOT / "data" / "price_history_seed.json"
 Confidence = Literal["HIGH", "MEDIUM", "LOW", "NONE"]
+REFERENCE_DATE_ENV = "LRI_MARKET_REFERENCE_DATE"
 
 
 class PriceSnapshot(BaseModel):
@@ -117,6 +119,31 @@ def load_price_snapshots(
     return load_price_snapshots_from_json(path)
 
 
+def market_reference_date(
+    snapshots: list[PriceSnapshot] | None = None,
+    today: date | None = None,
+) -> date:
+    """Date the market windows (90/180 days) are measured from.
+
+    With live data this is today. The public demo runs on a fixed seed history
+    (January to May 2026); measuring it from today would empty every window as
+    the calendar moves on ("No trend data"). So the reference is the day after the
+    latest snapshot, never later than today. LRI_MARKET_REFERENCE_DATE (YYYY-MM-DD)
+    pins it explicitly.
+    """
+    override = os.getenv(REFERENCE_DATE_ENV, "").strip()
+    if override:
+        return date.fromisoformat(override)
+
+    current = today or datetime.now(timezone.utc).date()
+    all_snapshots = load_price_snapshots() if snapshots is None else snapshots
+    if not all_snapshots:
+        return current
+
+    latest = max(snapshot.recorded_at for snapshot in all_snapshots)
+    return min(current, latest + timedelta(days=1))
+
+
 def get_recent_snapshots(
     set_id: str,
     condition: str,
@@ -125,8 +152,8 @@ def get_recent_snapshots(
     snapshots: list[PriceSnapshot] | None = None,
 ) -> list[PriceSnapshot]:
     """Return recent snapshots for one set and condition."""
-    reference_date = as_of or datetime.now(timezone.utc).date()
     all_snapshots = load_price_snapshots() if snapshots is None else snapshots
+    reference_date = as_of or market_reference_date(all_snapshots)
 
     filtered = [
         snapshot
@@ -167,12 +194,14 @@ def compute_fair_price(
     snapshots: list[PriceSnapshot] | None = None,
 ) -> FairPrice:
     """Compute dynamic fair price from curated historical snapshots."""
+    all_snapshots = load_price_snapshots() if snapshots is None else snapshots
+    reference_date = as_of or market_reference_date(all_snapshots)
     recent_snapshots = get_recent_snapshots(
         set_id=set_id,
         condition=condition,
         days=days,
-        as_of=as_of,
-        snapshots=snapshots,
+        as_of=reference_date,
+        snapshots=all_snapshots,
     )
 
     if not recent_snapshots:
@@ -182,7 +211,6 @@ def compute_fair_price(
             confidence="NONE",
         )
 
-    reference_date = as_of or datetime.now(timezone.utc).date()
     weights = exponential_decay_weights(
         [snapshot.recorded_at for snapshot in recent_snapshots],
         as_of=reference_date,
@@ -223,8 +251,8 @@ def get_price_changes(
     snapshots: list[PriceSnapshot] | None = None,
 ) -> list[PriceChange]:
     """Return strongest price movements in the selected period."""
-    reference_date = as_of or datetime.now(timezone.utc).date()
     all_snapshots = load_price_snapshots() if snapshots is None else snapshots
+    reference_date = as_of or market_reference_date(all_snapshots)
     grouped: dict[tuple[str, str], list[PriceSnapshot]] = {}
 
     for snapshot in all_snapshots:
