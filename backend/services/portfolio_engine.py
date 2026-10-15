@@ -1,5 +1,5 @@
 import json
-from datetime import date, datetime, timezone
+from datetime import date
 from pathlib import Path
 from typing import Literal
 
@@ -9,7 +9,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from backend.db.database import get_session_factory
 from backend.db.models import PortfolioItem as PortfolioItemRecord
-from backend.services.price_engine import compute_fair_price, get_price_changes
+from backend.services.price_engine import compute_fair_price, get_price_changes, market_reference_date
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -130,7 +130,7 @@ def compute_position_pnl(
     as_of: date | None = None,
 ) -> PositionPnL:
     """Compute current value and unrealized P&L for one position."""
-    reference_date = as_of or datetime.now(timezone.utc).date()
+    reference_date = as_of or market_reference_date()
     fair_price = compute_fair_price(
         set_id=item.set_id,
         condition=item.condition,
