@@ -178,7 +178,7 @@ sh scripts/v2_deploy_smoke.sh
 
 ## Secuencia recomendada
 
-1. Publicar backend en Railway con `Dockerfile`.
+2. Verificar `/health` y `/api/analyze/demo` (o ejecutar `scripts/v2_deploy_smoke.sh`). `/docs` está apagado en producción salvo con `LRI_ENABLE_DOCS=1`.
 2. Verificar `/health` y `/docs`.
 3. Si se quiere persistencia, crear Postgres en Railway y usar `V2_DATABASE_URL`.
 4. Ejecutar primer deploy con `V2_RUN_MIGRATIONS=1` y `V2_SEED_DATABASE=1`.

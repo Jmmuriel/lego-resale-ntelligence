@@ -1,6 +1,7 @@
 import pytest
 
-from src.extract import build_extraction_prompt, parse_extraction_response
+from src.extract import build_extraction_prompt, call_anthropic, parse_extraction_response
+from src.limits import LLMBudgetExceeded
 from src.models import ListingExtraction
 
 
@@ -12,6 +13,36 @@ def test_build_extraction_prompt_includes_listing_text():
     assert "75192" in prompt
     assert "USED_COMPLETE" in prompt
     assert "JSON válido" in prompt
+
+
+def test_build_extraction_prompt_truncates_long_listing_text(monkeypatch):
+    monkeypatch.setenv("LRI_LLM_MAX_INPUT_CHARS", "50")
+
+    prompt = build_extraction_prompt("LEGO 75192 " + "a" * 10_000 + " FINAL_MARKER")
+
+    assert "LEGO 75192" in prompt
+    assert "FINAL_MARKER" not in prompt
+    assert "a" * 51 not in prompt
+
+
+def test_build_extraction_prompt_caps_input_at_4000_chars_by_default():
+    prompt = build_extraction_prompt("b" * 10_000)
+
+    assert "b" * 4000 in prompt
+    assert "b" * 4001 not in prompt
+
+
+def test_call_anthropic_respects_daily_cap_before_calling_api(monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("LRI_LLM_DAILY_CAP", "0")
+
+    def fail_client(*args, **kwargs):
+        raise AssertionError("the Anthropic client must not be created over the daily cap")
+
+    monkeypatch.setattr("anthropic.Anthropic", fail_client)
+
+    with pytest.raises(LLMBudgetExceeded):
+        call_anthropic("prompt")
 
 
 def test_build_extraction_prompt_rejects_empty_input():

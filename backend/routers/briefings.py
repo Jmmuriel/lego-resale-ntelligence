@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Depends, Query
 
+from backend.security import limit_outbound_requests, require_demo_writes
 from backend.services.ai_analyst import (
     MarketBriefing,
     generate_briefing,
@@ -18,17 +19,21 @@ async def ping() -> dict[str, str]:
 
 
 @router.get("", response_model=list[MarketBriefing])
-async def list_briefings(limit: int = Query(default=1, ge=1, le=10)) -> list[MarketBriefing]:
+def list_briefings(limit: int = Query(default=1, ge=1, le=10)) -> list[MarketBriefing]:
     """Return latest market briefings."""
     return get_latest_briefings(limit=limit)
 
 
-@router.post("/generate", response_model=MarketBriefing)
-async def create_briefing(
+@router.post(
+    "/generate",
+    response_model=MarketBriefing,
+    dependencies=[Depends(require_demo_writes), Depends(limit_outbound_requests)],
+)
+def create_briefing(
     period_days: int = Query(default=7, ge=1, le=90),
-    use_llm: bool = Query(default=True, description="Use Claude Sonnet if API key is set"),
+    use_llm: bool = Query(default=False, description="Use Claude Sonnet if API key is set"),
 ) -> MarketBriefing:
-    """Generate a market briefing. Uses Claude Sonnet when ANTHROPIC_API_KEY is set."""
+    """Generate a market briefing. Uses Claude Sonnet only when use_llm=true and ANTHROPIC_API_KEY is set."""
     if use_llm:
         return generate_briefing_with_llm(period_days=period_days)
     return generate_briefing(period_days=period_days)

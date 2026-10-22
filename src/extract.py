@@ -5,6 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from pydantic import ValidationError
 
+from src.limits import reserve_llm_call, truncate_llm_input
 from src.models import ListingExtraction
 
 
@@ -24,8 +25,8 @@ def extract_listing(raw_text: str) -> ListingExtraction:
 
 
 def build_extraction_prompt(raw_text: str) -> str:
-    """Construye el prompt de extracción a partir del texto crudo."""
-    clean_text = _clean_raw_text(raw_text)
+    """Construye el prompt de extracción a partir del texto crudo (recortado a LRI_LLM_MAX_INPUT_CHARS)."""
+    clean_text = truncate_llm_input(_clean_raw_text(raw_text))
     if not clean_text:
         raise ValueError("El texto crudo del listing no puede estar vacío.")
 
@@ -70,6 +71,7 @@ def call_anthropic(prompt: str) -> str:
 
     from anthropic import Anthropic, APIConnectionError, APIError, AuthenticationError
 
+    reserve_llm_call()
     client = Anthropic(api_key=api_key)
     try:
         message = client.messages.create(

@@ -1,13 +1,63 @@
+import ipaddress
 import json
+import logging
 import re
+import socket
+import time
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import TimeoutError as FutureTimeoutError
+from urllib.parse import urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
 
+from src.limits import env_int
 from src.models import ListingInput
 
 
+log = logging.getLogger(__name__)
+
 REQUEST_TIMEOUT_SECONDS = 10
+CONNECT_TIMEOUT_SECONDS = 5
+DEFAULT_FETCH_DEADLINE_SECONDS = 15
+DEFAULT_FETCH_MAX_BYTES = 2_000_000
+MAX_REDIRECTS = 3
+MAX_URL_LENGTH = 2048
+READ_CHUNK_BYTES = 64 * 1024
+HOSTNAME_PATTERN = re.compile(r"^[a-z0-9-]+(\.[a-z0-9-]+)+$")
+
+# Only the marketplaces the analyzer supports. A host matches when it equals one
+# of these domains or ends with "." + domain (www.ebay.es, es.wallapop.com...).
+ALLOWED_LISTING_DOMAINS = (
+    "ebay.es",
+    "ebay.com",
+    "ebay.co.uk",
+    "ebay.de",
+    "ebay.fr",
+    "ebay.it",
+    "ebay.nl",
+    "ebay.be",
+    "ebay.at",
+    "ebay.ie",
+    "ebay.ch",
+    "ebay.pl",
+    "wallapop.com",
+    "vinted.es",
+    "vinted.com",
+    "vinted.fr",
+    "vinted.it",
+    "vinted.de",
+    "vinted.co.uk",
+    "vinted.pt",
+    "vinted.nl",
+    "vinted.be",
+    "vinted.at",
+    "vinted.pl",
+)
+
+UNSUPPORTED_URL_MESSAGE = "Solo se pueden analizar URLs https de listings de eBay, Wallapop o Vinted."
+FETCH_ERROR_MESSAGE = "No se pudo descargar el HTML del listing."
+
 BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -18,19 +68,166 @@ BROWSER_HEADERS = {
     "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
 }
 
+# Bounded pool so a slow marketplace cannot pile up threads; the caller stops
+# waiting at the deadline even if a worker is still blocked on a socket read.
+_FETCH_EXECUTOR = ThreadPoolExecutor(max_workers=4, thread_name_prefix="listing-fetch")
+
+
+class UnsupportedListingURLError(ValueError):
+    """The URL is not an https listing on a supported marketplace, or points to a non-public address."""
+
+    def __init__(self) -> None:
+        super().__init__(UNSUPPORTED_URL_MESSAGE)
+
+
+class ListingFetchError(RuntimeError):
+    """The listing could not be downloaded. The message is safe to show to users."""
+
+    def __init__(self) -> None:
+        super().__init__(FETCH_ERROR_MESSAGE)
+
 
 def fetch_html(url: str) -> str:
-    """Descarga el HTML de una única URL de listing."""
+    """Descarga el HTML de una única URL de listing de un marketplace soportado.
+
+    Solo acepta https en el puerto 443 hacia hosts de ALLOWED_LISTING_DOMAINS que
+    resuelvan a IPs públicas. Valida cada redirección, corta la descarga al pasar
+    de LRI_FETCH_MAX_BYTES y deja de esperar a los LRI_FETCH_TIMEOUT_SECONDS.
+    """
     if not url:
         raise ValueError("La URL no puede estar vacía.")
 
+    validate_listing_url(url)
+    timeout_seconds = env_int("LRI_FETCH_TIMEOUT_SECONDS", DEFAULT_FETCH_DEADLINE_SECONDS, minimum=1)
+    deadline = time.monotonic() + timeout_seconds
+    future = _FETCH_EXECUTOR.submit(_download_listing, url, deadline)
     try:
-        response = requests.get(url, headers=BROWSER_HEADERS, timeout=REQUEST_TIMEOUT_SECONDS)
-        response.raise_for_status()
-    except requests.RequestException as exc:
-        raise RuntimeError(f"No se pudo descargar el HTML del listing: {exc}") from exc
+        return future.result(timeout=timeout_seconds)
+    except FutureTimeoutError as exc:
+        future.cancel()
+        log.warning("Listing fetch exceeded the %ss deadline", timeout_seconds)
+        raise ListingFetchError() from exc
 
-    return response.text
+
+def validate_listing_url(url: str) -> str:
+    """Comprueba la URL sin tocar la red y devuelve el hostname normalizado."""
+    if (
+        len(url) > MAX_URL_LENGTH
+        or "\\" in url
+        or any(char.isspace() or not char.isprintable() for char in url)
+    ):
+        raise UnsupportedListingURLError()
+
+    try:
+        parts = urlsplit(url)
+        port = parts.port
+    except ValueError as exc:
+        raise UnsupportedListingURLError() from exc
+
+    if parts.scheme != "https" or "@" in parts.netloc or port not in (None, 443):
+        raise UnsupportedListingURLError()
+
+    hostname = (parts.hostname or "").rstrip(".")
+    if not HOSTNAME_PATTERN.match(hostname) or _is_ip_literal(hostname):
+        raise UnsupportedListingURLError()
+
+    if not any(hostname == domain or hostname.endswith(f".{domain}") for domain in ALLOWED_LISTING_DOMAINS):
+        raise UnsupportedListingURLError()
+
+    return hostname
+
+
+def _download_listing(url: str, deadline: float) -> str:
+    current_url = url
+    for _ in range(MAX_REDIRECTS + 1):
+        hostname = validate_listing_url(current_url)
+        _ensure_public_host(hostname)
+
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise ListingFetchError()
+
+        try:
+            response = requests.get(
+                current_url,
+                headers=BROWSER_HEADERS,
+                timeout=(
+                    min(CONNECT_TIMEOUT_SECONDS, remaining),
+                    min(REQUEST_TIMEOUT_SECONDS, remaining),
+                ),
+                allow_redirects=False,
+                stream=True,
+            )
+        except requests.RequestException as exc:
+            log.warning("Listing fetch failed for host %s: %s", hostname, exc)
+            raise ListingFetchError() from exc
+
+        with response:
+            if response.is_redirect:
+                current_url = urljoin(current_url, response.headers["location"])
+                continue
+
+            try:
+                response.raise_for_status()
+                return _read_capped_text(response, deadline)
+            except requests.RequestException as exc:
+                log.warning("Listing fetch failed for host %s: %s", hostname, exc)
+                raise ListingFetchError() from exc
+
+    log.warning("Listing fetch stopped after %s redirects", MAX_REDIRECTS)
+    raise ListingFetchError()
+
+
+def _read_capped_text(response: requests.Response, deadline: float) -> str:
+    max_bytes = env_int("LRI_FETCH_MAX_BYTES", DEFAULT_FETCH_MAX_BYTES, minimum=1)
+    body = bytearray()
+    # iter_content yields decompressed bytes, so the cap also stops gzip bombs.
+    for chunk in response.iter_content(chunk_size=READ_CHUNK_BYTES):
+        body.extend(chunk)
+        if len(body) > max_bytes:
+            log.warning("Listing response exceeded %s bytes", max_bytes)
+            raise ListingFetchError()
+        if time.monotonic() > deadline:
+            raise ListingFetchError()
+
+    encoding = response.encoding or "utf-8"
+    try:
+        return body.decode(encoding, errors="replace")
+    except LookupError:
+        return body.decode("utf-8", errors="replace")
+
+
+def _ensure_public_host(hostname: str) -> None:
+    """Rechaza hosts que resuelven a IPs privadas, loopback, link-local o reservadas."""
+    try:
+        addresses = _resolve_host(hostname)
+    except (OSError, UnicodeError) as exc:
+        log.warning("Could not resolve listing host %s: %s", hostname, exc)
+        raise ListingFetchError() from exc
+
+    if not addresses:
+        raise ListingFetchError()
+
+    for address in addresses:
+        ip = ipaddress.ip_address(address.split("%", 1)[0])
+        if ip.version == 6 and ip.ipv4_mapped is not None:
+            ip = ip.ipv4_mapped
+        if not ip.is_global or ip.is_multicast:
+            log.warning("Blocked listing host %s resolving to non-public address %s", hostname, ip)
+            raise UnsupportedListingURLError()
+
+
+def _resolve_host(hostname: str) -> list[str]:
+    infos = socket.getaddrinfo(hostname, 443, type=socket.SOCK_STREAM)
+    return [str(info[4][0]) for info in infos]
+
+
+def _is_ip_literal(hostname: str) -> bool:
+    try:
+        ipaddress.ip_address(hostname)
+    except ValueError:
+        return False
+    return True
 
 
 def detect_marketplace_from_url(url: str | None) -> str | None:

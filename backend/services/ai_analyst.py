@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 from backend.services.portfolio_engine import PortfolioSummary, get_portfolio_summary
 from backend.services.price_engine import PriceChange, get_price_changes
+from src.limits import reserve_llm_call, truncate_llm_input
 
 log = logging.getLogger(__name__)
 
@@ -79,8 +80,11 @@ def generate_briefing_with_llm(period_days: int = 7) -> MarketBriefing:
         price_changes = get_price_changes(days=max(period_days, 120))[:5]
         portfolio_summary = get_portfolio_summary()
         market_trend = infer_market_trend(price_changes)
-        context = _build_briefing_context(market_trend, price_changes, portfolio_summary, period_days)
+        context = truncate_llm_input(
+            _build_briefing_context(market_trend, price_changes, portfolio_summary, period_days)
+        )
 
+        reserve_llm_call()
         client = anthropic.Anthropic(api_key=api_key)
         response = client.messages.create(
             model="claude-sonnet-4-6",

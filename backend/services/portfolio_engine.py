@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import date
 from pathlib import Path
 from typing import Literal
@@ -9,8 +10,11 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from backend.db.database import get_session_factory
 from backend.db.models import PortfolioItem as PortfolioItemRecord
+from backend.security import demo_writes_allowed
 from backend.services.price_engine import compute_fair_price, get_price_changes, market_reference_date
 
+
+log = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PORTFOLIO_PATH = PROJECT_ROOT / "data" / "portfolio_seed.json"
@@ -254,7 +258,11 @@ def add_portfolio_item(
     notes: str | None = None,
     sell_target_eur: float | None = None,
 ) -> PortfolioItem:
-    """Add a new portfolio position, persisting to DB if available or JSON file."""
+    """Add a new portfolio position, persisting to DB if available or JSON file.
+
+    The JSON fallback only runs for database errors and only while demo writes are
+    enabled (LRI_DEMO_ALLOW_WRITES=1), so the read-only public demo never writes to data/.
+    """
     try:
         from backend.db.models import PortfolioItem as PortfolioItemRecord  # noqa: PLC0415
 
@@ -286,7 +294,10 @@ def add_portfolio_item(
                 notes=record.notes,
                 sell_target_eur=record.sell_target_eur,
             )
-    except Exception:
+    except SQLAlchemyError:
+        if not demo_writes_allowed():
+            raise
+        log.warning("Portfolio DB write failed; using the local JSON fallback", exc_info=True)
         raw = json.loads(DEFAULT_PORTFOLIO_PATH.read_text(encoding="utf-8"))
         new_id = max((item["id"] for item in raw), default=0) + 1
         new_item = {
@@ -309,7 +320,10 @@ def add_portfolio_item(
 
 
 def delete_portfolio_item(item_id: int) -> bool:
-    """Delete a portfolio position by ID. Returns True if found and deleted."""
+    """Delete a portfolio position by ID. Returns True if found and deleted.
+
+    Same JSON fallback rule as add_portfolio_item.
+    """
     try:
         from backend.db.models import PortfolioItem as PortfolioItemRecord  # noqa: PLC0415
 
@@ -321,7 +335,10 @@ def delete_portfolio_item(item_id: int) -> bool:
             session.delete(record)
             session.commit()
             return True
-    except Exception:
+    except SQLAlchemyError:
+        if not demo_writes_allowed():
+            raise
+        log.warning("Portfolio DB delete failed; using the local JSON fallback", exc_info=True)
         raw = json.loads(DEFAULT_PORTFOLIO_PATH.read_text(encoding="utf-8"))
         before = len(raw)
         raw = [item for item in raw if item["id"] != item_id]
