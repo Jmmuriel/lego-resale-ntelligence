@@ -1,5 +1,7 @@
 import { getPortfolio } from "@/lib/api";
+import { DEMO_ALLOW_WRITES } from "@/lib/demo";
 import AddPositionPanel from "@/components/AddPositionPanel";
+import ReadOnlyNote from "@/components/ReadOnlyNote";
 
 export const dynamic = "force-dynamic";
 
@@ -65,14 +67,12 @@ export default async function PortfolioPage() {
         <div className="position-list">
           {portfolio.positions.length === 0 ? (
             <div className="empty-state" style={{ minHeight: "100px" }}>
-              <span>No positions yet. Use the form below to add your first purchase.</span>
+              <span>
+                No positions yet.{DEMO_ALLOW_WRITES ? " Use the form below to add your first purchase." : ""}
+              </span>
             </div>
           ) : portfolio.positions.map((position) => (
-            <article
-              className="position-row"
-              key={position.item.id}
-              style={{ gridTemplateColumns: "minmax(220px, 1.8fr) repeat(4, minmax(110px, 1fr)) auto" }}
-            >
+            <article className="position-row" key={position.item.id}>
               <div>
                 <strong>{position.item.set_name}</strong>
                 <span>
@@ -102,7 +102,7 @@ export default async function PortfolioPage() {
         </div>
       </section>
 
-      <AddPositionPanel positions={portfolio.positions} />
+      {DEMO_ALLOW_WRITES ? <AddPositionPanel positions={portfolio.positions} /> : <ReadOnlyNote />}
     </div>
   );
 }

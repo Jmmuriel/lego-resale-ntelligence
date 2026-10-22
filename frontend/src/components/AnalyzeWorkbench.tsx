@@ -1,7 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import ReadOnlyNote from "@/components/ReadOnlyNote";
 import { analyzeDemoOpportunity, analyzeUrl, saveAnalysisToWatchlist } from "@/lib/api";
+import { DEMO_ALLOW_WRITES } from "@/lib/demo";
 import type { AnalysisResult, WatchlistRecord } from "@/lib/types";
 
 function eur(value: number | null | undefined) {
@@ -15,6 +17,8 @@ function eur(value: number | null | undefined) {
 
 export default function AnalyzeWorkbench() {
   const [url, setUrl] = useState("");
+  // URL of the loaded demo opportunity: it is not a real listing, so Analyze reloads the demo.
+  const [demoUrl, setDemoUrl] = useState<string | null>(null);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [savedRecord, setSavedRecord] = useState<WatchlistRecord | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +35,7 @@ export default function AnalyzeWorkbench() {
     setIsLoading(true);
 
     try {
-      const analysis = await analyzeUrl(url);
+      const analysis = url.trim() === demoUrl ? await analyzeDemoOpportunity() : await analyzeUrl(url);
       setResult(analysis);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Could not analyze this listing.");
@@ -49,6 +53,7 @@ export default function AnalyzeWorkbench() {
 
     try {
       const analysis = await analyzeDemoOpportunity();
+      setDemoUrl(analysis.url);
       setUrl(analysis.url);
       setResult(analysis);
     } catch (caught) {
@@ -149,15 +154,21 @@ export default function AnalyzeWorkbench() {
                 </dd>
               </div>
             </dl>
-            <button className="secondary-action" disabled={isSaving || Boolean(savedRecord)} onClick={onSaveToWatchlist}>
-              {savedRecord ? `Saved #${savedRecord.id}` : isSaving ? "Saving" : "Save to watchlist"}
-            </button>
-            {saveError ? <p className="error-text">{saveError}</p> : null}
-            {savedRecord ? (
-              <p className="success-text">
-                Saved as {savedRecord.status}. It is now visible in the shared SQLite watchlist.
-              </p>
-            ) : null}
+            {DEMO_ALLOW_WRITES ? (
+              <>
+                <button className="secondary-action" disabled={isSaving || Boolean(savedRecord)} onClick={onSaveToWatchlist}>
+                  {savedRecord ? `Saved #${savedRecord.id}` : isSaving ? "Saving" : "Save to watchlist"}
+                </button>
+                {saveError ? <p className="error-text">{saveError}</p> : null}
+                {savedRecord ? (
+                  <p className="success-text">
+                    Saved as {savedRecord.status}. It is now visible in the shared SQLite watchlist.
+                  </p>
+                ) : null}
+              </>
+            ) : (
+              <ReadOnlyNote />
+            )}
           </div>
         ) : null}
       </section>
