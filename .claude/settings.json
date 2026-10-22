@@ -4,9 +4,17 @@
       "Read",
       "Edit",
       "Write",
-      "Bash(*)",
       "TodoWrite",
-      "TodoRead"
+      "TodoRead",
+      "Bash(pytest:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(.venv/bin/pytest:*)",
+      "Bash(.venv/bin/python -m pytest:*)",
+      "Bash(npm run:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
