@@ -49,7 +49,7 @@ bash scripts/v2_start_frontend.sh
 Open:
 
 - V2 web: `http://127.0.0.1:3000`
-- V2 API docs: `http://127.0.0.1:8000/docs`
+- V2 API docs: `http://127.0.0.1:8000/docs` (the local start script sets `LRI_ENABLE_DOCS=1`; the deployed API keeps them off)
 
 Check V2:
 
@@ -81,6 +81,36 @@ V2 documentation:
 
 The public V2 demo runs as a split deployment: FastAPI on Railway and Next.js on Vercel.
 
+The public demo is **read-only**: visitors can browse, analyze listings and load the no-cost demo opportunity, but they cannot add, delete or change the shared portfolio and watchlist. The V1 Streamlit app follows the same switch: it analyzes without saving and hides the status controls.
+
+### Public demo hardening
+
+The API is safe by default: a deploy that sets none of these variables gets the values in the table.
+
+| Variable | Default | What it does |
+|---|---|---|
+| `LRI_DEMO_ALLOW_WRITES` | `0` | `1` re-enables the routes that change shared data (`POST`/`DELETE /api/portfolio`, `POST /api/watchlist`, `PATCH /api/watchlist/{id}/status`, `POST /api/briefings/generate`). Otherwise they answer `403 {"detail": "This public demo is read-only."}`, and the portfolio's JSON fallback never writes to `data/`. In the Streamlit app, `1` brings back "Analyze and save" and "Update status". |
+| `LRI_ENABLE_DOCS` | `0` | `1` serves `/docs`, `/redoc` and `/openapi.json`. |
+| `BACKEND_CORS_ORIGINS` | the Vercel app | Comma-separated browser origins. Localhost is allowed only when listed here (as `.env.example` and `scripts/v2_start_api.sh` do). No credentials; methods `GET`, `POST`, `PATCH`, `DELETE`. |
+| `LRI_RATE_LIMIT_PER_MINUTE` | `10` | Requests per client and minute to `POST /api/analyze` and `POST /api/briefings/generate` (429 when exceeded). |
+| `LRI_RATE_LIMIT_PER_DAY` | `60` | Same, per client and UTC day. |
+| `LRI_LLM_DAILY_CAP` | `100` | Paid Anthropic calls per UTC day for the whole process, Streamlit included (`0` = none). Over the cap, analyze returns 429 and briefings fall back to the local version. |
+| `LRI_LLM_MAX_INPUT_CHARS` | `4000` | Characters of listing text sent to Anthropic. |
+| `LRI_MAX_BODY_BYTES` | `65536` | Largest request body the API accepts. Bigger bodies get `413 {"detail": "Request body too large."}` before they are buffered or parsed (a declared `Content-Length` is refused up front; a chunked body is cut off once it passes the limit). |
+| `LRI_FETCH_TIMEOUT_SECONDS` | `15` | Total time allowed to download a listing, redirects included. |
+| `LRI_FETCH_MAX_BYTES` | `2000000` | Maximum listing size after decompression. |
+| `FORWARDED_ALLOW_IPS` | loopback + private ranges | Proxies whose `X-Forwarded-For` uvicorn trusts (`scripts/v2_boot_api.sh`). |
+
+Other protections, not configurable:
+
+- The analyzer only fetches `https` URLs on port 443 whose host is, or is a subdomain of, a supported marketplace domain (eBay, Wallapop, Vinted). It rejects user-info tricks such as `https://ebay.es@evil.com`, IP literals, and hosts that resolve to private, loopback, link-local or reserved addresses (IPv4 and IPv6, including `169.254.169.254`). Every redirect is checked the same way (3 at most). Rejected URLs get a 400.
+- Handlers that touch the network, Anthropic or the database are plain `def`, so FastAPI runs them in its thread pool and one slow request cannot freeze the API.
+- Error responses never include exception text: details are logged on the server and the client gets a generic message. The Streamlit app does the same.
+- The Docker image runs as an unprivileged user. If you mount a Railway volume for SQLite, make it writable for that user, or use Postgres (`V2_DATABASE_URL`).
+- Rate limits and the LLM cap live in process memory: they reset on restart and assume one uvicorn worker, which is how Railway runs this app.
+
+Real client IPs behind Railway: `scripts/v2_boot_api.sh` starts uvicorn with `--proxy-headers --forwarded-allow-ips "$FORWARDED_ALLOW_IPS"`. With the default list of private ranges, uvicorn only reads `X-Forwarded-For` when the connection comes from such an address (Railway's edge) and takes the right-most entry that is not a trusted proxy, so a visitor cannot spoof their IP by sending their own header. The trade-off: if Railway's edge ever connects from an address outside those ranges, uvicorn ignores the header and all visitors share one rate-limit bucket (stricter, still safe). Setting `FORWARDED_ALLOW_IPS='*'` avoids that, but then uvicorn takes the left-most entry, which a client can forge if the edge appends to an existing header; per-IP limits become best-effort and `LRI_LLM_DAILY_CAP` is the real cost backstop. Either way, give the deployed API its own Anthropic key with a low monthly spend limit.
+
 ---
 
 ## V1 Streamlit Demo
@@ -97,6 +127,7 @@ The public V2 demo runs as a split deployment: FastAPI on Railway and Next.js on
    ANTHROPIC_API_KEY = "your_key_here"
    ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
    ```
+   The app is read-only unless you also add `LRI_DEMO_ALLOW_WRITES = "1"` (see [Public demo hardening](#public-demo-hardening)).
 5. Deploy — the app will be live at `https://your-app-name.streamlit.app`
 
 > **Note on persistence:** The SQLite archive is ephemeral on Streamlit Cloud — analyses won't survive redeploys. This is expected for a portfolio demo; for a persistent version, swap `DATABASE_URL` for a hosted Postgres instance.
@@ -211,10 +242,10 @@ net_margin    = gross_margin − selling_fees − outbound_shipping
 ## Test coverage
 
 ```
-116 passed
+214 passed
 ```
 
-Tests cover: data models, capture, extraction mocks, catalog matching, pricing lookups, scoring logic, margin calculations, database operations, FastAPI routes, dynamic pricing, DB-backed seed loading, seed data validation, data quality API, catalog research queue, portfolio logic (including CRUD), Claude Sonnet briefings with local fallback, expanded price history for all 50 active seed sets, and watchlist workflows.
+Tests cover: data models, capture, extraction mocks, catalog matching, pricing lookups, scoring logic, margin calculations, database operations, FastAPI routes, dynamic pricing, DB-backed seed loading, seed data validation, data quality API, catalog research queue, portfolio logic (including CRUD), Claude Sonnet briefings with local fallback, expanded price history for all 50 active seed sets, watchlist workflows, and the public demo hardening (read-only routes, input bounds, URL allowlist and SSRF checks, rate limits, LLM cap, request body size limit, disabled docs, CORS, generic errors and the read-only Streamlit app).
 
 ---
 
@@ -233,7 +264,7 @@ pip install -r requirements.txt
 cp .env.example .env
 # Add your ANTHROPIC_API_KEY to .env
 
-# 4. Run V1
+# 4. Run V1 (read-only unless .env sets LRI_DEMO_ALLOW_WRITES=1)
 streamlit run app/main.py
 ```
 
@@ -255,6 +286,8 @@ ANTHROPIC_API_KEY=your_key_here
 ANTHROPIC_MODEL=claude-haiku-4-5-20251001   # optional, this is the default
 DATABASE_URL=                                # leave empty to use db/lri.db
 ```
+
+The demo-hardening variables (`LRI_*`, `FORWARDED_ALLOW_IPS`) are listed in [Public demo hardening](#public-demo-hardening) and in `.env.example`.
 
 ### Run tests
 

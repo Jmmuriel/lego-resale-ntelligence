@@ -168,7 +168,7 @@ def test_briefings_endpoint_returns_latest_briefing():
     assert "briefing_text" in payload[0]
 
 
-def test_generate_briefing_endpoint_returns_market_briefing():
+def test_generate_briefing_endpoint_returns_market_briefing(allow_demo_writes):
     client = TestClient(app)
 
     response = client.post("/api/briefings/generate?period_days=7&use_llm=false")
@@ -179,7 +179,7 @@ def test_generate_briefing_endpoint_returns_market_briefing():
     assert payload["token_count"] == 0
 
 
-def test_watchlist_endpoint_saves_and_lists_analysis(tmp_path, monkeypatch):
+def test_watchlist_endpoint_saves_and_lists_analysis(tmp_path, monkeypatch, allow_demo_writes):
     database_url = f"sqlite:///{tmp_path / 'watchlist.db'}"
 
     monkeypatch.setattr("backend.routers.watchlist.save_listing_analysis", lambda analysis, status: __import__(
@@ -219,7 +219,7 @@ def test_watchlist_endpoint_saves_and_lists_analysis(tmp_path, monkeypatch):
     assert records[0]["id"] == created["id"]
 
 
-def test_watchlist_status_endpoint_updates_record(tmp_path, monkeypatch):
+def test_watchlist_status_endpoint_updates_record(tmp_path, monkeypatch, allow_demo_writes):
     from src.db import save_listing_analysis as db_save_listing_analysis
     from src.db import update_listing_status as db_update_listing_status
 
@@ -340,7 +340,7 @@ def test_analyze_endpoint_returns_controlled_pipeline_error(monkeypatch):
     )
 
     assert response.status_code == 422
-    assert "No se pudo identificar" in response.json()["detail"]
+    assert "Could not analyze this listing" in response.json()["detail"]
 
 
 def _sample_listing_analysis() -> ListingAnalysis:

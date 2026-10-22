@@ -1,7 +1,10 @@
-from src.capture import fetch_html, parse_listing_html
+import logging
+
+from src.capture import ListingFetchError, fetch_html, parse_listing_html
 from src.db import DATABASE_URL, ListingAnalysisRecord, save_listing_analysis
 from src.extract import extract_listing
 from src.identify import identify_set
+from src.limits import LLMBudgetExceeded
 from src.models import ListingAnalysis, ListingExtraction, ListingInput
 from src.pricing_reference import get_fair_price
 from src.scoring import (
@@ -12,8 +15,14 @@ from src.scoring import (
 )
 
 
+log = logging.getLogger(__name__)
+
+
 class PipelineError(RuntimeError):
-    """Error controlado del flujo end-to-end de Fase 2."""
+    """Error controlado del flujo end-to-end de Fase 2.
+
+    Su mensaje se muestra al usuario: nunca debe incluir texto de excepciones internas.
+    """
 
 
 def analyze_listing_url(url: str) -> ListingAnalysis:
@@ -21,7 +30,11 @@ def analyze_listing_url(url: str) -> ListingAnalysis:
     if not url or not url.strip():
         raise PipelineError("La URL no puede estar vacía.")
 
-    html = fetch_html(url)
+    try:
+        html = fetch_html(url)
+    except ListingFetchError as exc:
+        raise PipelineError(str(exc)) from exc
+
     listing_input = parse_listing_html(html, url=url)
     raw_text = _build_raw_text(listing_input)
     if not raw_text:
@@ -77,8 +90,11 @@ def _safe_extract_listing(raw_text: str) -> ListingExtraction:
     """Envuelve errores del extractor para que el pipeline falle con un mensaje claro."""
     try:
         return extract_listing(raw_text)
+    except LLMBudgetExceeded:
+        raise
     except Exception as exc:
-        raise PipelineError(f"La extracción estructurada falló: {exc}") from exc
+        log.warning("Structured extraction failed: %s", exc)
+        raise PipelineError("La extracción estructurada falló.") from exc
 
 
 def _build_listing_analysis(

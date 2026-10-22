@@ -1,5 +1,8 @@
-# Entorno local
-.env
+# Entorno local y secretos (.env, .env.local, .env.production...; los .env.example sí se versionan)
+.env*
+!.env.example
+.streamlit/secrets.toml
+.claude/settings.local.json
 .venv/
 venv/
 env/

@@ -37,6 +37,8 @@ function getApiUrl(): string {
   return LOCAL_API_URL;
 }
 
+const GENERIC_ERROR_MESSAGE = "The request could not be completed. Please try again in a moment.";
+
 export class ApiError extends Error {
   status: number;
 
@@ -59,7 +61,7 @@ async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
       },
       cache: "no-store"
     });
-  } catch (error) {
+  } catch {
     throw new ApiError(
       0,
       "Could not reach the LEGO Resale Intelligence API. Please try the demo opportunity, or retry in a moment if the Railway backend is waking up."
@@ -67,11 +69,24 @@ async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
   }
 
   if (!response.ok) {
-    const detail = await response.text();
-    throw new ApiError(response.status, detail || response.statusText);
+    throw new ApiError(response.status, await readErrorMessage(response));
   }
 
   return response.json() as Promise<T>;
+}
+
+// Show the API's own message when it is a plain string; validation errors (a list)
+// and non-JSON bodies get a generic message instead of raw JSON.
+async function readErrorMessage(response: Response): Promise<string> {
+  try {
+    const body: unknown = await response.json();
+    if (typeof body === "object" && body !== null && "detail" in body && typeof body.detail === "string") {
+      return body.detail;
+    }
+  } catch {
+    // Not JSON.
+  }
+  return GENERIC_ERROR_MESSAGE;
 }
 
 export function analyzeUrl(url: string): Promise<AnalysisResult> {

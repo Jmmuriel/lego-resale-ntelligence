@@ -1,5 +1,6 @@
 import base64
 from html import escape
+import logging
 from pathlib import Path
 import sys
 
@@ -15,24 +16,37 @@ if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
 from styles import apply_global_styles
+from src.capture import UnsupportedListingURLError
 from src.db import (
     ListingAnalysisRecord,
     list_recent_listings,
     save_listing_analysis,
     update_listing_status,
 )
+from src.limits import LLMBudgetExceeded, env_flag
 from src.models import ListingAnalysis
 from src.pipeline import PipelineError, analyze_listing_url
 from src.scoring import build_margin_breakdown
 
 
+log = logging.getLogger(__name__)
+
+
 PHASE_LABEL = "V2 Incremental Watchlist"
+READ_ONLY_MESSAGE = (
+    "Demo pública de solo lectura: el análisis no se guarda y los estados no se pueden cambiar."
+)
 STATUS_LABELS = {
     "analyzed": "Analyzed",
     "watching": "Watching",
     "discarded": "Discarded",
     "bought": "Bought",
 }
+
+
+def writes_enabled() -> bool:
+    """Saving analyses and changing statuses is off unless LRI_DEMO_ALLOW_WRITES=1, as in the V2 API."""
+    return env_flag("LRI_DEMO_ALLOW_WRITES")
 
 
 def format_eur(value: float | None) -> str:
@@ -278,8 +292,10 @@ def show_input_panel() -> str:
 
 def show_analyze() -> None:
     """Pantalla operativa de análisis."""
+    can_save = writes_enabled()
+    storage_copy = "stores the result locally" if can_save else "shows the result without saving it"
     st.markdown(
-        """
+        f"""
         <div class="lri-panel">
             <div class="lri-section-label">
                 <span>Analyze</span>
@@ -287,7 +303,7 @@ def show_analyze() -> None:
             </div>
             <div class="lri-manifesto">
                 Paste a listing URL. The system captures the HTML, extracts structured data,
-                identifies the LEGO set, calculates margin and stores the result locally.
+                identifies the LEGO set, calculates margin and {storage_copy}.
             </div>
         </div>
         """,
@@ -295,7 +311,7 @@ def show_analyze() -> None:
     )
     listing_url = show_input_panel()
 
-    if st.button("Analyze and save"):
+    if st.button("Analyze and save" if can_save else "Analyze"):
         if not listing_url:
             status_panel(
                 "URL required",
@@ -313,22 +329,34 @@ def show_analyze() -> None:
                     )
                 with st.spinner(""):
                     analysis = analyze_listing_url(listing_url)
-                    record = save_listing_analysis(analysis)
+                    record = save_listing_analysis(analysis) if can_save else None
                 loading_placeholder.empty()
             except PipelineError as exc:
                 show_error_panel(exc)
-            except Exception as exc:
+            except UnsupportedListingURLError as exc:
+                status_panel("Unsupported listing URL", str(exc), tone="warning")
+            except LLMBudgetExceeded:
+                status_panel(
+                    "Daily analysis limit reached",
+                    "El análisis con IA ha alcanzado su límite diario. Inténtalo de nuevo mañana.",
+                    tone="warning",
+                )
+            except Exception:
+                log.exception("Unexpected error while analyzing a listing")
                 status_panel(
                     "Unexpected analysis error",
-                    f"Error inesperado durante el análisis: {exc}",
+                    "No se pudo completar el análisis. Inténtalo de nuevo más tarde.",
                     tone="error",
                 )
             else:
-                status_panel(
-                    "Analysis archived",
-                    f"Análisis guardado en SQLite con ID {record.id}.",
-                    tone="success",
-                )
+                if record is None:
+                    status_panel("Analysis ready", READ_ONLY_MESSAGE, tone="success")
+                else:
+                    status_panel(
+                        "Analysis archived",
+                        f"Análisis guardado en SQLite con ID {record.id}.",
+                        tone="success",
+                    )
                 show_analysis_result(analysis)
 
     show_recent_records()
@@ -598,6 +626,9 @@ def show_record_detail(record: ListingAnalysisRecord) -> None:
 
 def show_status_controls(record: ListingAnalysisRecord) -> None:
     """Permite convertir el archivo local en una watchlist accionable."""
+    if not writes_enabled():
+        return
+
     status_keys = list(STATUS_LABELS.keys())
     current_status = record.status if record.status in STATUS_LABELS else "analyzed"
     current_index = status_keys.index(current_status)

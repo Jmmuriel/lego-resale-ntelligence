@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import ReadOnlyNote from "@/components/ReadOnlyNote";
 import { updateWatchlistStatus } from "@/lib/api";
+import { DEMO_ALLOW_WRITES } from "@/lib/demo";
 import type { WatchlistRecord, WatchlistStatus } from "@/lib/types";
 
 const statuses: Array<WatchlistStatus | "all"> = [
@@ -91,10 +93,15 @@ export default function WatchlistDesk({ initialRecords }: { initialRecords: Watc
           <span>Saved listings</span>
           <strong>SQLite watchlist</strong>
         </div>
+        {DEMO_ALLOW_WRITES ? null : <ReadOnlyNote />}
         {filteredRecords.length === 0 ? (
           <div className="empty-state">
             <strong>No records in this state</strong>
-            <span>Analyze and save a listing, or switch filters to inspect older records.</span>
+            <span>
+              {DEMO_ALLOW_WRITES
+                ? "Analyze and save a listing, or switch filters to inspect older records."
+                : "Switch filters to inspect older records."}
+            </span>
           </div>
         ) : (
           <div className="watchlist-table">
@@ -128,29 +135,31 @@ export default function WatchlistDesk({ initialRecords }: { initialRecords: Watc
                   <strong>{record.opportunity_score ?? "n/a"}</strong>
                 </div>
 
-                <div className="row-actions">
-                  <button
-                    disabled={pendingId === record.id || record.status === "watching"}
-                    onClick={() => moveRecord(record.id, "watching")}
-                    type="button"
-                  >
-                    Watch
-                  </button>
-                  <button
-                    disabled={pendingId === record.id || record.status === "discarded"}
-                    onClick={() => moveRecord(record.id, "discarded")}
-                    type="button"
-                  >
-                    Discard
-                  </button>
-                  <button
-                    disabled={pendingId === record.id || record.status === "bought"}
-                    onClick={() => moveRecord(record.id, "bought")}
-                    type="button"
-                  >
-                    Bought
-                  </button>
-                </div>
+                {DEMO_ALLOW_WRITES ? (
+                  <div className="row-actions">
+                    <button
+                      disabled={pendingId === record.id || record.status === "watching"}
+                      onClick={() => moveRecord(record.id, "watching")}
+                      type="button"
+                    >
+                      Watch
+                    </button>
+                    <button
+                      disabled={pendingId === record.id || record.status === "discarded"}
+                      onClick={() => moveRecord(record.id, "discarded")}
+                      type="button"
+                    >
+                      Discard
+                    </button>
+                    <button
+                      disabled={pendingId === record.id || record.status === "bought"}
+                      onClick={() => moveRecord(record.id, "bought")}
+                      type="button"
+                    >
+                      Bought
+                    </button>
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>
